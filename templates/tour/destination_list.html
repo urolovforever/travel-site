@@ -29,6 +29,10 @@
               <img src="{{ destination.main_image.url }}" class="card-img-top" alt="{{ destination|get_translated:'title' }}" style="height: 250px; object-fit: cover;">
             {% endif %}
             <div class="card-body">
+              <p class="text-muted mb-2" style="font-size: 14px;">
+                <ion-icon name="location-outline" style="vertical-align: middle;"></ion-icon>
+                {{ destination|get_translated:'country' }}
+              </p>
               <h5 class="card-title">{{ destination|get_translated:'title' }}</h5>
               <p class="card-text">{{ destination|get_translated:'short_description'|truncatewords:20 }}</p>
               <a href="{% url 'destinations:destination_detail' destination.slug %}" class="btn btn-primary">{% trans "View Details" %}</a>

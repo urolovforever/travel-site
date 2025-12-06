@@ -6,50 +6,145 @@
 {% block title %}{{ destination|get_translated:'title' }} | {{ block.super }}{% endblock %}
 
 {% block content %}
-<section class="section" style="padding: 50px 0;">
+
+<!-- Page Hero -->
+<section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{% if destination.main_image %}{{ destination.main_image.url }}{% else %}{% static 'images/hero-banner.jpg' %}{% endif %}');">
   <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        {% if destination.main_image %}
-          <img src="{{ destination.main_image.url }}" class="img-fluid rounded" alt="{{ destination|get_translated:'title' }}" style="width: 100%; max-height: 500px; object-fit: cover;">
-        {% endif %}
-        
-        <h1 class="mt-4">{{ destination|get_translated:'title' }}</h1>
-        <p class="lead">{{ destination|get_translated:'short_description' }}</p>
-        
-        <div class="mt-4">
-          {{ destination|get_translated:'description'|linebreaks }}
+    <p class="page-hero-text" style="margin-bottom: 5px;">
+      <ion-icon name="location-outline" style="vertical-align: middle; font-size: 20px;"></ion-icon>
+      {{ destination|get_translated:'country' }}
+    </p>
+    <h1 class="h1 page-hero-title">{{ destination|get_translated:'title' }}</h1>
+  </div>
+</section>
+
+<!-- Destination Details -->
+<section class="section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <!-- Short Description -->
+        <div style="background: var(--cultured); padding: 30px; border-radius: 10px; margin-bottom: 40px;">
+          <h3 class="h3" style="margin-bottom: 20px; color: var(--bright-navy-blue);">
+            <ion-icon name="information-circle-outline" style="vertical-align: middle; font-size: 28px;"></ion-icon>
+            {% trans "Overview" %}
+          </h3>
+          <p class="section-text" style="font-size: 18px; line-height: 1.8;">
+            {{ destination|get_translated:'short_description' }}
+          </p>
+        </div>
+
+        <!-- Description -->
+        <div style="margin-bottom: 40px;">
+          <h3 class="h3 section-title" style="margin-bottom: 25px;">{% trans "About" %} {{ destination|get_translated:'title' }}</h3>
+          <div class="section-text" style="line-height: 1.8;">
+            {{ destination|get_translated:'description'|linebreaks }}
+          </div>
         </div>
 
         <!-- Gallery -->
         {% if gallery_images %}
-          <h3 class="mt-5">{% trans "Gallery" %}</h3>
-          <div class="row">
-            {% for image in gallery_images %}
-              <div class="col-md-4 mb-3">
-                <img src="{{ image.image.url }}" class="img-fluid rounded" alt="{{ image|get_translated:'caption' }}">
-              </div>
-            {% endfor %}
+          <div style="margin-top: 50px;">
+            <h3 class="h3 section-title" style="margin-bottom: 30px;">
+              <ion-icon name="images-outline" style="vertical-align: middle; font-size: 28px;"></ion-icon>
+              {% trans "Photo Gallery" %}
+            </h3>
+            <div class="row g-3">
+              {% for image in gallery_images %}
+                <div class="col-md-6 col-lg-4">
+                  <div style="position: relative; overflow: hidden; border-radius: 10px; height: 250px;">
+                    <img src="{{ image.image.url }}" alt="{{ image|get_translated:'caption' }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                  </div>
+                  {% if image.caption %}
+                    <p style="margin-top: 10px; font-size: 14px; color: var(--spanish-gray);">{{ image|get_translated:'caption' }}</p>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
           </div>
         {% endif %}
       </div>
 
-      <div class="col-md-4">
-        <h3>{% trans "Available Packages" %}</h3>
-        {% for package in packages %}
-          <div class="card mb-3">
-            <div class="card-body">
-              <h5 class="card-title">{{ package|get_translated:'title' }}</h5>
-              <p class="card-text"><strong>{{ package.price }} {{ package.currency }}</strong></p>
-              <p class="card-text"><small>{{ package|get_translated:'duration' }}</small></p>
-              <a href="{% url 'packages:package_detail' package.slug %}" class="btn btn-sm btn-primary">{% trans "View Package" %}</a>
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <!-- Destination Info Card -->
+        <div style="background: var(--white); border: 2px solid var(--cultured); border-radius: 10px; padding: 30px; margin-bottom: 30px; position: sticky; top: 100px;">
+          <h4 class="h4" style="margin-bottom: 25px; color: var(--bright-navy-blue);">
+            <ion-icon name="compass-outline" style="vertical-align: middle; font-size: 24px;"></ion-icon>
+            {% trans "Destination Info" %}
+          </h4>
+
+          <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--cultured);">
+            <div style="display: flex; align-items: start; gap: 15px;">
+              <ion-icon name="location" style="font-size: 22px; color: var(--bright-navy-blue); flex-shrink: 0; margin-top: 2px;"></ion-icon>
+              <div>
+                <p style="font-weight: 600; margin-bottom: 5px; color: var(--black-coral);">{% trans "Country" %}</p>
+                <p style="color: var(--spanish-gray);">{{ destination|get_translated:'country' }}</p>
+              </div>
             </div>
           </div>
-        {% empty %}
-          <p>{% trans "No packages available" %}</p>
-        {% endfor %}
+
+          <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--cultured);">
+            <div style="display: flex; align-items: start; gap: 15px;">
+              <ion-icon name="navigate" style="font-size: 22px; color: var(--bright-navy-blue); flex-shrink: 0; margin-top: 2px;"></ion-icon>
+              <div>
+                <p style="font-weight: 600; margin-bottom: 5px; color: var(--black-coral);">{% trans "Destination" %}</p>
+                <p style="color: var(--spanish-gray);">{{ destination|get_translated:'title' }}</p>
+              </div>
+            </div>
+          </div>
+
+          {% if packages %}
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--cultured);">
+              <div style="display: flex; align-items: start; gap: 15px;">
+                <ion-icon name="pricetag" style="font-size: 22px; color: var(--bright-navy-blue); flex-shrink: 0; margin-top: 2px;"></ion-icon>
+                <div>
+                  <p style="font-weight: 600; margin-bottom: 5px; color: var(--black-coral);">{% trans "Available Packages" %}</p>
+                  <p style="color: var(--spanish-gray);">{{ packages|length }} {% trans "package(s) available" %}</p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          <a href="{% url 'core:contact' %}" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+            <ion-icon name="mail-outline" style="vertical-align: middle;"></ion-icon>
+            {% trans "Contact Us" %}
+          </a>
+        </div>
+
+        <!-- Available Packages -->
+        {% if packages %}
+          <div style="background: var(--cultured); border-radius: 10px; padding: 25px;">
+            <h4 class="h4" style="margin-bottom: 20px; color: var(--bright-navy-blue);">
+              <ion-icon name="briefcase-outline" style="vertical-align: middle; font-size: 24px;"></ion-icon>
+              {% trans "Tour Packages" %}
+            </h4>
+            {% for package in packages %}
+              <div style="background: var(--white); border-radius: 8px; padding: 20px; margin-bottom: 15px;">
+                <h5 style="margin-bottom: 10px; font-size: 16px;">{{ package|get_translated:'title' }}</h5>
+                <p style="color: var(--bright-navy-blue); font-size: 20px; font-weight: 700; margin-bottom: 8px;">
+                  {{ package.price }} {{ package.currency }}
+                </p>
+                <p style="color: var(--spanish-gray); font-size: 14px; margin-bottom: 15px;">
+                  <ion-icon name="time-outline" style="vertical-align: middle;"></ion-icon>
+                  {{ package|get_translated:'duration' }}
+                </p>
+                <a href="{% url 'packages:package_detail' package.slug %}" class="btn btn-secondary btn-sm" style="width: 100%;">
+                  {% trans "View Details" %}
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div style="background: var(--cultured); border-radius: 10px; padding: 25px; text-align: center;">
+            <ion-icon name="information-circle-outline" style="font-size: 48px; color: var(--spanish-gray);"></ion-icon>
+            <p style="margin-top: 15px; color: var(--spanish-gray);">{% trans "No tour packages available for this destination yet. Contact us for custom packages!" %}</p>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
 </section>
+
 {% endblock %}
