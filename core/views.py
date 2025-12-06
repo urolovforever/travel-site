@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from destinations.models import Destination
 from packages.models import Package
 from gallery.models import GalleryImage
+from sponsors.models import Sponsor
 
 
 class HomeView(TemplateView):
@@ -18,6 +19,7 @@ class HomeView(TemplateView):
             published=True, available=True, featured=True
         ).select_related('destination').order_by('-created_at')[:3]
         context['latest_gallery_images'] = GalleryImage.objects.all().order_by('-uploaded_at')[:5]
+        context['sponsors'] = Sponsor.objects.filter(active=True).order_by('display_order')
         return context
 
 

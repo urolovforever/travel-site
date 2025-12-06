@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'packages',
     'gallery',
     'bookings',
+    'sponsors',
 ]
 
 MIDDLEWARE = [
