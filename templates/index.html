@@ -23,28 +23,32 @@
   </div>
 </section>
 
-<!-- LANGUAGE SELECTOR SECTION -->
-<section class="tour-search" style="background: var(--bright-navy-blue); padding: 40px 0;">
+<!-- TOUR SEARCH -->
+<section class="tour-search">
   <div class="container">
-    <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
-      <h3 class="h3" style="color: white; margin: 0;">{% trans "Select Your Language" %}:</h3>
-
-      <div class="language-selector-buttons" style="display: flex; gap: 15px; flex-wrap: wrap;">
-        {% get_current_language as CURRENT_LANG %}
-        {% get_available_languages as LANGUAGES %}
-        {% for lang_code, lang_name in LANGUAGES %}
-          <form action="{% url 'set_language' %}" method="post" style="display: inline;">
-            {% csrf_token %}
-            <input name="next" type="hidden" value="{{ request.get_full_path }}">
-            <input name="language" type="hidden" value="{{ lang_code }}">
-            <button type="submit" class="btn {% if CURRENT_LANG == lang_code %}btn-secondary{% else %}btn-outline{% endif %}" style="min-width: 120px; background: {% if CURRENT_LANG == lang_code %}var(--united-nations-blue){% else %}rgba(255,255,255,0.1){% endif %}; border: 2px solid white; color: white; font-weight: 600; padding: 12px 30px;">
-              <ion-icon name="{% if lang_code == 'uz' %}flag{% elif lang_code == 'en' %}flag{% else %}flag{% endif %}" style="vertical-align: middle; margin-right: 5px;"></ion-icon>
-              {{ lang_name }}
-            </button>
-          </form>
-        {% endfor %}
+    <form action="{% url 'packages:package_list' %}" method="get" class="tour-search-form">
+      <div class="input-wrapper">
+        <label for="destination" class="input-label">{% trans "Search Destination" %}*</label>
+        <input type="text" name="destination" id="destination" placeholder="{% trans 'Enter Destination' %}" class="input-field">
       </div>
-    </div>
+
+      <div class="input-wrapper">
+        <label for="people" class="input-label">{% trans "Pax Number" %}*</label>
+        <input type="number" name="people" id="people" placeholder="{% trans 'No.of People' %}" class="input-field">
+      </div>
+
+      <div class="input-wrapper">
+        <label for="checkin" class="input-label">{% trans "Checkin Date" %}</label>
+        <input type="date" name="checkin" id="checkin" class="input-field">
+      </div>
+
+      <div class="input-wrapper">
+        <label for="checkout" class="input-label">{% trans "Checkout Date" %}</label>
+        <input type="date" name="checkout" id="checkout" class="input-field">
+      </div>
+
+      <button type="submit" class="btn btn-secondary">{% trans "Inquire now" %}</button>
+    </form>
   </div>
 </section>
 
