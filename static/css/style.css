@@ -1158,8 +1158,8 @@ address {
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--white);
-    color: var(--onyx);
+    background: var(--gunmetal);
+    color: var(--white);
     box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.08);
     transition: var(--transition);
   }
@@ -1185,13 +1185,13 @@ address {
     padding: 20px 15px;
   }
 
-  .header.active .navbar-link { color: var(--onyx); }
+  .header.active .navbar-link { color: var(--white); }
 
   .header.active .navbar-link:is(:hover, :focus) { color: var(--bright-navy-blue); }
 
   .header.active .social-link {
-    color: var(--onyx);
-    border-color: hsla(0, 0%, 0%, 0.15);
+    color: var(--white);
+    border-color: hsla(0, 0%, 100%, 0.15);
   }
 
   .overlay { display: none; }
