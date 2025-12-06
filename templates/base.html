@@ -88,27 +88,37 @@
 
           <ul class="navbar-list">
             <li><a href="{% url 'core:home' %}" class="navbar-link" data-nav-link>{% trans "Home" %}</a></li>
+            <li><a href="{% url 'core:about' %}" class="navbar-link" data-nav-link>{% trans "About Us" %}</a></li>
             <li><a href="{% url 'destinations:destination_list' %}" class="navbar-link" data-nav-link>{% trans "Destinations" %}</a></li>
             <li><a href="{% url 'packages:package_list' %}" class="navbar-link" data-nav-link>{% trans "Packages" %}</a></li>
             <li><a href="{% url 'gallery:gallery' %}" class="navbar-link" data-nav-link>{% trans "Gallery" %}</a></li>
+            <li><a href="{% url 'core:contact' %}" class="navbar-link" data-nav-link>{% trans "Contact Us" %}</a></li>
           </ul>
 
         </nav>
 
-        <!-- Language Switcher -->
-        <div class="language-switcher" style="display: flex; gap: 10px; align-items: center;">
-          {% get_current_language as LANGUAGE_CODE %}
+        <!-- Language Switcher Dropdown -->
+        <div class="language-switcher" style="position: relative; margin-right: 20px;">
+          {% get_current_language as CURRENT_LANG %}
           {% get_available_languages as LANGUAGES %}
-          {% for lang_code, lang_name in LANGUAGES %}
-            <form action="{% url 'set_language' %}" method="post" style="display: inline;">
-              {% csrf_token %}
-              <input name="next" type="hidden" value="{{ request.get_full_path }}">
-              <input name="language" type="hidden" value="{{ lang_code }}">
-              <button type="submit" class="btn btn-sm {% if LANGUAGE_CODE == lang_code %}btn-primary{% else %}btn-outline-primary{% endif %}" style="font-size: 12px; padding: 4px 8px;">
-                {{ lang_code|upper }}
-              </button>
-            </form>
-          {% endfor %}
+          <button class="btn btn-outline" id="langDropdown" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 15px; cursor: pointer; border-radius: 4px; display: flex; align-items: center; gap: 5px;">
+            <ion-icon name="globe-outline" style="font-size: 18px;"></ion-icon>
+            <span>{{ CURRENT_LANG|upper }}</span>
+            <ion-icon name="chevron-down-outline" style="font-size: 14px;"></ion-icon>
+          </button>
+          <div class="lang-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; margin-top: 5px; min-width: 150px; z-index: 1000;">
+            {% for lang_code, lang_name in LANGUAGES %}
+              <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                <input name="language" type="hidden" value="{{ lang_code }}">
+                <button type="submit" class="lang-dropdown-item" style="width: 100%; text-align: left; padding: 10px 15px; border: none; background: {% if CURRENT_LANG == lang_code %}#f0f0f0{% else %}white{% endif %}; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #333;">
+                  <ion-icon name="{% if CURRENT_LANG == lang_code %}checkmark-circle{% else %}radio-button-off{% endif %}" style="font-size: 16px;"></ion-icon>
+                  <span>{{ lang_name }}</span>
+                </button>
+              </form>
+            {% endfor %}
+          </div>
         </div>
 
         <button class="btn btn-primary">{% trans "Book Now" %}</button>
@@ -217,6 +227,43 @@
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Language Dropdown Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const langButton = document.getElementById('langDropdown');
+      const langMenu = document.querySelector('.lang-dropdown-menu');
+
+      if (langButton && langMenu) {
+        langButton.addEventListener('click', function(e) {
+          e.stopPropagation();
+          langMenu.style.display = langMenu.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
+            langMenu.style.display = 'none';
+          }
+        });
+
+        // Hover effects for dropdown items
+        const dropdownItems = document.querySelectorAll('.lang-dropdown-item');
+        dropdownItems.forEach(item => {
+          item.addEventListener('mouseenter', function() {
+            if (this.style.background === 'white') {
+              this.style.background = '#f8f8f8';
+            }
+          });
+          item.addEventListener('mouseleave', function() {
+            if (this.style.background !== 'rgb(240, 240, 240)') {
+              this.style.background = 'white';
+            }
+          });
+        });
+      }
+    });
+  </script>
 
   {% block scripts %}{% endblock scripts %}
 
