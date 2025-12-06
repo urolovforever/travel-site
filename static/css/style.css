@@ -407,6 +407,37 @@ body { background: var(--white); }
 
 
 
+/*-----------------------------------*\
+ * #PAGE HERO
+\*-----------------------------------*/
+
+.page-hero {
+  background-image: url("../images/hero-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: hsla(0, 0%, 0%, 0.7);
+  background-blend-mode: overlay;
+  display: grid;
+  place-items: center;
+  min-height: 300px;
+  text-align: center;
+  padding-top: 125px;
+  padding-bottom: 40px;
+}
+
+.page-hero-title {
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.page-hero-text {
+  color: var(--white);
+  font-size: var(--fs-5);
+  max-width: 600px;
+  margin-inline: auto;
+}
+
 
 /*-----------------------------------*\
  * #TOUR SEARCH
