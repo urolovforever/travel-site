@@ -46,7 +46,7 @@
 
         </a>
 
-        <a href="{% url 'home' %}" class="logo">
+        <a href="{% url 'core:home' %}" class="logo">
           <img src="{% static 'images/logo.svg' %}" alt="Tourly logo">
         </a>
 
@@ -77,7 +77,7 @@
         <nav class="navbar" data-navbar>
 
           <div class="navbar-top">
-            <a href="{% url 'home' %}" class="logo">
+            <a href="{% url 'core:home' %}" class="logo">
               <img src="{% static 'images/logo-blue.svg' %}" alt="Tourly logo">
             </a>
 
@@ -87,12 +87,10 @@
           </div>
 
           <ul class="navbar-list">
-            <li><a href="{% url 'home' %}#home" class="navbar-link" data-nav-link>home</a></li>
-            <li><a href="#" class="navbar-link" data-nav-link>about us</a></li>
-            <li><a href="{% url 'home' %}#destination" class="navbar-link" data-nav-link>destination</a></li>
-            <li><a href="{% url 'home' %}#package" class="navbar-link" data-nav-link>packages</a></li>
-            <li><a href="{% url 'home' %}#gallery" class="navbar-link" data-nav-link>gallery</a></li>
-            <li><a href="{% url 'home' %}#contact" class="navbar-link" data-nav-link>contact us</a></li>
+            <li><a href="{% url 'core:home' %}" class="navbar-link" data-nav-link>{% trans "Home" %}</a></li>
+            <li><a href="{% url 'destinations:destination_list' %}" class="navbar-link" data-nav-link>{% trans "Destinations" %}</a></li>
+            <li><a href="{% url 'packages:package_list' %}" class="navbar-link" data-nav-link>{% trans "Packages" %}</a></li>
+            <li><a href="{% url 'gallery:gallery' %}" class="navbar-link" data-nav-link>{% trans "Gallery" %}</a></li>
           </ul>
 
         </nav>
