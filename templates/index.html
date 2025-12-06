@@ -246,6 +246,44 @@
   </div>
 </section>
 
+<!-- SPONSORS/PARTNERS -->
+{% if sponsors %}
+<section class="sponsors" style="padding: 60px 0; background: var(--cultured);">
+  <div class="container">
+    <p class="section-subtitle" style="text-align: center;">{% trans "Our Partners" %}</p>
+    <h2 class="h2 section-title" style="text-align: center; margin-bottom: 50px;">{% trans "Trusted by Leading Companies" %}</h2>
+
+    <div class="sponsors-carousel-wrapper" style="overflow: hidden; position: relative;">
+      <div class="sponsors-carousel" id="sponsorsCarousel">
+        {% for sponsor in sponsors %}
+          <div class="sponsor-item">
+            {% if sponsor.website_url %}
+              <a href="{{ sponsor.website_url }}" target="_blank" rel="noopener" title="{{ sponsor.name }}">
+                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" loading="lazy">
+              </a>
+            {% else %}
+              <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" loading="lazy">
+            {% endif %}
+          </div>
+        {% endfor %}
+        <!-- Duplicate items for seamless loop -->
+        {% for sponsor in sponsors %}
+          <div class="sponsor-item">
+            {% if sponsor.website_url %}
+              <a href="{{ sponsor.website_url }}" target="_blank" rel="noopener" title="{{ sponsor.name }}">
+                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" loading="lazy">
+              </a>
+            {% else %}
+              <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" loading="lazy">
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <!-- CTA -->
 <section class="cta" id="contact">
   <div class="container">
