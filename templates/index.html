@@ -3,23 +3,52 @@
 {% load i18n %}
 {% load i18n_tags %}
 
-{% block title %}{% trans "Home" %} - {{ block.super }}{% endblock %}
+{% block title %}{% trans "Home" %} - Tourly Travel Agency{% endblock %}
 
 {% block content %}
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="container">
     <h2 class="h1 hero-title">{% trans "Journey to explore world" %}</h2>
 
     <p class="hero-text">
-      {% trans "Discover amazing destinations and unforgettable experiences with our carefully curated tour packages." %}
+      {% trans "Discover amazing destinations and create unforgettable memories with our carefully curated travel packages." %}
     </p>
 
     <div class="btn-group">
-      <a href="{% url 'destinations:destination_list' %}" class="btn btn-primary">{% trans "Learn more" %}</a>
+      <a href="{% url 'core:about' %}" class="btn btn-primary">{% trans "Learn more" %}</a>
       <a href="{% url 'packages:package_list' %}" class="btn btn-secondary">{% trans "Book now" %}</a>
     </div>
+  </div>
+</section>
+
+<!-- TOUR SEARCH -->
+<section class="tour-search">
+  <div class="container">
+    <form action="{% url 'packages:package_list' %}" method="get" class="tour-search-form">
+      <div class="input-wrapper">
+        <label for="destination" class="input-label">{% trans "Search Destination" %}*</label>
+        <input type="text" name="destination" id="destination" placeholder="{% trans 'Enter Destination' %}" class="input-field">
+      </div>
+
+      <div class="input-wrapper">
+        <label for="people" class="input-label">{% trans "Pax Number" %}*</label>
+        <input type="number" name="people" id="people" placeholder="{% trans 'No.of People' %}" class="input-field">
+      </div>
+
+      <div class="input-wrapper">
+        <label for="checkin" class="input-label">{% trans "Checkin Date" %}</label>
+        <input type="date" name="checkin" id="checkin" class="input-field">
+      </div>
+
+      <div class="input-wrapper">
+        <label for="checkout" class="input-label">{% trans "Checkout Date" %}</label>
+        <input type="date" name="checkout" id="checkout" class="input-field">
+      </div>
+
+      <button type="submit" class="btn btn-secondary">{% trans "Inquire now" %}</button>
+    </form>
   </div>
 </section>
 
@@ -28,21 +57,23 @@
   <div class="container">
     <p class="section-subtitle">{% trans "Uncover place" %}</p>
 
-    <h2 class="h2 section-title">{% trans "Popular destination" %}</h2>
+    <h2 class="h2 section-title">{% trans "Popular destinations" %}</h2>
 
     <p class="section-text">
-      {% trans "Explore our most popular travel destinations" %}
+      {% trans "Explore our most sought-after travel destinations around the world" %}
     </p>
 
     <ul class="popular-list">
       {% for destination in featured_destinations %}
         <li>
           <div class="popular-card">
-            {% if destination.main_image %}
-              <figure class="card-img">
+            <figure class="card-img">
+              {% if destination.main_image %}
                 <img src="{{ destination.main_image.url }}" alt="{{ destination|get_translated:'title' }}" loading="lazy">
-              </figure>
-            {% endif %}
+              {% else %}
+                <img src="{% static 'images/popular-1.jpg' %}" alt="{{ destination|get_translated:'title' }}" loading="lazy">
+              {% endif %}
+            </figure>
 
             <div class="card-content">
               <div class="card-rating">
@@ -58,7 +89,7 @@
               </p>
 
               <h3 class="h3 card-title">
-                <a href="{% url 'destinations:destination_detail' destination.slug %}">{{ destination|get_translated:'short_description'|truncatewords:10 }}</a>
+                <a href="{% url 'destinations:destination_detail' destination.slug %}">{{ destination|get_translated:'short_description'|truncatewords:5 }}</a>
               </h3>
 
               <p class="card-text">
@@ -68,11 +99,20 @@
           </div>
         </li>
       {% empty %}
-        <li><p>{% trans "No destinations available at the moment." %}</p></li>
+        <li>
+          <div class="popular-card">
+            <figure class="card-img">
+              <img src="{% static 'images/popular-1.jpg' %}" alt="Sample Destination" loading="lazy">
+            </figure>
+            <div class="card-content">
+              <p class="card-text">{% trans "No destinations available. Please check back later." %}</p>
+            </div>
+          </div>
+        </li>
       {% endfor %}
     </ul>
 
-    <a href="{% url 'destinations:destination_list' %}" class="btn btn-primary">{% trans "More destintion" %}</a>
+    <a href="{% url 'destinations:destination_list' %}" class="btn btn-primary">{% trans "More destinations" %}</a>
   </div>
 </section>
 
@@ -84,18 +124,20 @@
     <h2 class="h2 section-title">{% trans "Checkout Our Packages" %}</h2>
 
     <p class="section-text">
-      {% trans "Find the perfect tour package for your next adventure" %}
+      {% trans "Choose from our wide selection of carefully crafted tour packages" %}
     </p>
 
     <ul class="package-list">
       {% for package in featured_packages %}
         <li>
           <div class="package-card">
-            {% if package.main_image %}
-              <figure class="card-banner">
+            <figure class="card-banner">
+              {% if package.main_image %}
                 <img src="{{ package.main_image.url }}" alt="{{ package|get_translated:'title' }}" loading="lazy">
-              </figure>
-            {% endif %}
+              {% else %}
+                <img src="{% static 'images/packege-1.jpg' %}" alt="{{ package|get_translated:'title' }}" loading="lazy">
+              {% endif %}
+            </figure>
 
             <div class="card-content">
               <h3 class="h3 card-title">{{ package|get_translated:'title' }}</h3>
@@ -151,7 +193,13 @@
           </div>
         </li>
       {% empty %}
-        <li><p>{% trans "No packages available at the moment." %}</p></li>
+        <li>
+          <div class="package-card">
+            <div class="card-content">
+              <p class="card-text">{% trans "No packages available. Please check back later." %}</p>
+            </div>
+          </div>
+        </li>
       {% endfor %}
     </ul>
 
@@ -167,16 +215,24 @@
     <h2 class="h2 section-title">{% trans "Photo's From Travellers" %}</h2>
 
     <p class="section-text">
-      {% trans "Browse beautiful moments captured by our travelers" %}
+      {% trans "Explore beautiful moments captured by our happy travelers" %}
     </p>
 
     <ul class="gallery-list">
       {% for image in latest_gallery_images %}
         <li class="gallery-item">
           <figure class="gallery-image">
-            <img src="{{ image.image.url }}" alt="{{ image|get_translated:'caption' }}">
+            <img src="{{ image.image.url }}" alt="{{ image|get_translated:'caption' }}" loading="lazy">
           </figure>
         </li>
+      {% empty %}
+        {% for i in "12345" %}
+          <li class="gallery-item">
+            <figure class="gallery-image">
+              <img src="{% static 'images/gallery-'|add:i|add:'.jpg' %}" alt="Gallery" loading="lazy">
+            </figure>
+          </li>
+        {% endfor %}
       {% endfor %}
     </ul>
 
@@ -184,20 +240,20 @@
   </div>
 </section>
 
-<!-- CTA (Contact/Booking) -->
+<!-- CTA -->
 <section class="cta" id="contact">
   <div class="container">
     <div class="cta-content">
       <p class="section-subtitle">{% trans "Call To Action" %}</p>
 
-      <h2 class="h2 section-title">{% trans "Ready For Unforgatable Travel. Remember Us!" %}</h2>
+      <h2 class="h2 section-title">{% trans "Ready For Unforgettable Travel. Remember Us!" %}</h2>
 
       <p class="section-text">
-        {% trans "Contact us today to plan your perfect journey" %}
+        {% trans "Contact us today to start planning your dream vacation" %}
       </p>
     </div>
 
-    <a href="{% url 'packages:package_list' %}" class="btn btn-secondary">{% trans "Contact Us !" %}</a>
+    <a href="{% url 'core:contact' %}" class="btn btn-secondary">{% trans "Contact Us!" %}</a>
   </div>
 </section>
 

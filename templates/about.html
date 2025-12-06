@@ -1,10 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
 
-</body>
-</html>
+{% block title %}{% trans "About Us" %} - {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<!-- About Section -->
+<section class="section about" style="padding: 100px 0;">
+  <div class="container">
+    <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px;">
+        <p class="section-subtitle">{% trans "About Us" %}</p>
+        <h2 class="h2 section-title">{% trans "Explore All Tour of the World with Us" %}</h2>
+        <p class="section-text">
+          {% trans "We are a professional travel agency dedicated to making your travel dreams come true. With years of experience in the tourism industry, we provide exceptional travel packages to the most beautiful destinations around the world." %}
+        </p>
+        <p class="section-text">
+          {% trans "Our team of travel experts carefully curates each tour package to ensure you have an unforgettable experience. From exotic beach destinations to cultural heritage sites, we have something for every traveler." %}
+        </p>
+        <ul style="margin-top: 30px; list-style: none; padding: 0;">
+          <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            <ion-icon name="checkmark-circle" style="font-size: 24px; color: var(--bright-navy-blue);"></ion-icon>
+            <span>{% trans "Professional and experienced tour guides" %}</span>
+          </li>
+          <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            <ion-icon name="checkmark-circle" style="font-size: 24px; color: var(--bright-navy-blue);"></ion-icon>
+            <span>{% trans "Carefully selected destinations" %}</span>
+          </li>
+          <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            <ion-icon name="checkmark-circle" style="font-size: 24px; color: var(--bright-navy-blue);"></ion-icon>
+            <span>{% trans "Competitive prices and great value" %}</span>
+          </li>
+        </ul>
+      </div>
+      <div style="flex: 1; min-width: 300px;">
+        <img src="{% static 'images/hero-banner.jpg' %}" alt="{% trans 'About Us' %}" style="width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="section stats" style="background: var(--cultured); padding: 60px 0;">
+  <div class="container">
+    <div style="display: flex; justify-content: space-around; text-align: center; flex-wrap: wrap; gap: 30px;">
+      <div style="flex: 1; min-width: 150px; padding: 20px;">
+        <h3 style="color: var(--bright-navy-blue); font-size: 48px; margin-bottom: 10px;">500+</h3>
+        <p style="color: var(--black-coral);">{% trans "Happy Customers" %}</p>
+      </div>
+      <div style="flex: 1; min-width: 150px; padding: 20px;">
+        <h3 style="color: var(--bright-navy-blue); font-size: 48px; margin-bottom: 10px;">50+</h3>
+        <p style="color: var(--black-coral);">{% trans "Destinations" %}</p>
+      </div>
+      <div style="flex: 1; min-width: 150px; padding: 20px;">
+        <h3 style="color: var(--bright-navy-blue); font-size: 48px; margin-bottom: 10px;">100+</h3>
+        <p style="color: var(--black-coral);">{% trans "Packages" %}</p>
+      </div>
+      <div style="flex: 1; min-width: 150px; padding: 20px;">
+        <h3 style="color: var(--bright-navy-blue); font-size: 48px; margin-bottom: 10px;">15+</h3>
+        <p style="color: var(--black-coral);">{% trans "Years" %}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
