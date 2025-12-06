@@ -26,7 +26,7 @@
 
 <body id="top">
 
-  <header class="header" data-header>
+  <header class="header{% if request.path != '/' and request.path != '/uz/' and request.path != '/en/' and request.path != '/ru/' %} active{% endif %}" data-header>
 
     <div class="overlay" data-overlay></div>
 
