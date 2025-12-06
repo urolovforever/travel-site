@@ -1,0 +1,22 @@
+# Django Framework
+Django>=4.2,<5.0
+
+# Image handling
+Pillow>=10.0.0
+
+# Multilingual support
+django-modeltranslation>=0.18.0
+
+# Forms
+django-crispy-forms>=2.0
+crispy-bootstrap5>=0.7
+
+# Database (optional - for PostgreSQL in production)
+# psycopg2-binary>=2.9.0
+
+# Development tools (optional)
+# django-debug-toolbar>=4.0.0
+
+# Production server (optional)
+# gunicorn>=21.0.0
+# whitenoise>=6.0.0  # For serving static files in production

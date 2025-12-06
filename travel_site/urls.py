@@ -14,16 +14,30 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.urls import path, include
+from django.views.i18n import set_language
 
-urlpatterns = i18n_patterns(
+# Non-translatable URLs (language switching, media, static)
+urlpatterns = [
+    path('i18n/setlang/', set_language, name='set_language'),
+]
+
+# Translatable URLs wrapped in i18n_patterns
+urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('destinations/', include('destinations.urls')),
     path('packages/', include('packages.urls')),
     path('gallery/', include('gallery.urls')),
-    path('book/', include('bookings.urls')),
+    path('bookings/', include('bookings.urls')),
 )
+
+# Serve media files in development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

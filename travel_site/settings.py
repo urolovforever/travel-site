@@ -31,12 +31,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',  # Must be before django.contrib.admin
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+    # Third-party apps
+    'crispy_forms',
+    'crispy_bootstrap5',
+    # Local apps
     'core',
     'destinations',
     'packages',
@@ -47,6 +53,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # For language switching
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -67,6 +74,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
             ],
         },
     },
@@ -122,6 +132,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"  # For production collectstatic
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
@@ -131,15 +142,62 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LANGUAGE_CODE = 'en'
+# ========================================
+# INTERNATIONALIZATION & TRANSLATION
+# ========================================
+
+LANGUAGE_CODE = 'en'  # Default language
 USE_I18N = True
+USE_L10N = True
 
 LANGUAGES = [
-    ('en', 'English'),
     ('uz', 'Uzbek'),
+    ('en', 'English'),
     ('ru', 'Russian'),
 ]
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
+
+# Modeltranslation settings
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_LANGUAGES = ('uz', 'en', 'ru')
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('en', 'uz', 'ru')
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
+
+# ========================================
+# CRISPY FORMS
+# ========================================
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+# ========================================
+# EMAIL CONFIGURATION (Development)
+# ========================================
+
+# For development - prints emails to console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# For production, use SMTP:
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your-email@gmail.com'
+# EMAIL_HOST_PASSWORD = 'your-app-password'
+
+# ========================================
+# PAGINATION
+# ========================================
+
+ITEMS_PER_PAGE = 9  # Number of items per page for list views
+
+# ========================================
+# LOGIN/LOGOUT REDIRECTS
+# ========================================
+
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

@@ -1,7 +1,8 @@
 {% load static %}
-{% load url from future %}
+{% load i18n %}
+{% load i18n_tags %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 
 <head>
   <meta charset="UTF-8">
@@ -96,7 +97,23 @@
 
         </nav>
 
-        <button class="btn btn-primary">Book Now</button>
+        <!-- Language Switcher -->
+        <div class="language-switcher" style="display: flex; gap: 10px; align-items: center;">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% for lang_code, lang_name in LANGUAGES %}
+            <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+              {% csrf_token %}
+              <input name="next" type="hidden" value="{{ request.get_full_path }}">
+              <input name="language" type="hidden" value="{{ lang_code }}">
+              <button type="submit" class="btn btn-sm {% if LANGUAGE_CODE == lang_code %}btn-primary{% else %}btn-outline-primary{% endif %}" style="font-size: 12px; padding: 4px 8px;">
+                {{ lang_code|upper }}
+              </button>
+            </form>
+          {% endfor %}
+        </div>
+
+        <button class="btn btn-primary">{% trans "Book Now" %}</button>
 
       </div>
     </div>
