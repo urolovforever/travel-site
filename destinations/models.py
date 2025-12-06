@@ -11,6 +11,7 @@ class Destination(models.Model):
     """
     # Base fields (will be translated by modeltranslation)
     country = models.CharField(_('Country'), max_length=100, default='Unknown')
+    name = models.CharField(_('Destination Name'), max_length=200, default='Destination')
     title = models.CharField(_('Title'), max_length=200)
     slug = models.SlugField(_('Slug'), max_length=250, unique=True, blank=True)
     short_description = models.CharField(_('Short Description'), max_length=500, blank=True)

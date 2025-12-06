@@ -10,11 +10,12 @@
 <!-- Page Hero -->
 <section class="page-hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{% if destination.main_image %}{{ destination.main_image.url }}{% else %}{% static 'images/hero-banner.jpg' %}{% endif %}');">
   <div class="container">
-    <p class="page-hero-text" style="margin-bottom: 5px;">
+    <p class="page-hero-text" style="margin-bottom: 5px; font-size: 16px;">
       <ion-icon name="location-outline" style="vertical-align: middle; font-size: 20px;"></ion-icon>
       {{ destination|get_translated:'country' }}
     </p>
-    <h1 class="h1 page-hero-title">{{ destination|get_translated:'title' }}</h1>
+    <h1 class="h1 page-hero-title" style="margin-bottom: 10px;">{{ destination|get_translated:'name' }}</h1>
+    <p class="page-hero-text" style="font-size: 18px; margin-bottom: 0;">{{ destination|get_translated:'title' }}</p>
   </div>
 </section>
 
@@ -37,7 +38,7 @@
 
         <!-- Description -->
         <div style="margin-bottom: 40px;">
-          <h3 class="h3 section-title" style="margin-bottom: 25px;">{% trans "About" %} {{ destination|get_translated:'title' }}</h3>
+          <h3 class="h3 section-title" style="margin-bottom: 25px;">{% trans "About" %} {{ destination|get_translated:'name' }}</h3>
           <div class="section-text" style="line-height: 1.8;">
             {{ destination|get_translated:'description'|linebreaks }}
           </div>
@@ -89,8 +90,8 @@
             <div style="display: flex; align-items: start; gap: 15px;">
               <ion-icon name="navigate" style="font-size: 22px; color: var(--bright-navy-blue); flex-shrink: 0; margin-top: 2px;"></ion-icon>
               <div>
-                <p style="font-weight: 600; margin-bottom: 5px; color: var(--black-coral);">{% trans "Destination" %}</p>
-                <p style="color: var(--spanish-gray);">{{ destination|get_translated:'title' }}</p>
+                <p style="font-weight: 600; margin-bottom: 5px; color: var(--black-coral);">{% trans "Destination Name" %}</p>
+                <p style="color: var(--spanish-gray);">{{ destination|get_translated:'name' }}</p>
               </div>
             </div>
           </div>
