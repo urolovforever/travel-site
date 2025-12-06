@@ -1398,3 +1398,29 @@ address {
   height: 3px;
   background: #007bff;
 }
+
+/* Remove ::after from homepage section titles */
+.section-title::after {
+  display: none !important;
+}
+
+/* Custom button centering */
+.btn-center {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn-center .btn {
+  font-size: 14px;
+  padding: 10px 30px;
+}
+
+/* Language selector section styles */
+.language-selector-buttons .btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.language-selector-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
