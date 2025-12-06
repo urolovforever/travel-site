@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load i18n_tags %}
+
+{% block title %}{{ package|get_translated:'title' }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+<section class="section" style="padding: 50px 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% if package.main_image %}
+          <img src="{{ package.main_image.url }}" class="img-fluid rounded" alt="{{ package|get_translated:'title' }}">
+        {% endif %}
+        
+        <h1 class="mt-4">{{ package|get_translated:'title' }}</h1>
+        <p class="lead">{{ package.destination|get_translated:'title' }}</p>
+        
+        <div class="d-flex gap-3 mb-4">
+          <span class="badge bg-primary p-2">{{ package|get_translated:'duration' }}</span>
+          <span class="badge bg-success p-2">{{ package.price }} {{ package.currency }}</span>
+          <span class="badge bg-info p-2">{% trans "Max" %}: {{ package.max_people }} {% trans "people" %}</span>
+        </div>
+
+        <h3>{% trans "Description" %}</h3>
+        {{ package|get_translated:'description'|linebreaks }}
+
+        {% if package.itinerary %}
+          <h3 class="mt-4">{% trans "Itinerary" %}</h3>
+          {{ package|get_translated:'itinerary'|linebreaks }}
+        {% endif %}
+
+        {% if package.inclusions %}
+          <h3 class="mt-4">{% trans "Included" %}</h3>
+          {{ package|get_translated:'inclusions'|linebreaks }}
+        {% endif %}
+
+        {% if package.exclusions %}
+          <h3 class="mt-4">{% trans "Not Included" %}</h3>
+          {{ package|get_translated:'exclusions'|linebreaks }}
+        {% endif %}
+      </div>
+
+      <div class="col-md-4">
+        <div class="card sticky-top" style="top: 20px;">
+          <div class="card-body">
+            <h4 class="card-title">{% trans "Book This Package" %}</h4>
+            <hr>
+            <p><strong>{% trans "Price" %}:</strong> {{ package.price }} {{ package.currency }}</p>
+            <p><strong>{% trans "Duration" %}:</strong> {{ package|get_translated:'duration' }}</p>
+            <a href="{% url 'bookings:booking_create' package.slug %}" class="btn btn-primary btn-lg w-100">
+              {% trans "Book Now" %}
+            </a>
+          </div>
+        </div>
+
+        <!-- Related Packages -->
+        {% if related_packages %}
+          <h4 class="mt-4">{% trans "Related Packages" %}</h4>
+          {% for related in related_packages %}
+            <div class="card mb-2">
+              <div class="card-body p-2">
+                <h6>{{ related|get_translated:'title' }}</h6>
+                <small>{{ related.price }} {{ related.currency }}</small>
+                <a href="{% url 'packages:package_detail' related.slug %}" class="btn btn-sm btn-outline-primary">{% trans "View" %}</a>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

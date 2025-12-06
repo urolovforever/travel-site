@@ -1296,3 +1296,105 @@ address {
   .container { max-width: 1180px; }
 
 }
+/* Additional styles for Django Tour & Travel site */
+
+/* Language Switcher Styles */
+.language-switcher {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.language-switcher form {
+  margin: 0;
+}
+
+.language-switcher .btn {
+  min-width: 45px;
+  font-weight: 600;
+}
+
+/* Card Styles for Listings */
+.destination-card,
+.package-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover,
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Booking Form Styles */
+.booking-form {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .language-switcher {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+/* Alert/Message Styles */
+.messages {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 9999;
+  max-width: 400px;
+}
+
+/* Price Badge */
+.price-badge {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+/* Section Titles */
+.section-title {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #007bff;
+}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load i18n_tags %}
+
+{% block title %}{{ destination|get_translated:'title' }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+<section class="section" style="padding: 50px 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% if destination.main_image %}
+          <img src="{{ destination.main_image.url }}" class="img-fluid rounded" alt="{{ destination|get_translated:'title' }}" style="width: 100%; max-height: 500px; object-fit: cover;">
+        {% endif %}
+        
+        <h1 class="mt-4">{{ destination|get_translated:'title' }}</h1>
+        <p class="lead">{{ destination|get_translated:'short_description' }}</p>
+        
+        <div class="mt-4">
+          {{ destination|get_translated:'description'|linebreaks }}
+        </div>
+
+        <!-- Gallery -->
+        {% if gallery_images %}
+          <h3 class="mt-5">{% trans "Gallery" %}</h3>
+          <div class="row">
+            {% for image in gallery_images %}
+              <div class="col-md-4 mb-3">
+                <img src="{{ image.image.url }}" class="img-fluid rounded" alt="{{ image|get_translated:'caption' }}">
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="col-md-4">
+        <h3>{% trans "Available Packages" %}</h3>
+        {% for package in packages %}
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">{{ package|get_translated:'title' }}</h5>
+              <p class="card-text"><strong>{{ package.price }} {{ package.currency }}</strong></p>
+              <p class="card-text"><small>{{ package|get_translated:'duration' }}</small></p>
+              <a href="{% url 'packages:package_detail' package.slug %}" class="btn btn-sm btn-primary">{% trans "View Package" %}</a>
+            </div>
+          </div>
+        {% empty %}
+          <p>{% trans "No packages available" %}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
