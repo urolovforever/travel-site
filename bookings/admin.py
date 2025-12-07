@@ -6,7 +6,7 @@ from .models import Booking
 class BookingAdmin(admin.ModelAdmin):
     """Admin configuration for Bookings"""
     list_display = ('full_name', 'package', 'email', 'number_of_people', 'preferred_date', 'status', 'created_at')
-    list_filter = ('status', 'created_at', 'preferred_date', 'package__destination')
+    list_filter = ('status', 'created_at', 'preferred_date')
     search_fields = ('full_name', 'email', 'phone', 'package__title')
     date_hierarchy = 'created_at'
     list_editable = ('status',)

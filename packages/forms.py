@@ -10,7 +10,7 @@ class PackageForm(forms.ModelForm):
 
     class Meta:
         model = Package
-        fields = ['title', 'slug', 'destination', 'description', 'itinerary',
+        fields = ['title', 'slug', 'description', 'itinerary',
                   'price', 'currency', 'duration', 'duration_days', 'max_people',
                   'inclusions', 'exclusions', 'main_image',
                   'available', 'published', 'featured',
@@ -33,7 +33,6 @@ class PackageForm(forms.ModelForm):
                     Column('title', css_class='form-group col-md-8 mb-3'),
                     Column('slug', css_class='form-group col-md-4 mb-3'),
                 ),
-                'destination',
                 'description',
                 'itinerary',
                 'main_image',

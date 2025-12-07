@@ -10,11 +10,19 @@ class DestinationForm(forms.ModelForm):
 
     class Meta:
         model = Destination
-        fields = ['title', 'slug', 'short_description', 'description', 'main_image',
-                  'published', 'featured', 'meta_keywords', 'meta_description']
+        fields = [
+            'name', 'title', 'slug',
+            'country', 'city', 'region',
+            'short_description', 'description', 'things_to_do',
+            'best_time_to_visit', 'average_cost',
+            'main_image',
+            'published', 'featured',
+            'meta_title', 'meta_description', 'meta_keywords'
+        ]
         widgets = {
             'short_description': forms.Textarea(attrs={'rows': 3}),
             'description': forms.Textarea(attrs={'rows': 6}),
+            'things_to_do': forms.Textarea(attrs={'rows': 5}),
             'meta_description': forms.Textarea(attrs={'rows': 2}),
         }
 
@@ -25,17 +33,38 @@ class DestinationForm(forms.ModelForm):
             Fieldset(
                 _('Basic Information'),
                 Row(
-                    Column('title', css_class='form-group col-md-8 mb-3'),
-                    Column('slug', css_class='form-group col-md-4 mb-3'),
+                    Column('name', css_class='form-group col-md-6 mb-3'),
+                    Column('title', css_class='form-group col-md-6 mb-3'),
                 ),
+                'slug',
+                Row(
+                    Column('country', css_class='form-group col-md-4 mb-3'),
+                    Column('city', css_class='form-group col-md-4 mb-3'),
+                    Column('region', css_class='form-group col-md-4 mb-3'),
+                ),
+            ),
+            Fieldset(
+                _('Description & Content'),
                 'short_description',
                 'description',
+                'things_to_do',
+            ),
+            Fieldset(
+                _('Travel Information'),
+                Row(
+                    Column('best_time_to_visit', css_class='form-group col-md-6 mb-3'),
+                    Column('average_cost', css_class='form-group col-md-6 mb-3'),
+                ),
+            ),
+            Fieldset(
+                _('Media'),
                 'main_image',
             ),
             Fieldset(
-                _('SEO'),
-                'meta_keywords',
+                _('SEO Settings'),
+                'meta_title',
                 'meta_description',
+                'meta_keywords',
             ),
             Fieldset(
                 _('Status'),
