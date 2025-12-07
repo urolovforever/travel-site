@@ -1,6 +1,14 @@
 from django.contrib import admin
-from modeltranslation.admin import TranslationAdmin
-from .models import Destination
+from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
+from .models import Destination, DestinationGalleryImage
+
+
+class GalleryImageInline(TranslationTabularInline):
+    """Inline admin for gallery images with translation support"""
+    model = DestinationGalleryImage
+    extra = 1
+    fields = ('image', 'caption', 'order')
+    ordering = ['order']
 
 
 @admin.register(Destination)
@@ -18,13 +26,22 @@ class DestinationAdmin(TranslationAdmin):
 
     fieldsets = (
         ('Basic Information', {
-            'fields': ('title', 'slug', 'main_image')
+            'fields': ('name', 'title', 'slug')
+        }),
+        ('Location', {
+            'fields': ('country', 'city', 'region')
         }),
         ('Content', {
-            'fields': ('short_description', 'description')
+            'fields': ('short_description', 'description', 'things_to_do')
+        }),
+        ('Travel Information', {
+            'fields': ('best_time_to_visit', 'average_cost')
+        }),
+        ('Media', {
+            'fields': ('main_image',)
         }),
         ('SEO', {
-            'fields': ('meta_keywords', 'meta_description'),
+            'fields': ('meta_title', 'meta_description', 'meta_keywords'),
             'classes': ('collapse',)
         }),
         ('Status', {

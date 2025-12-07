@@ -12,7 +12,13 @@
   <div class="container">
     <p class="page-hero-text" style="margin-bottom: 5px; font-size: 16px;">
       <ion-icon name="location-outline" style="vertical-align: middle; font-size: 20px;"></ion-icon>
-      {{ destination|get_translated:'country' }}
+      {% if destination|get_translated:'city' and destination|get_translated:'region' %}
+        {{ destination|get_translated:'city' }}, {{ destination|get_translated:'region' }}, {{ destination|get_translated:'country' }}
+      {% elif destination|get_translated:'city' %}
+        {{ destination|get_translated:'city' }}, {{ destination|get_translated:'country' }}
+      {% else %}
+        {{ destination|get_translated:'country' }}
+      {% endif %}
     </p>
     <h1 class="h1 page-hero-title" style="margin-bottom: 10px;">{{ destination|get_translated:'name' }}</h1>
     <p class="page-hero-text" style="font-size: 18px; margin-bottom: 0;">{{ destination|get_translated:'title' }}</p>
@@ -43,6 +49,19 @@
             {{ destination|get_translated:'description'|linebreaks }}
           </div>
         </div>
+
+        <!-- Things to Do -->
+        {% if destination|get_translated:'things_to_do' %}
+          <div style="margin-bottom: 40px;">
+            <h3 class="h3 section-title" style="margin-bottom: 25px;">
+              <ion-icon name="list-outline" style="vertical-align: middle; font-size: 28px;"></ion-icon>
+              {% trans "Things to Do" %}
+            </h3>
+            <div class="section-text" style="line-height: 1.8;">
+              {{ destination|get_translated:'things_to_do'|linebreaks }}
+            </div>
+          </div>
+        {% endif %}
 
         <!-- Gallery -->
         {% if gallery_images %}
@@ -80,21 +99,43 @@
             <div style="display: flex; align-items: start; gap: 15px;">
               <ion-icon name="location" style="font-size: 22px; color: var(--bright-navy-blue); flex-shrink: 0; margin-top: 2px;"></ion-icon>
               <div>
-                <p style="font-weight: 600; margin-bottom: 5px; color: var(--black-coral);">{% trans "Country" %}</p>
-                <p style="color: var(--spanish-gray);">{{ destination|get_translated:'country' }}</p>
+                <p style="font-weight: 600; margin-bottom: 5px; color: var(--black-coral);">{% trans "Location" %}</p>
+                <p style="color: var(--spanish-gray);">
+                  {% if destination|get_translated:'city' %}
+                    {{ destination|get_translated:'city' }}<br>
+                  {% endif %}
+                  {% if destination|get_translated:'region' %}
+                    {{ destination|get_translated:'region' }}<br>
+                  {% endif %}
+                  {{ destination|get_translated:'country' }}
+                </p>
               </div>
             </div>
           </div>
 
-          <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--cultured);">
-            <div style="display: flex; align-items: start; gap: 15px;">
-              <ion-icon name="navigate" style="font-size: 22px; color: var(--bright-navy-blue); flex-shrink: 0; margin-top: 2px;"></ion-icon>
-              <div>
-                <p style="font-weight: 600; margin-bottom: 5px; color: var(--black-coral);">{% trans "Destination Name" %}</p>
-                <p style="color: var(--spanish-gray);">{{ destination|get_translated:'name' }}</p>
+          {% if destination|get_translated:'best_time_to_visit' %}
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--cultured);">
+              <div style="display: flex; align-items: start; gap: 15px;">
+                <ion-icon name="calendar-outline" style="font-size: 22px; color: var(--bright-navy-blue); flex-shrink: 0; margin-top: 2px;"></ion-icon>
+                <div>
+                  <p style="font-weight: 600; margin-bottom: 5px; color: var(--black-coral);">{% trans "Best Time to Visit" %}</p>
+                  <p style="color: var(--spanish-gray);">{{ destination|get_translated:'best_time_to_visit' }}</p>
+                </div>
               </div>
             </div>
-          </div>
+          {% endif %}
+
+          {% if destination|get_translated:'average_cost' %}
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--cultured);">
+              <div style="display: flex; align-items: start; gap: 15px;">
+                <ion-icon name="cash-outline" style="font-size: 22px; color: var(--bright-navy-blue); flex-shrink: 0; margin-top: 2px;"></ion-icon>
+                <div>
+                  <p style="font-weight: 600; margin-bottom: 5px; color: var(--black-coral);">{% trans "Average Cost" %}</p>
+                  <p style="color: var(--spanish-gray);">{{ destination|get_translated:'average_cost' }}</p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
 
           {% if packages %}
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--cultured);">

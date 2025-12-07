@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  {% if object %}
+    {% trans "Edit Destination" %} | {{ block.super }}
+  {% else %}
+    {% trans "Create Destination" %} | {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="h1 page-hero-title">
+      {% if object %}
+        {% trans "Edit Destination" %}
+      {% else %}
+        {% trans "Create New Destination" %}
+      {% endif %}
+    </h1>
+    <p class="page-hero-text">
+      {% trans "Fill in the details to create or update a destination" %}
+    </p>
+  </div>
+</section>
+
+<!-- Form Section -->
+<section class="section" style="padding: 50px 0;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div style="background: var(--white); border-radius: 10px; padding: 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+
+          {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+              <strong>{% trans "Please correct the errors below:" %}</strong>
+              {{ form.errors }}
+            </div>
+          {% endif %}
+
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% crispy form %}
+          </form>
+
+          <div style="margin-top: 20px;">
+            <a href="{% url 'destinations:destination_list' %}" class="btn btn-secondary">
+              <ion-icon name="arrow-back-outline" style="vertical-align: middle;"></ion-icon>
+              {% trans "Back to Destinations" %}
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

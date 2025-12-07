@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.core.paginator import Paginator
 from django.conf import settings
 from django.http import JsonResponse
-from .models import Destination
+from .models import Destination, DestinationGalleryImage
 from .forms import DestinationForm
 
 
@@ -29,7 +29,12 @@ class DestinationDetailView(DetailView):
     slug_url_kwarg = 'slug'
 
     def get_queryset(self):
-        return Destination.objects.filter(published=True)
+        return Destination.objects.filter(published=True).prefetch_related('gallery_images')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['gallery_images'] = self.object.gallery_images.all()
+        return context
 
 
 # CRUD Views (requires authentication)
@@ -68,7 +73,8 @@ class DestinationDeleteView(LoginRequiredMixin, DeleteView):
 def destination_list_json(request):
     """JSON endpoint for destinations"""
     destinations = Destination.objects.filter(published=True).values(
-        'id', 'title', 'slug', 'short_description', 'main_image', 'featured'
+        'id', 'name', 'title', 'slug', 'country', 'city', 'region',
+        'short_description', 'main_image', 'featured'
     )
     return JsonResponse(list(destinations), safe=False)
 
@@ -76,15 +82,37 @@ def destination_list_json(request):
 def destination_detail_json(request, slug):
     """JSON endpoint for a single destination"""
     destination = get_object_or_404(Destination, slug=slug, published=True)
+
+    # Get gallery images
+    gallery_images = [
+        {
+            'image': img.image.url if img.image else None,
+            'caption': img.caption,
+            'order': img.order
+        }
+        for img in destination.gallery_images.all()
+    ]
+
     data = {
         'id': destination.id,
+        'name': destination.name,
         'title': destination.title,
         'slug': destination.slug,
+        'country': destination.country,
+        'city': destination.city,
+        'region': destination.region,
         'short_description': destination.short_description,
         'description': destination.description,
+        'things_to_do': destination.things_to_do,
+        'best_time_to_visit': destination.best_time_to_visit,
+        'average_cost': destination.average_cost,
         'main_image': destination.main_image.url if destination.main_image else None,
+        'gallery_images': gallery_images,
         'published': destination.published,
         'featured': destination.featured,
         'created_at': destination.created_at,
+        'meta_title': destination.meta_title,
+        'meta_description': destination.meta_description,
+        'meta_keywords': destination.meta_keywords,
     }
     return JsonResponse(data)
