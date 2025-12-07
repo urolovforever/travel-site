@@ -31,16 +31,6 @@ class DestinationDetailView(DetailView):
     def get_queryset(self):
         return Destination.objects.filter(published=True)
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # Get packages for this destination
-        context['packages'] = self.object.packages.filter(
-            published=True, available=True
-        ).order_by('-created_at')
-        # Get gallery images
-        context['gallery_images'] = self.object.gallery_images.all()
-        return context
-
 
 # CRUD Views (requires authentication)
 
@@ -96,8 +86,5 @@ def destination_detail_json(request, slug):
         'published': destination.published,
         'featured': destination.featured,
         'created_at': destination.created_at,
-        'packages': list(destination.packages.filter(published=True).values(
-            'id', 'title', 'slug', 'price', 'duration'
-        ))
     }
     return JsonResponse(data)
