@@ -24,4 +24,4 @@ class GalleryView(ListView):
         if package_id:
             queryset = queryset.filter(package_id=package_id)
 
-        return queryset.order_by('order', '-uploaded_at')
+        return queryset.order_by('-uploaded_at')
