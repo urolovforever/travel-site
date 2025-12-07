@@ -17,40 +17,47 @@
   </div>
 </section>
 
-<section class="section" style="padding: 50px 0;">
+<section class="gallery">
   <div class="container">
-    <h2 class="h2 section-title">{% trans "Photo Gallery" %}</h2>
-    
-    <div class="row g-3" style="margin-top: 30px;">
+
+    <p class="section-subtitle">{% trans "Photo Gallery" %}</p>
+
+    <h2 class="h2 section-title">{% trans "Photo's From Travellers" %}</h2>
+
+    <p class="section-text">
+      {% trans "Browse through our collection of beautiful destinations and memorable moments" %}
+    </p>
+
+    <ul class="gallery-list">
       {% for image in images %}
-        <div class="col-md-4 col-sm-6">
-          <div class="card">
-            <img src="{{ image.image.url }}" class="card-img-top" alt="{{ image.caption }}" style="height: 300px; object-fit: cover;">
-            {% if image.caption %}
-              <div class="card-body">
-                <p class="card-text">{{ image.caption }}</p>
-              </div>
-            {% endif %}
-          </div>
-        </div>
+        <li class="gallery-item">
+          <figure class="gallery-image">
+            <img src="{{ image.image.url }}" alt="{% if image.caption %}{{ image.caption }}{% else %}{% trans 'Gallery image' %}{% endif %}" loading="lazy">
+          </figure>
+          {% if image.caption %}
+            <div style="margin-top: 10px;">
+              <p class="card-text" style="text-align: center;">{{ image.caption }}</p>
+            </div>
+          {% endif %}
+        </li>
       {% empty %}
-        <p>{% trans "No images in gallery yet." %}</p>
+        <li style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+          <p class="section-text">{% trans "No images in gallery yet." %}</p>
+        </li>
       {% endfor %}
-    </div>
+    </ul>
 
     <!-- Pagination -->
     {% if is_paginated %}
-      <nav aria-label="Page navigation" class="mt-4">
-        <ul class="pagination justify-content-center">
-          {% if page_obj.has_previous %}
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{% trans "Previous" %}</a></li>
-          {% endif %}
-          <li class="page-item active"><span class="page-link">{{ page_obj.number }}</span></li>
-          {% if page_obj.has_next %}
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{% trans "Next" %}</a></li>
-          {% endif %}
-        </ul>
-      </nav>
+      <div style="margin-top: 50px; text-align: center;">
+        {% if page_obj.has_previous %}
+          <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary" style="margin: 0 5px;">{% trans "Previous" %}</a>
+        {% endif %}
+        <span style="margin: 0 15px; color: var(--black-coral);">{% trans "Page" %} {{ page_obj.number }} {% trans "of" %} {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}" class="btn btn-secondary" style="margin: 0 5px;">{% trans "Next" %}</a>
+        {% endif %}
+      </div>
     {% endif %}
   </div>
 </section>
