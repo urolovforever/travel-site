@@ -27,14 +27,9 @@
           <div class="gallery-card">
             <img
               src="{{ image.image.url }}"
-              alt="{{ image.caption }}"
+              alt="Gallery Image"
               loading="lazy"
               class="gallery-img">
-            {% if image.caption %}
-              <div class="gallery-overlay">
-                <p class="gallery-caption">{{ image.caption }}</p>
-              </div>
-            {% endif %}
           </div>
         </div>
       {% empty %}

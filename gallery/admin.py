@@ -5,17 +5,18 @@ from .models import GalleryImage
 @admin.register(GalleryImage)
 class GalleryImageAdmin(admin.ModelAdmin):
     """Admin configuration for Gallery Images"""
-    list_display = ('caption', 'destination', 'package', 'uploaded_at')
-    list_filter = ('destination', 'package', 'uploaded_at')
-    search_fields = ('caption',)
+    list_display = ('__str__', 'uploaded_at', 'image_preview')
+    list_filter = ('uploaded_at',)
     date_hierarchy = 'uploaded_at'
+    readonly_fields = ('image_preview', 'uploaded_at')
 
-    fieldsets = (
-        ('Image', {
-            'fields': ('image', 'caption')
-        }),
-        ('Association', {
-            'fields': ('destination', 'package'),
-            'description': 'Optionally link this image to a destination or package'
-        }),
-    )
+    fields = ('image', 'image_preview', 'uploaded_at')
+
+    def image_preview(self, obj):
+        """Show a thumbnail preview of the image"""
+        if obj.image:
+            return f'<img src="{obj.image.url}" style="max-height: 200px; max-width: 300px;" />'
+        return '-'
+
+    image_preview.short_description = 'Preview'
+    image_preview.allow_tags = True

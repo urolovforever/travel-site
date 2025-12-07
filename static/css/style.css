@@ -944,32 +944,6 @@ address {
   transform: scale(1.1);
 }
 
-.gallery-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, hsla(0, 0%, 0%, 0.85), transparent);
-  padding: 25px 20px 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.gallery-card:hover .gallery-overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.gallery-caption {
-  color: var(--white);
-  font-family: var(--ff-poppins);
-  font-size: var(--fs-5);
-  font-weight: var(--fw-500);
-  line-height: 1.6;
-  margin: 0;
-}
-
 .no-images-text {
   color: var(--spanish-gray);
   font-size: var(--fs-4);
