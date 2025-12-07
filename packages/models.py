@@ -34,7 +34,6 @@ class Package(models.Model):
     # Availability
     available = models.BooleanField(_('Available'), default=True)
     published = models.BooleanField(_('Published'), default=True)
-    featured = models.BooleanField(_('Featured'), default=False, help_text=_('Show on homepage'))
 
     # Metadata
     created_at = models.DateTimeField(_('Created At'), auto_now_add=True)

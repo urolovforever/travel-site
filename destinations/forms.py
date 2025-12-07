@@ -10,15 +10,8 @@ class DestinationForm(forms.ModelForm):
 
     class Meta:
         model = Destination
-        fields = [
-            'name', 'title', 'slug',
-            'country', 'city', 'region',
-            'short_description', 'description', 'things_to_do',
-            'best_time_to_visit', 'average_cost',
-            'main_image',
-            'published', 'featured',
-            'meta_title', 'meta_description', 'meta_keywords'
-        ]
+        fields = ['title', 'slug', 'short_description', 'description', 'main_image',
+                  'published', 'meta_keywords', 'meta_description']
         widgets = {
             'short_description': forms.Textarea(attrs={'rows': 3}),
             'description': forms.Textarea(attrs={'rows': 6}),
@@ -70,7 +63,7 @@ class DestinationForm(forms.ModelForm):
                 _('Status'),
                 Row(
                     Column('published', css_class='form-group col-md-6 mb-3'),
-                    Column('featured', css_class='form-group col-md-6 mb-3'),
+                    Column(css_class='form-group col-md-6 mb-3'),
                 ),
             ),
             Submit('submit', _('Save Destination'), css_class='btn btn-success btn-lg')
