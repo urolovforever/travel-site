@@ -2,7 +2,6 @@ from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-from destinations.models import Destination
 
 
 class Package(models.Model):
@@ -15,14 +14,6 @@ class Package(models.Model):
     slug = models.SlugField(_('Slug'), max_length=250, unique=True, blank=True)
     description = models.TextField(_('Description'))
     itinerary = models.TextField(_('Itinerary'), blank=True, help_text=_('Day-by-day itinerary'))
-
-    # Relationships
-    destination = models.ForeignKey(
-        Destination,
-        on_delete=models.CASCADE,
-        related_name='packages',
-        verbose_name=_('Destination')
-    )
 
     # Pricing & Duration
     price = models.DecimalField(_('Price'), max_digits=10, decimal_places=2)
@@ -62,9 +53,6 @@ class Package(models.Model):
             models.Index(fields=['published', 'available', '-created_at']),
         ]
 
-    def __str__(self):
-        return f"{self.title} - {self.destination}"
-
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
@@ -72,11 +60,6 @@ class Package(models.Model):
 
     def get_absolute_url(self):
         return reverse('packages:package_detail', kwargs={'slug': self.slug})
-
-    @property
-    def gallery_images(self):
-        """Get all gallery images for this package"""
-        return self.galleryimage_set.all()
 
     @property
     def price_per_person(self):

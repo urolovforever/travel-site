@@ -22,7 +22,6 @@ class Destination(models.Model):
 
     # Metadata
     published = models.BooleanField(_('Published'), default=True)
-    featured = models.BooleanField(_('Featured'), default=False, help_text=_('Show on homepage'))
     created_at = models.DateTimeField(_('Created At'), auto_now_add=True)
     updated_at = models.DateTimeField(_('Updated At'), auto_now=True)
 
@@ -50,7 +49,3 @@ class Destination(models.Model):
     def get_absolute_url(self):
         return reverse('destinations:destination_detail', kwargs={'slug': self.slug})
 
-    @property
-    def gallery_images(self):
-        """Get all gallery images for this destination"""
-        return self.galleryimage_set.all()
