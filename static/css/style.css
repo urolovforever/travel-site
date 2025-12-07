@@ -994,6 +994,26 @@ address {
 
 
 /*-----------------------------------*\
+ * #PAGINATION
+\*-----------------------------------*/
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.page-item {
+  display: inline-block;
+}
+
+
+/*-----------------------------------*\
  * #MEDIA QUERIES
 \*-----------------------------------*/
 
@@ -1032,6 +1052,14 @@ address {
   .gallery-masonry {
     column-count: 2;
     column-gap: 25px;
+  }
+
+  /**
+   * GALLERY LIST
+   */
+
+  .gallery-list {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
 
@@ -1286,6 +1314,14 @@ address {
     margin-bottom: 30px;
   }
 
+  /**
+   * GALLERY LIST
+   */
+
+  .gallery-list {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
 }
 
 
@@ -1480,6 +1516,14 @@ address {
 
   .gallery-masonry {
     column-count: 4;
+  }
+
+  /**
+   * GALLERY LIST
+   */
+
+  .gallery-list {
+    grid-template-columns: repeat(4, 1fr) !important;
   }
 
 }
