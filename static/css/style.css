@@ -1256,6 +1256,10 @@ address {
     gap: 20px;
   }
 
+  .gallery-item:nth-child(3) {
+    grid-area: auto;
+  }
+
   .gallery-image { border-radius: var(--radius-25); }
 
 
