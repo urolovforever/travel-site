@@ -6,13 +6,13 @@ from packages.models import Package
 
 class GalleryImage(models.Model):
     """
-    Gallery Image model with multilingual caption support.
+    Gallery Image model.
     Can be associated with either a Destination or Package (or standalone).
     """
     # Image
     image = models.ImageField(_('Image'), upload_to='gallery/')
 
-    # Caption (will be translated by modeltranslation)
+    # Caption (single language, no translation)
     caption = models.CharField(_('Caption'), max_length=500, blank=True)
 
     # Optional relationships
@@ -31,19 +31,16 @@ class GalleryImage(models.Model):
         verbose_name=_('Package')
     )
 
-    # Display order
-    order = models.PositiveIntegerField(_('Order'), default=0)
-
     # Metadata
     uploaded_at = models.DateTimeField(_('Uploaded At'), auto_now_add=True)
 
     class Meta:
         verbose_name = _('Gallery Image')
         verbose_name_plural = _('Gallery Images')
-        ordering = ['order', '-uploaded_at']
+        ordering = ['-uploaded_at']
         indexes = [
-            models.Index(fields=['destination', 'order']),
-            models.Index(fields=['package', 'order']),
+            models.Index(fields=['destination', '-uploaded_at']),
+            models.Index(fields=['package', '-uploaded_at']),
         ]
 
     def __str__(self):

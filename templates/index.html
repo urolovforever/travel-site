@@ -226,7 +226,7 @@
       {% for image in latest_gallery_images %}
         <li class="gallery-item">
           <figure class="gallery-image">
-            <img src="{{ image.image.url }}" alt="{{ image|get_translated:'caption' }}" loading="lazy">
+            <img src="{{ image.image.url }}" alt="{{ image.caption }}" loading="lazy">
           </figure>
         </li>
       {% empty %}
