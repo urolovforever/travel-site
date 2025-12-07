@@ -17,48 +17,129 @@
   </div>
 </section>
 
-<section class="section" style="padding: 50px 0;">
+<!-- PACKAGES -->
+<section class="package" id="package">
   <div class="container">
-    <h2 class="h2 section-title">{% trans "Tour Packages" %}</h2>
-    
-    <div class="row" style="margin-top: 30px;">
+
+    <p class="section-subtitle">{% trans "Popular Packages" %}</p>
+
+    <h2 class="h2 section-title">{% trans "Checkout Our Packages" %}</h2>
+
+    <p class="section-text">
+      {% trans "Explore our carefully curated tour packages that offer unforgettable experiences and exceptional value" %}
+    </p>
+
+    <ul class="package-list">
       {% for package in packages %}
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
+      <li>
+        <div class="package-card">
+
+          <figure class="card-banner">
             {% if package.main_image %}
-              <img src="{{ package.main_image.url }}" class="card-img-top" alt="{{ package|get_translated:'title' }}" style="height: 250px; object-fit: cover;">
+              <img src="{{ package.main_image.url }}" alt="{{ package|get_translated:'title' }}" loading="lazy">
+            {% else %}
+              <img src="{% static 'images/packege-1.jpg' %}" alt="{{ package|get_translated:'title' }}" loading="lazy">
             {% endif %}
-            <div class="card-body">
-              <h5 class="card-title">{{ package|get_translated:'title' }}</h5>
-              <p class="text-muted"><small>{{ package.destination|get_translated:'title' }}</small></p>
-              <p class="card-text">{{ package|get_translated:'description'|truncatewords:15 }}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="h5 mb-0 text-primary">{{ package.price }} {{ package.currency }}</span>
-                <span class="badge bg-secondary">{{ package|get_translated:'duration' }}</span>
-              </div>
-              <a href="{% url 'packages:package_detail' package.slug %}" class="btn btn-primary w-100 mt-3">{% trans "View Details" %}</a>
-            </div>
+          </figure>
+
+          <div class="card-content">
+
+            <h3 class="h3 card-title">{{ package|get_translated:'title' }}</h3>
+
+            <p class="card-text">
+              {{ package|get_translated:'description'|truncatewords:20 }}
+            </p>
+
+            <ul class="card-meta-list">
+
+              <li class="card-meta-item">
+                <div class="meta-box">
+                  <ion-icon name="time"></ion-icon>
+                  <p class="text">{{ package|get_translated:'duration' }}</p>
+                </div>
+              </li>
+
+              <li class="card-meta-item">
+                <div class="meta-box">
+                  <ion-icon name="people"></ion-icon>
+                  <p class="text">{% trans "max" %}: {{ package.max_people }}</p>
+                </div>
+              </li>
+
+              <li class="card-meta-item">
+                <div class="meta-box">
+                  <ion-icon name="location"></ion-icon>
+                  <p class="text">{{ package.destination|get_translated:'name' }}</p>
+                </div>
+              </li>
+
+            </ul>
+
           </div>
+
+          <div class="card-price">
+
+            <div class="wrapper">
+
+              <p class="reviews">{% if package.max_people %}{{ package.max_people }} {% trans "people max" %}{% endif %}</p>
+
+              <div class="card-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+
+            </div>
+
+            <p class="price">
+              {{ package.price }} {{ package.currency }}
+              <span>/ {% trans "per person" %}</span>
+            </p>
+
+            <a href="{% url 'packages:package_detail' package.slug %}" class="btn btn-secondary">{% trans "View Details" %}</a>
+
+          </div>
+
         </div>
+      </li>
       {% empty %}
-        <p>{% trans "No packages available at the moment." %}</p>
+      <li>
+        <p class="section-text">{% trans "No packages available at the moment." %}</p>
+      </li>
       {% endfor %}
-    </div>
+    </ul>
 
     <!-- Pagination -->
     {% if is_paginated %}
-      <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
+      <nav aria-label="Page navigation" style="margin-top: 50px;">
+        <ul class="pagination justify-content-center" style="display: flex; gap: 10px; flex-wrap: wrap;">
           {% if page_obj.has_previous %}
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{% trans "Previous" %}</a></li>
+            <li class="page-item">
+              <a class="btn btn-secondary" href="?page=1" style="--padding: 10px 20px;">{% trans "First" %}</a>
+            </li>
+            <li class="page-item">
+              <a class="btn btn-secondary" href="?page={{ page_obj.previous_page_number }}" style="--padding: 10px 20px;">{% trans "Previous" %}</a>
+            </li>
           {% endif %}
-          <li class="page-item active"><span class="page-link">{{ page_obj.number }}</span></li>
+
+          <li class="page-item active">
+            <span class="btn btn-primary" style="--padding: 10px 20px;">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+          </li>
+
           {% if page_obj.has_next %}
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{% trans "Next" %}</a></li>
+            <li class="page-item">
+              <a class="btn btn-secondary" href="?page={{ page_obj.next_page_number }}" style="--padding: 10px 20px;">{% trans "Next" %}</a>
+            </li>
+            <li class="page-item">
+              <a class="btn btn-secondary" href="?page={{ page_obj.paginator.num_pages }}" style="--padding: 10px 20px;">{% trans "Last" %}</a>
+            </li>
           {% endif %}
         </ul>
       </nav>
     {% endif %}
+
   </div>
 </section>
 {% endblock %}

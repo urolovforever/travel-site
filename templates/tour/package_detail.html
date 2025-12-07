@@ -6,70 +6,238 @@
 {% block title %}{{ package|get_translated:'title' }} | {{ block.super }}{% endblock %}
 
 {% block content %}
-<section class="section" style="padding: 50px 0;">
+
+<!-- Hero Section -->
+<section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{% if package.main_image %}{{ package.main_image.url }}{% else %}{% static 'images/hero-banner.jpg' %}{% endif %}'); min-height: 500px;">
   <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        {% if package.main_image %}
-          <img src="{{ package.main_image.url }}" class="img-fluid rounded" alt="{{ package|get_translated:'title' }}">
-        {% endif %}
-        
-        <h1 class="mt-4">{{ package|get_translated:'title' }}</h1>
-        <p class="lead">{{ package.destination|get_translated:'title' }}</p>
-        
-        <div class="d-flex gap-3 mb-4">
-          <span class="badge bg-primary p-2">{{ package|get_translated:'duration' }}</span>
-          <span class="badge bg-success p-2">{{ package.price }} {{ package.currency }}</span>
-          <span class="badge bg-info p-2">{% trans "Max" %}: {{ package.max_people }} {% trans "people" %}</span>
-        </div>
-
-        <h3>{% trans "Description" %}</h3>
-        {{ package|get_translated:'description'|linebreaks }}
-
-        {% if package.itinerary %}
-          <h3 class="mt-4">{% trans "Itinerary" %}</h3>
-          {{ package|get_translated:'itinerary'|linebreaks }}
-        {% endif %}
-
-        {% if package.inclusions %}
-          <h3 class="mt-4">{% trans "Included" %}</h3>
-          {{ package|get_translated:'inclusions'|linebreaks }}
-        {% endif %}
-
-        {% if package.exclusions %}
-          <h3 class="mt-4">{% trans "Not Included" %}</h3>
-          {{ package|get_translated:'exclusions'|linebreaks }}
-        {% endif %}
-      </div>
-
-      <div class="col-md-4">
-        <div class="card sticky-top" style="top: 20px;">
-          <div class="card-body">
-            <h4 class="card-title">{% trans "Book This Package" %}</h4>
-            <hr>
-            <p><strong>{% trans "Price" %}:</strong> {{ package.price }} {{ package.currency }}</p>
-            <p><strong>{% trans "Duration" %}:</strong> {{ package|get_translated:'duration' }}</p>
-            <a href="{% url 'bookings:booking_create' package.slug %}" class="btn btn-primary btn-lg w-100">
-              {% trans "Book Now" %}
-            </a>
-          </div>
-        </div>
-
-        <!-- Related Packages -->
-        {% if related_packages %}
-          <h4 class="mt-4">{% trans "Related Packages" %}</h4>
-          {% for related in related_packages %}
-            <div class="card mb-2">
-              <div class="card-body p-2">
-                <h6>{{ related|get_translated:'title' }}</h6>
-                <small>{{ related.price }} {{ related.currency }}</small>
-                <a href="{% url 'packages:package_detail' related.slug %}" class="btn btn-sm btn-outline-primary">{% trans "View" %}</a>
-              </div>
-            </div>
-          {% endfor %}
-        {% endif %}
-      </div>
+    <p class="hero-text" style="margin-bottom: 10px; font-size: 16px;">
+      <ion-icon name="location" style="vertical-align: middle; font-size: 20px;"></ion-icon>
+      {{ package.destination|get_translated:'name' }}
+    </p>
+    <h1 class="h1 hero-title" style="margin-bottom: 15px;">{{ package|get_translated:'title' }}</h1>
+    <div class="btn-group" style="margin-top: 30px;">
+      <span class="btn btn-secondary" style="cursor: default;">
+        <ion-icon name="time" style="vertical-align: middle;"></ion-icon>
+        {{ package|get_translated:'duration' }}
+      </span>
+      <span class="btn btn-secondary" style="cursor: default;">
+        <ion-icon name="people" style="vertical-align: middle;"></ion-icon>
+        {% trans "Max" %}: {{ package.max_people }} {% trans "people" %}
+      </span>
     </div>
   </div>
 </section>
+
+<!-- Package Details -->
+<section class="package" style="padding: var(--section-padding) 0;">
+  <div class="container">
+
+    <!-- Pricing Card -->
+    <div style="background: var(--united-nations-blue); color: var(--white); padding: 40px 30px; border-radius: var(--radius-15); margin-bottom: 50px; text-align: center;">
+      <p style="font-size: var(--fs-5); margin-bottom: 10px;">{% trans "Package Price" %}</p>
+      <h2 class="h1" style="color: var(--white); margin-bottom: 20px;">
+        {{ package.price }} {{ package.currency }}
+        <span style="font-size: var(--fs-5); font-weight: var(--fw-500);">/ {% trans "per person" %}</span>
+      </h2>
+      <a href="{% url 'bookings:booking_create' package.slug %}" class="btn btn-secondary" style="--padding: 15px 40px;">
+        <ion-icon name="calendar" style="vertical-align: middle; margin-right: 5px;"></ion-icon>
+        {% trans "Book Now" %}
+      </a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 50px;">
+
+      <!-- Main Content Grid -->
+      <div style="display: grid; grid-template-columns: 1fr; gap: 40px;">
+
+        <!-- Description Card -->
+        <div class="package-card" style="display: block;">
+          <div class="card-content">
+            <h3 class="h3 card-title" style="margin-bottom: 20px;">
+              <ion-icon name="document-text-outline" style="vertical-align: middle;"></ion-icon>
+              {% trans "Package Description" %}
+            </h3>
+            <div class="card-text" style="line-height: 1.8;">
+              {{ package|get_translated:'description'|linebreaks }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Cards Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+
+          <!-- Duration Card -->
+          <div class="package-card" style="display: block;">
+            <div class="card-content" style="text-align: center;">
+              <ion-icon name="time" style="font-size: 40px; color: var(--bright-navy-blue); margin-bottom: 15px;"></ion-icon>
+              <h4 class="h4" style="margin-bottom: 10px; font-size: var(--fs-4); color: var(--gunmetal);">{% trans "Duration" %}</h4>
+              <p class="card-text">{{ package|get_translated:'duration' }}</p>
+            </div>
+          </div>
+
+          <!-- Group Size Card -->
+          <div class="package-card" style="display: block;">
+            <div class="card-content" style="text-align: center;">
+              <ion-icon name="people" style="font-size: 40px; color: var(--bright-navy-blue); margin-bottom: 15px;"></ion-icon>
+              <h4 class="h4" style="margin-bottom: 10px; font-size: var(--fs-4); color: var(--gunmetal);">{% trans "Group Size" %}</h4>
+              <p class="card-text">{% trans "Maximum" %} {{ package.max_people }} {% trans "people" %}</p>
+            </div>
+          </div>
+
+          <!-- Destination Card -->
+          <div class="package-card" style="display: block;">
+            <div class="card-content" style="text-align: center;">
+              <ion-icon name="location" style="font-size: 40px; color: var(--bright-navy-blue); margin-bottom: 15px;"></ion-icon>
+              <h4 class="h4" style="margin-bottom: 10px; font-size: var(--fs-4); color: var(--gunmetal);">{% trans "Destination" %}</h4>
+              <p class="card-text">{{ package.destination|get_translated:'name' }}</p>
+              <a href="{% url 'destinations:destination_detail' package.destination.slug %}" class="btn btn-primary btn-sm" style="margin-top: 10px;">{% trans "View Destination" %}</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Itinerary -->
+        {% if package|get_translated:'itinerary' %}
+        <div class="package-card" style="display: block;">
+          <div class="card-content">
+            <h3 class="h3 card-title" style="margin-bottom: 20px;">
+              <ion-icon name="map-outline" style="vertical-align: middle;"></ion-icon>
+              {% trans "Itinerary" %}
+            </h3>
+            <div class="card-text" style="line-height: 1.8;">
+              {{ package|get_translated:'itinerary'|linebreaks }}
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- What's Included / Excluded Grid -->
+        <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+
+          {% if package|get_translated:'inclusions' %}
+          <!-- Inclusions -->
+          <div class="package-card" style="display: block;">
+            <div class="card-content">
+              <h3 class="h3 card-title" style="margin-bottom: 20px; color: var(--bright-navy-blue);">
+                <ion-icon name="checkmark-circle" style="vertical-align: middle;"></ion-icon>
+                {% trans "What's Included" %}
+              </h3>
+              <div class="card-text" style="line-height: 1.8;">
+                {{ package|get_translated:'inclusions'|linebreaks }}
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+          {% if package|get_translated:'exclusions' %}
+          <!-- Exclusions -->
+          <div class="package-card" style="display: block;">
+            <div class="card-content">
+              <h3 class="h3 card-title" style="margin-bottom: 20px; color: var(--spanish-gray);">
+                <ion-icon name="close-circle" style="vertical-align: middle;"></ion-icon>
+                {% trans "What's Not Included" %}
+              </h3>
+              <div class="card-text" style="line-height: 1.8;">
+                {{ package|get_translated:'exclusions'|linebreaks }}
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Related Packages -->
+    {% if related_packages %}
+    <div>
+      <p class="section-subtitle">{% trans "Explore More" %}</p>
+      <h3 class="h2 section-title" style="margin-bottom: 40px;">{% trans "Related Packages" %}</h3>
+
+      <ul class="package-list">
+        {% for related in related_packages %}
+        <li>
+          <div class="package-card">
+
+            <figure class="card-banner">
+              {% if related.main_image %}
+              <img src="{{ related.main_image.url }}" alt="{{ related|get_translated:'title' }}" loading="lazy">
+              {% else %}
+              <img src="{% static 'images/packege-1.jpg' %}" alt="{{ related|get_translated:'title' }}" loading="lazy">
+              {% endif %}
+            </figure>
+
+            <div class="card-content">
+              <h3 class="h3 card-title">{{ related|get_translated:'title' }}</h3>
+
+              <p class="card-text">
+                {{ related|get_translated:'description'|truncatewords:20 }}
+              </p>
+
+              <ul class="card-meta-list">
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="time"></ion-icon>
+                    <p class="text">{{ related|get_translated:'duration' }}</p>
+                  </div>
+                </li>
+
+                <li class="card-meta-item">
+                  <div class="meta-box">
+                    <ion-icon name="location"></ion-icon>
+                    <p class="text">{{ related.destination|get_translated:'name' }}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card-price">
+              <div class="wrapper">
+                <div class="card-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+              </div>
+
+              <p class="price">
+                {{ related.price }} {{ related.currency }}
+                <span>/ {% trans "per person" %}</span>
+              </p>
+
+              <a href="{% url 'packages:package_detail' related.slug %}" class="btn btn-secondary">{% trans "View Details" %}</a>
+            </div>
+
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <!-- CTA -->
+    <div style="background: var(--bright-navy-blue); padding: 50px 30px; border-radius: var(--radius-25); text-align: center; margin-top: 60px;">
+      <h3 class="h2 section-title" style="color: var(--white); margin-bottom: 15px;">{% trans "Ready to book this adventure?" %}</h3>
+      <p class="section-text" style="color: var(--white); margin-bottom: 30px;">
+        {% trans "Don't miss out on this amazing experience. Book now and create unforgettable memories!" %}
+      </p>
+      <div class="btn-group">
+        <a href="{% url 'bookings:booking_create' package.slug %}" class="btn btn-secondary">
+          <ion-icon name="calendar" style="vertical-align: middle; margin-right: 5px;"></ion-icon>
+          {% trans "Book This Package" %}
+        </a>
+        <a href="{% url 'core:contact' %}" class="btn" style="background: transparent; border: 2px solid var(--white);">
+          <ion-icon name="mail-outline" style="vertical-align: middle; margin-right: 5px;"></ion-icon>
+          {% trans "Contact Us" %}
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 {% endblock %}
