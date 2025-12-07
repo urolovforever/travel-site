@@ -1,14 +1,6 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 from .models import Destination
-from gallery.models import GalleryImage
-
-
-class GalleryImageInline(admin.TabularInline):
-    """Inline admin for gallery images"""
-    model = GalleryImage
-    extra = 1
-    fields = ('image', 'caption', 'order')
 
 
 @admin.register(Destination)
@@ -23,8 +15,6 @@ class DestinationAdmin(TranslationAdmin):
     prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'created_at'
     list_editable = ('published', 'featured')
-
-    inlines = [GalleryImageInline]
 
     fieldsets = (
         ('Basic Information', {

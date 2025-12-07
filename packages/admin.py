@@ -1,15 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 from .models import Package
-from gallery.models import GalleryImage
 from bookings.models import Booking
-
-
-class GalleryImageInline(admin.TabularInline):
-    """Inline admin for gallery images"""
-    model = GalleryImage
-    extra = 1
-    fields = ('image', 'caption', 'order')
 
 
 class BookingInline(admin.TabularInline):
@@ -33,7 +25,7 @@ class PackageAdmin(TranslationAdmin):
     date_hierarchy = 'created_at'
     list_editable = ('available', 'published', 'featured')
 
-    inlines = [GalleryImageInline, BookingInline]
+    inlines = [BookingInline]
 
     fieldsets = (
         ('Basic Information', {
