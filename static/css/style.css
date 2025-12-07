@@ -1054,14 +1054,6 @@ address {
     column-gap: 25px;
   }
 
-  /**
-   * GALLERY LIST
-   */
-
-  .gallery-list {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
 
 
   /**
@@ -1314,14 +1306,6 @@ address {
     margin-bottom: 30px;
   }
 
-  /**
-   * GALLERY LIST
-   */
-
-  .gallery-list {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-
 }
 
 
@@ -1516,14 +1500,6 @@ address {
 
   .gallery-masonry {
     column-count: 4;
-  }
-
-  /**
-   * GALLERY LIST
-   */
-
-  .gallery-list {
-    grid-template-columns: repeat(4, 1fr) !important;
   }
 
 }
