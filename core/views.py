@@ -1,8 +1,5 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from destinations.models import Destination
-from packages.models import Package
-from gallery.models import GalleryImage
 from sponsors.models import Sponsor
 
 
@@ -12,13 +9,6 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['featured_destinations'] = Destination.objects.filter(
-            published=True, featured=True
-        ).order_by('-created_at')[:3]
-        context['featured_packages'] = Package.objects.filter(
-            published=True, available=True, featured=True
-        ).select_related('destination').order_by('-created_at')[:3]
-        context['latest_gallery_images'] = GalleryImage.objects.all().order_by('-uploaded_at')[:5]
         context['sponsors'] = Sponsor.objects.filter(active=True).order_by('display_order')
         return context
 

@@ -10,8 +10,15 @@ class DestinationForm(forms.ModelForm):
 
     class Meta:
         model = Destination
-        fields = ['title', 'slug', 'short_description', 'description', 'main_image',
-                  'published', 'meta_keywords', 'meta_description']
+        fields = [
+            'name', 'title', 'slug',
+            'country', 'city', 'region',
+            'short_description', 'description', 'things_to_do',
+            'best_time_to_visit', 'average_cost',
+            'main_image',
+            'published', 'featured',
+            'meta_title', 'meta_description', 'meta_keywords'
+        ]
         widgets = {
             'short_description': forms.Textarea(attrs={'rows': 3}),
             'description': forms.Textarea(attrs={'rows': 6}),
