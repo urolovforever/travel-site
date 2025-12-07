@@ -18,8 +18,8 @@ class PackageAdmin(TranslationAdmin):
     """
     Admin configuration for Package model with modeltranslation support.
     """
-    list_display = ('title', 'destination', 'price', 'duration_days', 'available', 'published', 'featured')
-    list_filter = ('published', 'available', 'featured', 'destination', 'created_at')
+    list_display = ('title', 'price', 'duration_days', 'available', 'published', 'featured')
+    list_filter = ('published', 'available', 'featured', 'created_at')
     search_fields = ('title', 'title_en', 'title_uz', 'title_ru', 'description')
     prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'created_at'
@@ -29,7 +29,7 @@ class PackageAdmin(TranslationAdmin):
 
     fieldsets = (
         ('Basic Information', {
-            'fields': ('title', 'slug', 'destination', 'main_image')
+            'fields': ('title', 'slug', 'main_image')
         }),
         ('Content', {
             'fields': ('description', 'itinerary', 'inclusions', 'exclusions')

@@ -16,12 +16,7 @@ class PackageListView(ListView):
     paginate_by = settings.ITEMS_PER_PAGE
 
     def get_queryset(self):
-        queryset = Package.objects.filter(published=True, available=True).select_related('destination')
-
-        # Filter by destination if provided
-        destination_slug = self.request.GET.get('destination')
-        if destination_slug:
-            queryset = queryset.filter(destination__slug=destination_slug)
+        queryset = Package.objects.filter(published=True, available=True)
 
         # Filter by price range
         min_price = self.request.GET.get('min_price')
@@ -43,19 +38,7 @@ class PackageDetailView(DetailView):
     slug_url_kwarg = 'slug'
 
     def get_queryset(self):
-        return Package.objects.filter(published=True).select_related('destination')
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # Get gallery images
-        context['gallery_images'] = self.object.gallery_images.all()
-        # Get related packages from same destination
-        context['related_packages'] = Package.objects.filter(
-            destination=self.object.destination,
-            published=True,
-            available=True
-        ).exclude(id=self.object.id)[:3]
-        return context
+        return Package.objects.filter(published=True)
 
 
 # CRUD Views (requires authentication)
@@ -93,8 +76,8 @@ class PackageDeleteView(LoginRequiredMixin, DeleteView):
 
 def package_list_json(request):
     """JSON endpoint for packages"""
-    packages = Package.objects.filter(published=True, available=True).select_related('destination').values(
-        'id', 'title', 'slug', 'price', 'currency', 'duration', 'destination__title', 'main_image', 'featured'
+    packages = Package.objects.filter(published=True, available=True).values(
+        'id', 'title', 'slug', 'price', 'currency', 'duration', 'main_image', 'featured'
     )
     return JsonResponse(list(packages), safe=False)
 
@@ -117,10 +100,5 @@ def package_detail_json(request, slug):
         'main_image': package.main_image.url if package.main_image else None,
         'available': package.available,
         'featured': package.featured,
-        'destination': {
-            'id': package.destination.id,
-            'title': package.destination.title,
-            'slug': package.destination.slug,
-        }
     }
     return JsonResponse(data)
