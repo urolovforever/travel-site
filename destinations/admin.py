@@ -9,12 +9,12 @@ class DestinationAdmin(TranslationAdmin):
     Admin configuration for Destination model with modeltranslation support.
     TranslationAdmin provides language tabs in the admin interface.
     """
-    list_display = ('title', 'slug', 'published', 'featured', 'created_at')
-    list_filter = ('published', 'featured', 'created_at')
+    list_display = ('title', 'slug', 'published', 'created_at')
+    list_filter = ('published', 'created_at')
     search_fields = ('title', 'title_en', 'title_uz', 'title_ru', 'description')
     prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'created_at'
-    list_editable = ('published', 'featured')
+    list_editable = ['published']
 
     fieldsets = (
         ('Basic Information', {
@@ -28,7 +28,7 @@ class DestinationAdmin(TranslationAdmin):
             'classes': ('collapse',)
         }),
         ('Status', {
-            'fields': ('published', 'featured')
+            'fields': ['published']
         }),
     )
 

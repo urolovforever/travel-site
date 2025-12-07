@@ -10,10 +10,10 @@ class PackageForm(forms.ModelForm):
 
     class Meta:
         model = Package
-        fields = ['title', 'slug', 'destination', 'description', 'itinerary',
+        fields = ['title', 'slug', 'description', 'itinerary',
                   'price', 'currency', 'duration', 'duration_days', 'max_people',
                   'inclusions', 'exclusions', 'main_image',
-                  'available', 'published', 'featured',
+                  'available', 'published',
                   'meta_keywords', 'meta_description']
         widgets = {
             'description': forms.Textarea(attrs={'rows': 5}),
@@ -33,7 +33,6 @@ class PackageForm(forms.ModelForm):
                     Column('title', css_class='form-group col-md-8 mb-3'),
                     Column('slug', css_class='form-group col-md-4 mb-3'),
                 ),
-                'destination',
                 'description',
                 'itinerary',
                 'main_image',
@@ -63,7 +62,7 @@ class PackageForm(forms.ModelForm):
                 Row(
                     Column('available', css_class='form-group col-md-4 mb-3'),
                     Column('published', css_class='form-group col-md-4 mb-3'),
-                    Column('featured', css_class='form-group col-md-4 mb-3'),
+                    Column(css_class='form-group col-md-4 mb-3'),
                 ),
             ),
             Submit('submit', _('Save Package'), css_class='btn btn-success btn-lg')

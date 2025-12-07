@@ -18,12 +18,12 @@ class PackageAdmin(TranslationAdmin):
     """
     Admin configuration for Package model with modeltranslation support.
     """
-    list_display = ('title', 'price', 'duration_days', 'available', 'published', 'featured')
-    list_filter = ('published', 'available', 'featured', 'created_at')
+    list_display = ('title', 'price', 'duration_days', 'available', 'published')
+    list_filter = ('published', 'available', 'created_at')
     search_fields = ('title', 'title_en', 'title_uz', 'title_ru', 'description')
     prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'created_at'
-    list_editable = ('available', 'published', 'featured')
+    list_editable = ('available', 'published')
 
     inlines = [BookingInline]
 
@@ -42,7 +42,7 @@ class PackageAdmin(TranslationAdmin):
             'classes': ('collapse',)
         }),
         ('Status', {
-            'fields': ('available', 'published', 'featured')
+            'fields': ('available', 'published')
         }),
     )
 
