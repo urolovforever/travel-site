@@ -9,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{% block title %}Tourly - Travel Agency{% endblock title %}</title>
+  <title>{% block title %}{% trans "Tourly - Travel Agency" %}{% endblock title %}</title>
 
   <link rel="shortcut icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
 
@@ -40,7 +40,7 @@
           </div>
 
           <div class="wrapper">
-            <p class="helpline-title">For Further Inquires :</p>
+            <p class="helpline-title">{% trans "For Further Inquires :" %}</p>
             <p class="helpline-number">+01 (123) 4567 90</p>
           </div>
 
@@ -142,19 +142,17 @@
           </a>
 
           <p class="footer-text">
-            Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna conubia
-            at
-            perferendis, pretium, aenean aut ultrices.
+            {% trans "Discover amazing destinations around the world with Tourly. We provide the best travel packages and unforgettable experiences for every traveler." %}
           </p>
 
         </div>
 
         <div class="footer-contact">
 
-          <h4 class="contact-title">Contact Us</h4>
+          <h4 class="contact-title">{% trans "Contact Us" %}</h4>
 
           <p class="contact-text">
-            Feel free to contact and reach us !!
+            {% trans "Feel free to contact and reach us !!" %}
           </p>
 
           <ul>
@@ -171,7 +169,7 @@
 
             <li class="contact-item">
               <ion-icon name="location-outline"></ion-icon>
-              <address>3146 Koontz, California</address>
+              <address>{% trans "Tashkent, Uzbekistan" %}</address>
             </li>
 
           </ul>
@@ -181,12 +179,12 @@
         <div class="footer-form">
 
           <p class="form-text">
-            Subscribe our newsletter for more update & news !!
+            {% trans "Subscribe our newsletter for more update & news !!" %}
           </p>
 
           <form action="" class="form-wrapper">
-            <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
-            <button type="submit" class="btn btn-secondary">Subscribe</button>
+            <input type="email" name="email" class="input-field" placeholder="{% trans 'Enter Your Email' %}" required>
+            <button type="submit" class="btn btn-secondary">{% trans "Subscribe" %}</button>
           </form>
 
         </div>
@@ -198,13 +196,13 @@
       <div class="container">
 
         <p class="copyright">
-          &copy; 2022 <a href="">codewithsadee</a>. All rights reserved
+          &copy; 2022 <a href="">codewithsadee</a>. {% trans "All rights reserved" %}
         </p>
 
         <ul class="footer-bottom-list">
-          <li><a href="#" class="footer-bottom-link">Privacy Policy</a></li>
-          <li><a href="#" class="footer-bottom-link">Term & Condition</a></li>
-          <li><a href="#" class="footer-bottom-link">FAQ</a></li>
+          <li><a href="#" class="footer-bottom-link">{% trans "Privacy Policy" %}</a></li>
+          <li><a href="#" class="footer-bottom-link">{% trans "Term & Condition" %}</a></li>
+          <li><a href="#" class="footer-bottom-link">{% trans "FAQ" %}</a></li>
         </ul>
 
       </div>

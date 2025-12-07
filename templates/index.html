@@ -56,14 +56,12 @@
 <section class="popular" id="destination">
   <div class="container">
 
-    <p class="section-subtitle">Uncover place</p>
+    <p class="section-subtitle">{% trans "Uncover place" %}</p>
 
-    <h2 class="h2 section-title">Popular destination</h2>
+    <h2 class="h2 section-title">{% trans "Popular destination" %}</h2>
 
     <p class="section-text">
-      Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
-      Sit ornare
-      mollitia tenetur, aptent.
+      {% trans "Explore our most popular travel destinations around the world. Find the perfect place for your next adventure and create unforgettable memories." %}
     </p>
 
     <ul class="popular-list">
@@ -172,7 +170,7 @@
 
     </ul>
 
-    <button class="btn btn-primary">More destintion</button>
+    <a href="{% url 'destinations:destination_list' %}" class="btn btn-primary">{% trans "More destinations" %}</a>
 
   </div>
 </section>
@@ -181,14 +179,12 @@
 <section class="package" id="package">
   <div class="container">
 
-    <p class="section-subtitle">Popular Packeges</p>
+    <p class="section-subtitle">{% trans "Popular Packages" %}</p>
 
-    <h2 class="h2 section-title">Checkout Our Packeges</h2>
+    <h2 class="h2 section-title">{% trans "Checkout Our Packages" %}</h2>
 
     <p class="section-text">
-      Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
-      Sit ornare
-      mollitia tenetur, aptent.
+      {% trans "Browse our carefully curated travel packages designed to give you the best experience. Each package includes accommodations, activities, and guided tours." %}
     </p>
 
     <ul class="package-list">
@@ -223,7 +219,7 @@
                 <div class="meta-box">
                   <ion-icon name="people"></ion-icon>
 
-                  <p class="text">pax: 10</p>
+                  <p class="text">{% trans "pax:" %} 10</p>
                 </div>
               </li>
 
@@ -243,7 +239,7 @@
 
             <div class="wrapper">
 
-              <p class="reviews">(25 reviews)</p>
+              <p class="reviews">(25 {% trans "reviews" %})</p>
 
               <div class="card-rating">
                 <ion-icon name="star"></ion-icon>
@@ -257,10 +253,10 @@
 
             <p class="price">
               $750
-              <span>/ per person</span>
+              <span>{% trans "/ per person" %}</span>
             </p>
 
-            <button class="btn btn-secondary">Book Now</button>
+            <button class="btn btn-secondary">{% trans "Book Now" %}</button>
 
           </div>
 
@@ -297,7 +293,7 @@
                 <div class="meta-box">
                   <ion-icon name="people"></ion-icon>
 
-                  <p class="text">pax: 10</p>
+                  <p class="text">{% trans "pax:" %} 10</p>
                 </div>
               </li>
 
@@ -317,7 +313,7 @@
 
             <div class="wrapper">
 
-              <p class="reviews">(20 reviews)</p>
+              <p class="reviews">(20 {% trans "reviews" %})</p>
 
               <div class="card-rating">
                 <ion-icon name="star"></ion-icon>
@@ -331,10 +327,10 @@
 
             <p class="price">
               $520
-              <span>/ per person</span>
+              <span>{% trans "/ per person" %}</span>
             </p>
 
-            <button class="btn btn-secondary">Book Now</button>
+            <button class="btn btn-secondary">{% trans "Book Now" %}</button>
 
           </div>
 
@@ -371,7 +367,7 @@
                 <div class="meta-box">
                   <ion-icon name="people"></ion-icon>
 
-                  <p class="text">pax: 10</p>
+                  <p class="text">{% trans "pax:" %} 10</p>
                 </div>
               </li>
 
@@ -391,7 +387,7 @@
 
             <div class="wrapper">
 
-              <p class="reviews">(40 reviews)</p>
+              <p class="reviews">(40 {% trans "reviews" %})</p>
 
               <div class="card-rating">
                 <ion-icon name="star"></ion-icon>
@@ -405,10 +401,10 @@
 
             <p class="price">
               $660
-              <span>/ per person</span>
+              <span>{% trans "/ per person" %}</span>
             </p>
 
-            <button class="btn btn-secondary">Book Now</button>
+            <button class="btn btn-secondary">{% trans "Book Now" %}</button>
 
           </div>
 
@@ -417,7 +413,7 @@
 
     </ul>
 
-    <button class="btn btn-primary">View All Packages</button>
+    <a href="{% url 'packages:package_list' %}" class="btn btn-primary">{% trans "View All Packages" %}</a>
 
   </div>
 </section>
@@ -426,14 +422,12 @@
 <section class="gallery" id="gallery">
         <div class="container">
 
-          <p class="section-subtitle">Photo Gallery</p>
+          <p class="section-subtitle">{% trans "Photo Gallery" %}</p>
 
-          <h2 class="h2 section-title">Photo's From Travellers</h2>
+          <h2 class="h2 section-title">{% trans "Photos From Travellers" %}</h2>
 
           <p class="section-text">
-            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
-            Sit ornare
-            mollitia tenetur, aptent.
+            {% trans "Check out beautiful moments captured by our travelers from around the world. Share your travel memories with us and inspire others to explore." %}
           </p>
 
           <ul class="gallery-list">
