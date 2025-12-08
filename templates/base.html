@@ -55,19 +55,28 @@
           <!-- Language Switcher -->
           {% get_current_language as CURRENT_LANG %}
           {% get_available_languages as LANGUAGES %}
-          <div class="language-switcher" style="position: relative; display: inline-block;">
-            <button class="search-btn" aria-label="Language" id="langDropdown">
+          <div class="language-switcher">
+            <button class="lang-btn" aria-label="Language" id="langDropdown">
               <ion-icon name="globe-outline"></ion-icon>
+              <span class="lang-code">{{ CURRENT_LANG|upper }}</span>
             </button>
-            <div class="lang-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 4px; margin-top: 5px; min-width: 150px; z-index: 1000;">
+            <div class="lang-dropdown-menu" id="langMenu">
               {% for lang_code, lang_name in LANGUAGES %}
-                <form action="{% url 'set_language' %}" method="post">
+                <form action="{% url 'set_language' %}" method="post" class="lang-form">
                   {% csrf_token %}
                   <input name="next" type="hidden" value="{{ request.get_full_path }}">
                   <input name="language" type="hidden" value="{{ lang_code }}">
-                  <button type="submit" class="lang-dropdown-item" style="width: 100%; text-align: left; padding: 10px 15px; border: none; background: {% if CURRENT_LANG == lang_code %}#f0f0f0{% else %}white{% endif %}; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #333;">
-                    <ion-icon name="{% if CURRENT_LANG == lang_code %}checkmark-circle{% else %}radio-button-off{% endif %}" style="font-size: 16px;"></ion-icon>
-                    <span>{{ lang_name }}</span>
+                  <button type="submit" class="lang-dropdown-item {% if CURRENT_LANG == lang_code %}active{% endif %}">
+                    <span class="lang-flag">
+                      {% if lang_code == 'uz' %}🇺🇿
+                      {% elif lang_code == 'ru' %}🇷🇺
+                      {% elif lang_code == 'en' %}🇬🇧
+                      {% endif %}
+                    </span>
+                    <span class="lang-name">{{ lang_name }}</span>
+                    {% if CURRENT_LANG == lang_code %}
+                      <ion-icon name="checkmark-circle" class="lang-check"></ion-icon>
+                    {% endif %}
                   </button>
                 </form>
               {% endfor %}
@@ -246,34 +255,35 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const langButton = document.getElementById('langDropdown');
-      const langMenu = document.querySelector('.lang-dropdown-menu');
+      const langMenu = document.getElementById('langMenu');
 
       if (langButton && langMenu) {
+        // Toggle dropdown on button click
         langButton.addEventListener('click', function(e) {
           e.stopPropagation();
-          langMenu.style.display = langMenu.style.display === 'none' ? 'block' : 'none';
+          langMenu.classList.toggle('show');
         });
 
         // Close dropdown when clicking outside
         document.addEventListener('click', function(e) {
           if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
-            langMenu.style.display = 'none';
+            langMenu.classList.remove('show');
           }
         });
 
-        // Hover effects for dropdown items
-        const dropdownItems = document.querySelectorAll('.lang-dropdown-item');
-        dropdownItems.forEach(item => {
-          item.addEventListener('mouseenter', function() {
-            if (this.style.background === 'white') {
-              this.style.background = '#f8f8f8';
-            }
+        // Close dropdown when a language is selected
+        const langForms = langMenu.querySelectorAll('.lang-form');
+        langForms.forEach(form => {
+          form.addEventListener('submit', function() {
+            langMenu.classList.remove('show');
           });
-          item.addEventListener('mouseleave', function() {
-            if (this.style.background !== 'rgb(240, 240, 240)') {
-              this.style.background = 'white';
-            }
-          });
+        });
+
+        // Close dropdown on escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && langMenu.classList.contains('show')) {
+            langMenu.classList.remove('show');
+          }
         });
       }
     });
