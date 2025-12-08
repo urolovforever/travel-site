@@ -492,12 +492,12 @@ msgstr "Bog'lanish"
 msgid "Book Now"
 msgstr "Buyurtma qiling"
 
-#: templates/base.html:145
+#: templates/base.html:167
 msgid ""
-"Discover amazing destinations around the world with Tourly. We provide the "
+"Discover amazing destinations around the world with SIDQGLOBAL. We provide the "
 "best travel packages and unforgettable experiences for every traveler."
 msgstr ""
-"Tourly bilan dunyoning ajoyib joylarini kashf eting. Biz har bir sayohatchi "
+"SIDQGLOBAL bilan dunyoning ajoyib joylarini kashf eting. Biz har bir sayohatchi "
 "uchun eng yaxshi sayohat paketlari va unutilmas tajribalarni taqdim etamiz."
 
 #: templates/base.html:155
