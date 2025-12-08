@@ -66,12 +66,14 @@
                 </div>
               </li>
 
+              {% if package.destination %}
               <li class="card-meta-item">
                 <div class="meta-box">
                   <ion-icon name="location"></ion-icon>
                   <p class="text">{{ package.destination|get_translated:'name' }}</p>
                 </div>
               </li>
+              {% endif %}
 
             </ul>
 
