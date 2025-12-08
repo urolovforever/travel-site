@@ -21,12 +21,6 @@ class Destination(models.Model):
 
     # Description fields (will be translated by modeltranslation)
     short_description = models.CharField(_('Short Description'), max_length=500, blank=True)
-    description = models.TextField(_('Full Description'))
-    things_to_do = models.TextField(_('Things to Do'), blank=True, help_text=_('List activities and attractions'))
-
-    # Travel Information (will be translated by modeltranslation)
-    best_time_to_visit = models.CharField(_('Best Time to Visit'), max_length=200, blank=True)
-    average_cost = models.CharField(_('Average Cost'), max_length=200, blank=True, help_text=_('e.g., "$500-$1000 per person"'))
 
     # Media
     main_image = models.ImageField(_('Cover Image'), upload_to='destinations/', blank=True, null=True)

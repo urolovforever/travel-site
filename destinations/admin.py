@@ -19,7 +19,7 @@ class DestinationAdmin(TranslationAdmin):
     """
     list_display = ('title', 'slug', 'published', 'created_at')
     list_filter = ('published', 'created_at')
-    search_fields = ('title', 'title_en', 'title_uz', 'title_ru', 'description')
+    search_fields = ('title', 'title_en', 'title_uz', 'title_ru', 'short_description')
     prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'created_at'
     list_editable = ['published']
@@ -32,10 +32,7 @@ class DestinationAdmin(TranslationAdmin):
             'fields': ('country', 'city', 'region')
         }),
         ('Content', {
-            'fields': ('short_description', 'description', 'things_to_do')
-        }),
-        ('Travel Information', {
-            'fields': ('best_time_to_visit', 'average_cost')
+            'fields': ('short_description',)
         }),
         ('Media', {
             'fields': ('main_image',)

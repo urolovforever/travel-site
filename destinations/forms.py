@@ -13,16 +13,13 @@ class DestinationForm(forms.ModelForm):
         fields = [
             'name', 'title', 'slug',
             'country', 'city', 'region',
-            'short_description', 'description', 'things_to_do',
-            'best_time_to_visit', 'average_cost',
+            'short_description',
             'main_image',
             'published', 'featured',
             'meta_title', 'meta_description', 'meta_keywords'
         ]
         widgets = {
             'short_description': forms.Textarea(attrs={'rows': 3}),
-            'description': forms.Textarea(attrs={'rows': 6}),
-            'things_to_do': forms.Textarea(attrs={'rows': 5}),
             'meta_description': forms.Textarea(attrs={'rows': 2}),
         }
 
@@ -46,15 +43,6 @@ class DestinationForm(forms.ModelForm):
             Fieldset(
                 _('Description & Content'),
                 'short_description',
-                'description',
-                'things_to_do',
-            ),
-            Fieldset(
-                _('Travel Information'),
-                Row(
-                    Column('best_time_to_visit', css_class='form-group col-md-6 mb-3'),
-                    Column('average_cost', css_class='form-group col-md-6 mb-3'),
-                ),
             ),
             Fieldset(
                 _('Media'),

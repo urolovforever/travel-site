@@ -10,16 +10,13 @@ class PackageForm(forms.ModelForm):
 
     class Meta:
         model = Package
-        fields = ['title', 'slug', 'description', 'itinerary',
-                  'price', 'currency', 'duration', 'duration_days', 'max_people',
-                  'inclusions', 'exclusions', 'main_image',
+        fields = ['title', 'slug', 'description',
+                  'price', 'currency', 'duration', 'max_people',
+                  'main_image',
                   'available', 'published',
                   'meta_keywords', 'meta_description']
         widgets = {
             'description': forms.Textarea(attrs={'rows': 5}),
-            'itinerary': forms.Textarea(attrs={'rows': 6}),
-            'inclusions': forms.Textarea(attrs={'rows': 4}),
-            'exclusions': forms.Textarea(attrs={'rows': 4}),
             'meta_description': forms.Textarea(attrs={'rows': 2}),
         }
 
@@ -34,23 +31,16 @@ class PackageForm(forms.ModelForm):
                     Column('slug', css_class='form-group col-md-4 mb-3'),
                 ),
                 'description',
-                'itinerary',
                 'main_image',
             ),
             Fieldset(
                 _('Pricing & Details'),
                 Row(
                     Column('price', css_class='form-group col-md-4 mb-3'),
-                    Column('currency', css_class='form-group col-md-2 mb-3'),
-                    Column('duration', css_class='form-group col-md-3 mb-3'),
-                    Column('duration_days', css_class='form-group col-md-3 mb-3'),
+                    Column('currency', css_class='form-group col-md-3 mb-3'),
+                    Column('duration', css_class='form-group col-md-5 mb-3'),
                 ),
                 'max_people',
-            ),
-            Fieldset(
-                _('Inclusions & Exclusions'),
-                'inclusions',
-                'exclusions',
             ),
             Fieldset(
                 _('SEO'),
