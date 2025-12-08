@@ -58,7 +58,7 @@
 
     <p class="section-subtitle">{% trans "Uncover place" %}</p>
 
-    <h2 class="h2 section-title">{% trans "Popular destination" %}</h2>
+    <h2 class="h2 section-title">{% trans "Top destinations around the World" %}</h2>
 
     <p class="section-text">
       {% trans "Explore our most popular travel destinations around the world. Find the perfect place for your next adventure and create unforgettable memories." %}
@@ -70,7 +70,7 @@
         <div class="popular-card">
 
           <figure class="card-img">
-            <img src="{% static 'images/popular-1.jpg' %}" alt="San miguel, italy" loading="lazy">
+            <img src="{% static 'images/istanbul.jpg' %}" alt="San miguel, italy" loading="lazy">
           </figure>
 
           <div class="card-content">
@@ -84,15 +84,15 @@
             </div>
 
             <p class="card-subtitle">
-              <a href="#">Italy</a>
+              <a href="#">Turkey</a>
             </p>
 
             <h3 class="h3 card-title">
-              <a href="#">San miguel</a>
+              <a href="#">Istanbul</a>
             </h3>
 
             <p class="card-text">
-              Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+              Istanbul is a historic city where East meets West
             </p>
 
           </div>
@@ -104,7 +104,7 @@
         <div class="popular-card">
 
           <figure class="card-img">
-            <img src="{% static 'images/popular-2.jpg' %}" alt="Burj khalifa, dubai" loading="lazy">
+            <img src="{% static 'images/dubai.jpg' %}" alt="Burj khalifa, dubai" loading="lazy">
           </figure>
 
           <div class="card-content">
@@ -118,17 +118,16 @@
             </div>
 
             <p class="card-subtitle">
+              <a href="#">BAA</a>
+            </p>
+
+            <h3 class="h3 card-title">
               <a href="#">Dubai</a>
-            </p>
-
-            <h3 class="h3 card-title">
-              <a href="#">Burj khalifa</a>
             </h3>
 
             <p class="card-text">
-              Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                Dubai is a modern city known for its skyscrapers and luxury shopping.
             </p>
-
           </div>
 
         </div>
@@ -138,7 +137,7 @@
         <div class="popular-card">
 
           <figure class="card-img">
-            <img src="{% static 'images/popular-3.jpg' %}" alt="Kyoto temple, japan" loading="lazy">
+            <img src="{% static 'images/kuala.jpg' %}" alt="Kyoto temple, japan" loading="lazy">
           </figure>
 
           <div class="card-content">
@@ -152,15 +151,141 @@
             </div>
 
             <p class="card-subtitle">
-              <a href="#">Japan</a>
+              <a href="#">Malaysia</a>
             </p>
 
             <h3 class="h3 card-title">
-              <a href="#">Kyoto temple</a>
+              <a href="#">Kuala-Lumpur</a>
             </h3>
 
             <p class="card-text">
-              Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+              Kuala Lumpur is famous for the Petronas Towers and cultural diversity.
+            </p>
+
+          </div>
+
+        </div>
+      </li>
+
+    </ul>
+
+    <button class="btn btn-primary"
+          onclick="window.location.href='{% url 'destinations:destination_list' %}'">
+      {% trans "More destinations" %}
+    </button>
+
+  </div>
+</section>
+
+<!-- POPULAR DESTINATIONS -->
+<section class="popular" id="destination">
+  <div class="container">
+
+   <p class="section-subtitle">{% trans "Explore Uzbekistan" %}</p>
+
+<h2 class="h2 section-title">{% trans "Top destinations in Uzbekistan" %}</h2>
+
+<p class="section-text">
+  {% trans "Discover Uzbekistan’s most remarkable travel spots. Plan your next journey and enjoy experiences you’ll never forget." %}
+</p>
+
+
+    <ul class="popular-list">
+
+      <li>
+        <div class="popular-card">
+
+          <figure class="card-img">
+            <img src="{% static 'images/tashkent1.jpg' %}" alt="San miguel, italy" loading="lazy">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="card-subtitle">
+              <a href="#">Uzbekistan</a>
+            </p>
+
+            <h3 class="h3 card-title">
+              <a href="#">Tashkent</a>
+            </h3>
+
+            <p class="card-text">
+              Tashkent is Uzbekistan’s capital, known for its modern architecture, bustling markets, and rich history.
+            </p>
+
+          </div>
+
+        </div>
+      </li>
+
+      <li>
+        <div class="popular-card">
+
+          <figure class="card-img">
+            <img src="{% static 'images/nefrit.jpg' %}" alt="Burj khalifa, dubai" loading="lazy">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="card-subtitle">
+              <a href="#">Uzbekistan</a>
+            </p>
+
+            <h3 class="h3 card-title">
+              <a href="#">Urungach Lake</a>
+            </h3>
+
+            <p class="card-text">
+                Urungach Lake is a scenic spot known for its calm waters and natural beauty.
+            </p>
+          </div>
+
+        </div>
+      </li>
+
+      <li>
+        <div class="popular-card">
+
+          <figure class="card-img">
+            <img src="{% static 'images/buxoro.jpg' %}" alt="Kyoto temple, japan" loading="lazy">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="card-subtitle">
+              <a href="#">Uzbekistan</a>
+            </p>
+
+            <h3 class="h3 card-title">
+              <a href="#">Buxoro</a>
+            </h3>
+
+            <p class="card-text">
+              Buxoro is an ancient city known for its historic mosques and rich heritage.
             </p>
 
           </div>
@@ -196,16 +321,15 @@
         <div class="package-card">
 
           <figure class="card-banner">
-            <img src="{% static 'images/packege-1.jpg' %}" alt="Experience The Great Holiday On Beach" loading="lazy">
+            <img src="{% static 'images/istanbul2.jpg' %}" alt="Experience The Great Holiday On Beach" loading="lazy">
           </figure>
 
           <div class="card-content">
 
-            <h3 class="h3 card-title">Experience The Great Holiday On Beach</h3>
+            <h3 class="h3 card-title">Experience the Wonders of Istanbul</h3>
 
             <p class="card-text">
-              Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
-              cras, aspernatur.
+              Explore the vibrant streets of Istanbul, from historic mosques to bustling bazaars. Enjoy rich culture, delicious cuisine, and unforgettable views of the Bosphorus.
             </p>
 
             <ul class="card-meta-list">
@@ -230,7 +354,7 @@
                 <div class="meta-box">
                   <ion-icon name="location"></ion-icon>
 
-                  <p class="text">Malaysia</p>
+                  <p class="text">Istanbul</p>
                 </div>
               </li>
 
@@ -270,16 +394,15 @@
         <div class="package-card">
 
           <figure class="card-banner">
-            <img src="{% static 'images/packege-2.jpg' %}" alt="Summer Holiday To The Oxolotan River" loading="lazy">
+            <img src="{% static 'images/bali2.jpg' %}" alt="Summer Holiday To The Oxolotan River" loading="lazy">
           </figure>
 
           <div class="card-content">
 
-            <h3 class="h3 card-title">Summer Holiday To The Oxolotan River</h3>
+            <h3 class="h3 card-title">Bali: Your Island Escape</h3>
 
             <p class="card-text">
-              Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
-              cras, aspernatur.
+              Unwind in Bali’s lush landscapes and sparkling shores. Explore hidden waterfalls, vibrant culture, and unforgettable coastal views.
             </p>
 
             <ul class="card-meta-list">
@@ -304,7 +427,7 @@
                 <div class="meta-box">
                   <ion-icon name="location"></ion-icon>
 
-                  <p class="text">Malaysia</p>
+                  <p class="text">Indonesia</p>
                 </div>
               </li>
 
@@ -344,16 +467,15 @@
         <div class="package-card">
 
           <figure class="card-banner">
-            <img src="{% static 'images/packege-3.jpg' %}" alt="Santorini Island's Weekend Vacation" loading="lazy">
+            <img src="{% static 'images/samarqand2.jpg' %}" alt="Santorini Island's Weekend Vacation" loading="lazy">
           </figure>
 
           <div class="card-content">
 
-            <h3 class="h3 card-title">Santorini Island's Weekend Vacation</h3>
+            <h3 class="h3 card-title">Tashkent – Samarkand – Bukhara Tour</h3>
 
             <p class="card-text">
-              Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
-              cras, aspernatur.
+              A 3-day journey through history, architecture, and culture. Explore Uzbekistan’s three iconic cities in one tour.
             </p>
 
             <ul class="card-meta-list">
@@ -378,7 +500,7 @@
                 <div class="meta-box">
                   <ion-icon name="location"></ion-icon>
 
-                  <p class="text">Malaysia</p>
+                  <p class="text">Uzbekistan</p>
                 </div>
               </li>
 
