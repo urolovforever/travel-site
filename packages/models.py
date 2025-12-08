@@ -13,20 +13,14 @@ class Package(models.Model):
     title = models.CharField(_('Title'), max_length=200)
     slug = models.SlugField(_('Slug'), max_length=250, unique=True, blank=True)
     description = models.TextField(_('Description'))
-    itinerary = models.TextField(_('Itinerary'), blank=True, help_text=_('Day-by-day itinerary'))
 
     # Pricing & Duration
     price = models.DecimalField(_('Price'), max_digits=10, decimal_places=2)
     currency = models.CharField(_('Currency'), max_length=3, default='USD')
     duration = models.CharField(_('Duration'), max_length=100, help_text=_('e.g., "5 days 4 nights"'))
-    duration_days = models.PositiveIntegerField(_('Duration (days)'), default=1)
 
     # Capacity
     max_people = models.PositiveIntegerField(_('Max People'), default=10)
-
-    # Inclusions/Exclusions (translatable)
-    inclusions = models.TextField(_('Inclusions'), blank=True, help_text=_('What is included'))
-    exclusions = models.TextField(_('Exclusions'), blank=True, help_text=_('What is not included'))
 
     # Media
     main_image = models.ImageField(_('Main Image'), upload_to='packages/', blank=True, null=True)

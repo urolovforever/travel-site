@@ -11,10 +11,7 @@ class PackageTranslationOptions(TranslationOptions):
     fields = (
         'title',
         'description',
-        'itinerary',
         'duration',
-        'inclusions',
-        'exclusions',
         'meta_keywords',
         'meta_description'
     )
