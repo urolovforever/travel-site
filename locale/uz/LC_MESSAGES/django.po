@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-07 19:55+0000\n"
+"POT-Creation-Date: 2025-12-08 08:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: bookings/forms.py:48 templates/tour/booking_form.html:24
 msgid "Submit Booking Request"
-msgstr ""
+msgstr "Buyurtma so'rovini yuborish"
 
 #: bookings/models.py:11
 msgid "Pending"
@@ -190,7 +190,7 @@ msgstr ""
 
 #: destinations/models.py:25 templates/tour/destination_detail.html:110
 msgid "Things to Do"
-msgstr ""
+msgstr "Nima qilish mumkin"
 
 #: destinations/models.py:25
 msgid "List activities and attractions"
@@ -198,11 +198,11 @@ msgstr ""
 
 #: destinations/models.py:28 templates/tour/destination_detail.html:85
 msgid "Best Time to Visit"
-msgstr ""
+msgstr "Tashrif buyurish uchun eng yaxshi vaqt"
 
 #: destinations/models.py:29 templates/tour/destination_detail.html:96
 msgid "Average Cost"
-msgstr ""
+msgstr "O'rtacha narx"
 
 #: destinations/models.py:29
 msgid "e.g., \"$500-$1000 per person\""
@@ -251,7 +251,7 @@ msgstr ""
 #: destinations/models.py:46 destinations/models.py:75
 #: templates/tour/package_detail.html:91
 msgid "Destination"
-msgstr ""
+msgstr "Joy"
 
 #: destinations/models.py:47 templates/about.html:64 templates/base.html:110
 #: templates/tour/destination_list.html:6
@@ -311,7 +311,7 @@ msgstr ""
 
 #: packages/models.py:16 templates/tour/package_detail.html:105
 msgid "Itinerary"
-msgstr ""
+msgstr "Marshut"
 
 #: packages/models.py:16
 msgid "Day-by-day itinerary"
@@ -328,7 +328,7 @@ msgstr ""
 #: packages/models.py:21 templates/tour/package_detail.html:73
 #: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1793
 msgid "Duration"
-msgstr ""
+msgstr "Davomiyligi"
 
 #: packages/models.py:21
 msgid "e.g., \"5 days 4 nights\""
@@ -755,110 +755,110 @@ msgstr "Bog'laning!"
 
 #: templates/tour/booking_form.html:6
 msgid "Book Package"
-msgstr ""
+msgstr "Paketni buyurtma qilish"
 
 #: templates/tour/booking_form.html:13
 msgid "Book Your Tour Package"
-msgstr ""
+msgstr "Sayohat paketingizni buyurtma qiling"
 
 #: templates/tour/destination_confirm_delete.html:6
 #: templates/tour/destination_confirm_delete.html:13
 msgid "Delete Destination"
-msgstr ""
+msgstr "Joyni o'chirish"
 
 #: templates/tour/destination_confirm_delete.html:15
 msgid "Are you sure you want to delete this destination?"
-msgstr ""
+msgstr "Ushbu joyni o'chirishni xohlaysizmi?"
 
 #: templates/tour/destination_confirm_delete.html:29
 msgid "Warning!"
-msgstr ""
+msgstr "Ogohlantirish!"
 
 #: templates/tour/destination_confirm_delete.html:29
 msgid "This action cannot be undone."
-msgstr ""
+msgstr "Bu harakatni bekor qilib bo'lmaydi."
 
 #: templates/tour/destination_confirm_delete.html:42
 msgid "Location:"
-msgstr ""
+msgstr "Manzil:"
 
 #: templates/tour/destination_confirm_delete.html:51
 msgid "Name:"
-msgstr ""
+msgstr "Nomi:"
 
 #: templates/tour/destination_confirm_delete.html:66
 msgid "Cancel"
-msgstr ""
+msgstr "Bekor qilish"
 
 #: templates/tour/destination_confirm_delete.html:71
 msgid "Yes, Delete"
-msgstr ""
+msgstr "Ha, o'chirish"
 
 #: templates/tour/destination_detail.html:35
 msgid "Overview"
-msgstr ""
+msgstr "Umumiy ko'rinish"
 
 #: templates/tour/destination_detail.html:52
 msgid "About"
-msgstr ""
+msgstr "Haqida"
 
 #: templates/tour/destination_detail.html:67
 msgid "Location"
-msgstr ""
+msgstr "Manzil"
 
 #: templates/tour/destination_detail.html:126
 msgid "Explore"
-msgstr ""
+msgstr "Kashf qilish"
 
 #: templates/tour/destination_detail.html:147
 msgid "Ready to explore?"
-msgstr ""
+msgstr "Kashf qilishga tayyormisiz?"
 
 #: templates/tour/destination_detail.html:148
 msgid "Available Tour Packages"
-msgstr ""
+msgstr "Mavjud sayohat paketlari"
 
 #: templates/tour/destination_detail.html:196
 #: templates/tour/package_detail.html:212 templates/tour/package_list.html:101
 msgid "View Details"
-msgstr ""
+msgstr "Batafsil ko'rish"
 
 #: templates/tour/destination_detail.html:208
 msgid "Ready for an unforgettable journey?"
-msgstr ""
+msgstr "Unutilmas sayohatga tayyormisiz?"
 
 #: templates/tour/destination_detail.html:210
 msgid "Contact us today to plan your perfect trip to"
-msgstr ""
+msgstr "Bugun biz bilan bog'laning va"
 
 #: templates/tour/destination_form.html:8
 #: templates/tour/destination_form.html:21
 msgid "Edit Destination"
-msgstr ""
+msgstr "Joyni tahrirlash"
 
 #: templates/tour/destination_form.html:10
 msgid "Create Destination"
-msgstr ""
+msgstr "Joy yaratish"
 
 #: templates/tour/destination_form.html:23
 msgid "Create New Destination"
-msgstr ""
+msgstr "Yangi joy yaratish"
 
 #: templates/tour/destination_form.html:27
 msgid "Fill in the details to create or update a destination"
-msgstr ""
+msgstr "Joyni yaratish yoki yangilash uchun ma'lumotlarni to'ldiring"
 
 #: templates/tour/destination_form.html:41
 msgid "Please correct the errors below:"
-msgstr ""
+msgstr "Iltimos, quyidagi xatolarni tuzating:"
 
 #: templates/tour/destination_form.html:54
 msgid "Back to Destinations"
-msgstr ""
+msgstr "Joylarga qaytish"
 
 #: templates/tour/destination_list.html:13
 msgid "Our Destinations"
-msgstr ""
+msgstr "Bizning joylarimiz"
 
 #: templates/tour/destination_list.html:15
 #: templates/tour/destination_list.html:29
@@ -866,139 +866,147 @@ msgid ""
 "Discover amazing places around the world with our carefully curated "
 "destinations"
 msgstr ""
+"Ehtiyotkorlik bilan tanlangan joylarimiz bilan dunyoning ajoyib joylarini "
+"kashf eting"
 
 #: templates/tour/destination_list.html:24
 msgid "Uncover places"
-msgstr ""
+msgstr "Joylarni kashf eting"
 
 #: templates/tour/destination_list.html:26
 msgid "Popular destinations"
-msgstr ""
+msgstr "Mashhur joylar"
 
 #: templates/tour/destination_list.html:79
 msgid "No destinations available at the moment."
-msgstr ""
+msgstr "Hozircha joylar mavjud emas."
 
 #: templates/tour/destination_list.html:90
 #: templates/tour/package_list.html:120
 msgid "First"
-msgstr ""
+msgstr "Birinchi"
 
 #: templates/tour/destination_list.html:93 templates/tour/gallery.html:45
 #: templates/tour/package_list.html:123
 msgid "Previous"
-msgstr ""
+msgstr "Oldingi"
 
 #: templates/tour/destination_list.html:103 templates/tour/gallery.html:49
 #: templates/tour/package_list.html:133
 msgid "Next"
-msgstr ""
+msgstr "Keyingi"
 
 #: templates/tour/destination_list.html:106
 #: templates/tour/package_list.html:136
 msgid "Last"
-msgstr ""
+msgstr "Oxirgi"
 
 #: templates/tour/gallery.html:15
 msgid ""
 "Browse through our collection of beautiful destinations and memorable "
 "moments"
-msgstr ""
+msgstr "Go'zal joylar va unutilmas lahzalar to'plamimizni ko'rib chiqing"
 
 #: templates/tour/gallery.html:36
 msgid "No images in gallery yet."
-msgstr ""
+msgstr "Galereyada hali rasmlar yo'q."
 
 #: templates/tour/package_detail.html:25
 msgid "Max"
-msgstr ""
+msgstr "Maks"
 
 #: templates/tour/package_detail.html:25 templates/tour/package_detail.html:83
 msgid "people"
-msgstr ""
+msgstr "kishi"
 
 #: templates/tour/package_detail.html:37
 msgid "Package Price"
-msgstr ""
+msgstr "Paket narxi"
 
 #: templates/tour/package_detail.html:40
 #: templates/tour/package_detail.html:209 templates/tour/package_list.html:98
 msgid "per person"
-msgstr ""
+msgstr "kishi uchun"
 
 #: templates/tour/package_detail.html:58
 msgid "Package Description"
-msgstr ""
+msgstr "Paket tavsifi"
 
 #: templates/tour/package_detail.html:82
 msgid "Group Size"
-msgstr ""
+msgstr "Guruh hajmi"
 
 #: templates/tour/package_detail.html:83
 msgid "Maximum"
-msgstr ""
+msgstr "Maksimal"
 
 #: templates/tour/package_detail.html:93
 msgid "View Destination"
-msgstr ""
+msgstr "Joyni ko'rish"
 
 #: templates/tour/package_detail.html:123
 msgid "What's Included"
-msgstr ""
+msgstr "Nimalar kiradi"
 
 #: templates/tour/package_detail.html:138
 msgid "What's Not Included"
-msgstr ""
+msgstr "Nimalar kirmaydi"
 
 #: templates/tour/package_detail.html:156
 msgid "Explore More"
-msgstr ""
+msgstr "Ko'proq kashf qiling"
 
 #: templates/tour/package_detail.html:157
 msgid "Related Packages"
-msgstr ""
+msgstr "Tegishli paketlar"
 
 #: templates/tour/package_detail.html:224
 msgid "Ready to book this adventure?"
-msgstr ""
+msgstr "Ushbu sarguzashtni buyurtma qilishga tayyormisiz?"
 
 #: templates/tour/package_detail.html:226
 msgid ""
 "Don't miss out on this amazing experience. Book now and create unforgettable"
 " memories!"
 msgstr ""
+"Ushbu ajoyib tajribani o'tkazib yubormang. Hozir buyurtma qiling va "
+"unutilmas xotiralar yarating!"
 
 #: templates/tour/package_detail.html:231
 msgid "Book This Package"
-msgstr ""
+msgstr "Ushbu paketni buyurtma qiling"
 
 #: templates/tour/package_list.html:6 templates/tour/package_list.html:13
 msgid "Tour Packages"
-msgstr ""
+msgstr "Sayohat paketlari"
 
 #: templates/tour/package_list.html:15
 msgid ""
 "Choose from our exclusive tour packages designed to give you the best travel"
 " experience"
 msgstr ""
+"Sizga eng yaxshi sayohat tajribasini taqdim etish uchun mo'ljallangan "
+"eksklyuziv sayohat paketlarimizdan tanlang"
 
 #: templates/tour/package_list.html:29
 msgid ""
 "Explore our carefully curated tour packages that offer unforgettable "
 "experiences and exceptional value"
 msgstr ""
+"Unutilmas tajribalar va ajoyib qiymat taklif qiladigan ehtiyotkorlik bilan "
+"tanlangan sayohat paketlarimizni kashf eting"
 
 #: templates/tour/package_list.html:65
 msgid "max"
-msgstr ""
+msgstr "maksimal"
 
 #: templates/tour/package_list.html:84
 msgid "people max"
-msgstr ""
+msgstr "kishi (maks)"
 
 #: templates/tour/package_list.html:109
 msgid "No packages available at the moment."
-msgstr ""
+msgstr "Hozircha paketlar mavjud emas."
 
 #: venv/lib/python3.11/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
