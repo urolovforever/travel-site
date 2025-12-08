@@ -53,7 +53,8 @@
             </div>
 
             <p class="card-subtitle">
-              <a href="{% url 'destinations:destination_detail' destination.slug %}">
+<!--              <a href="{% url 'destinations:destination_detail' destination.slug %}">-->
+                <a href="#">
                 {% if destination|get_translated:'city' %}
                   {{ destination|get_translated:'city' }}, {{ destination|get_translated:'country' }}
                 {% else %}
@@ -63,7 +64,8 @@
             </p>
 
             <h3 class="h3 card-title">
-              <a href="{% url 'destinations:destination_detail' destination.slug %}">{{ destination|get_translated:'name' }}</a>
+              <a href="#">{{ destination|get_translated:'name' }}</a>
+<!--              <a href="{% url 'destinations:destination_detail' destination.slug %}">{{ destination|get_translated:'name' }}</a>-->
             </h3>
 
             <p class="card-text">
