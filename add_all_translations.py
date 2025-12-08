@@ -154,6 +154,26 @@ UZ_TRANS = {
     "Fill in the details to create or update a destination": "Joyni yaratish yoki yangilash uchun ma'lumotlarni to'ldiring",
     "Please correct the errors below:": "Iltimos, quyidagi xatolarni tuzating:",
     "Back to Destinations": "Joylarga qaytish",
+
+    # Home page static destinations
+    "Italy": "Italiya",
+    "San Miguel": "San-Migel",
+    "Experience the beauty of historic architecture and stunning coastal views.": "Tarixiy arxitektura va hayratlanarli qirg'oq manzaralarining go'zalligini his eting.",
+    "Dubai": "Dubay",
+    "Burj Khalifa": "Burj Xalifa",
+    "Discover luxury and modern marvels in the heart of the desert.": "Cho'l qalbida hashamat va zamonaviy mo''jizalarni kashf eting.",
+    "Japan": "Yaponiya",
+    "Kyoto Temple": "Kioto ibodatxonasi",
+    "Immerse yourself in ancient culture and serene temple gardens.": "Qadimiy madaniyat va tinch ibodatxona bog'lariga sho'ng'ing.",
+
+    # Home page static packages
+    "Experience The Great Holiday On Beach": "Plyajda ajoyib ta'tilni his eting",
+    "Enjoy pristine beaches, crystal clear waters, and unforgettable moments under the sun with our exclusive beach holiday package.": "Eksklyuziv plyaj ta'til paketimiz bilan toza plyajlar, tiniq suv va quyosh ostidagi unutilmas lahzalardan bahramand bo'ling.",
+    "Malaysia": "Malayziya",
+    "Summer Holiday To The Oxolotan River": "Oxolotan daryosida yozgi ta'til",
+    "Experience adventure and natural beauty with river activities, lush landscapes, and relaxing riverside retreats.": "Daryo faoliyatlari, yam-yashil manzaralar va dam olish joylarida sarguzasht va tabiiy go'zallikni his eting.",
+    "Santorini Island Weekend Vacation": "Santorini orolida dam olish kunlari",
+    "Discover stunning sunsets, white-washed buildings, and the romantic atmosphere of Greece's most beautiful island.": "Ajoyib quyosh botishlari, oq binolar va Gretsiyaning eng go'zal orolining romantik muhitini kashf eting.",
 }
 
 # Russian translations
@@ -304,6 +324,26 @@ RU_TRANS = {
     "Fill in the details to create or update a destination": "Заполните данные для создания или обновления направления",
     "Please correct the errors below:": "Пожалуйста, исправьте ошибки ниже:",
     "Back to Destinations": "Вернуться к направлениям",
+
+    # Home page static destinations
+    "Italy": "Италия",
+    "San Miguel": "Сан-Мигель",
+    "Experience the beauty of historic architecture and stunning coastal views.": "Ощутите красоту исторической архитектуры и потрясающих прибрежных видов.",
+    "Dubai": "Дубай",
+    "Burj Khalifa": "Бурдж-Халифа",
+    "Discover luxury and modern marvels in the heart of the desert.": "Откройте для себя роскошь и современные чудеса в сердце пустыни.",
+    "Japan": "Япония",
+    "Kyoto Temple": "Храм Киото",
+    "Immerse yourself in ancient culture and serene temple gardens.": "Погрузитесь в древнюю культуру и безмятежные храмовые сады.",
+
+    # Home page static packages
+    "Experience The Great Holiday On Beach": "Незабываемый отдых на пляже",
+    "Enjoy pristine beaches, crystal clear waters, and unforgettable moments under the sun with our exclusive beach holiday package.": "Наслаждайтесь чистейшими пляжами, кристально чистой водой и незабываемыми моментами под солнцем с нашим эксклюзивным пляжным пакетом.",
+    "Malaysia": "Малайзия",
+    "Summer Holiday To The Oxolotan River": "Летний отдых на реке Охолотан",
+    "Experience adventure and natural beauty with river activities, lush landscapes, and relaxing riverside retreats.": "Испытайте приключения и природную красоту с речными развлечениями, пышными пейзажами и расслабляющим отдыхом у реки.",
+    "Santorini Island Weekend Vacation": "Выходные на острове Санторини",
+    "Discover stunning sunsets, white-washed buildings, and the romantic atmosphere of Greece's most beautiful island.": "Откройте для себя потрясающие закаты, белоснежные здания и романтическую атмосферу самого красивого острова Греции.",
 }
 
 def update_po(po_path, translations):

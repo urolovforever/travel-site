@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-08 08:21+0000\n"
+"POT-Creation-Date: 2025-12-08 16:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -249,7 +249,7 @@ msgid "Comma-separated keywords"
 msgstr ""
 
 #: destinations/models.py:46 destinations/models.py:75
-#: templates/tour/package_detail.html:91
+#: templates/tour/package_detail.html:94
 msgid "Destination"
 msgstr "Joy"
 
@@ -309,7 +309,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: packages/models.py:16 templates/tour/package_detail.html:105
+#: packages/models.py:16 templates/tour/package_detail.html:109
 msgid "Itinerary"
 msgstr "Marshut"
 
@@ -325,7 +325,7 @@ msgstr ""
 msgid "Currency"
 msgstr ""
 
-#: packages/models.py:21 templates/tour/package_detail.html:73
+#: packages/models.py:21 templates/tour/package_detail.html:75
 #: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1793
 msgid "Duration"
 msgstr "Davomiyligi"
@@ -482,13 +482,13 @@ msgstr "Galereya"
 #: templates/base.html:113 templates/base.html:152 templates/contact.html:5
 #: templates/contact.html:12 templates/contact.html:23
 #: templates/tour/destination_detail.html:214
-#: templates/tour/package_detail.html:235
+#: templates/tour/package_detail.html:239
 msgid "Contact Us"
 msgstr "Bog'lanish"
 
-#: templates/base.html:118 templates/index.html:259 templates/index.html:333
-#: templates/index.html:407 templates/tour/destination_detail.html:189
-#: templates/tour/package_detail.html:44
+#: templates/base.html:118 templates/index.html:258 templates/index.html:331
+#: templates/index.html:404 templates/tour/destination_detail.html:189
+#: templates/tour/package_detail.html:46
 msgid "Book Now"
 msgstr "Buyurtma qiling"
 
@@ -671,6 +671,45 @@ msgstr ""
 "Dunyoning eng mashhur sayohat joylarini kashf eting. Keyingi sayohatingiz "
 "uchun ideal joyni toping va unutilmas xotiralar yarating."
 
+#: templates/index.html:87
+msgid "Italy"
+msgstr "Italiya"
+
+#: templates/index.html:91
+msgid "San Miguel"
+msgstr "San-Migel"
+
+#: templates/index.html:95
+msgid ""
+"Experience the beauty of historic architecture and stunning coastal views."
+msgstr ""
+"Tarixiy arxitektura va hayratlanarli qirg'oq manzaralarining go'zalligini "
+"his eting."
+
+#: templates/index.html:121
+msgid "Dubai"
+msgstr "Dubay"
+
+#: templates/index.html:125
+msgid "Burj Khalifa"
+msgstr "Burj Xalifa"
+
+#: templates/index.html:129
+msgid "Discover luxury and modern marvels in the heart of the desert."
+msgstr "Cho'l qalbida hashamat va zamonaviy mo''jizalarni kashf eting."
+
+#: templates/index.html:155
+msgid "Japan"
+msgstr "Yaponiya"
+
+#: templates/index.html:159
+msgid "Kyoto Temple"
+msgstr "Kioto ibodatxonasi"
+
+#: templates/index.html:163
+msgid "Immerse yourself in ancient culture and serene temple gardens."
+msgstr "Qadimiy madaniyat va tinch ibodatxona bog'lariga sho'ng'ing."
+
 #: templates/index.html:173
 msgid "More destinations"
 msgstr "Barcha joylar"
@@ -693,32 +732,72 @@ msgstr ""
 "paketlarimizni ko'rib chiqing. Har bir paket turar joy, faoliyat va "
 "ekskursiyalarni o'z ichiga oladi."
 
-#: templates/index.html:222 templates/index.html:296 templates/index.html:370
+#: templates/index.html:196 templates/index.html:201
+msgid "Experience The Great Holiday On Beach"
+msgstr "Plyajda ajoyib ta'tilni his eting"
+
+#: templates/index.html:204
+msgid ""
+"Enjoy pristine beaches, crystal clear waters, and unforgettable moments "
+"under the sun with our exclusive beach holiday package."
+msgstr ""
+"Eksklyuziv plyaj ta'til paketimiz bilan toza plyajlar, tiniq suv va quyosh "
+"ostidagi unutilmas lahzalardan bahramand bo'ling."
+
+#: templates/index.html:221 templates/index.html:294 templates/index.html:367
 msgid "pax:"
 msgstr "Odamlar:"
 
-#: templates/index.html:242 templates/index.html:316 templates/index.html:390
+#: templates/index.html:229 templates/index.html:302 templates/index.html:375
+msgid "Malaysia"
+msgstr "Malayziya"
+
+#: templates/index.html:241 templates/index.html:314 templates/index.html:387
 msgid "reviews"
 msgstr "sharh"
 
-#: templates/index.html:256 templates/index.html:330 templates/index.html:404
+#: templates/index.html:255 templates/index.html:328 templates/index.html:401
 msgid "/ per person"
 msgstr "/ kishi uchun"
 
-#: templates/index.html:416
+#: templates/index.html:269 templates/index.html:274
+msgid "Summer Holiday To The Oxolotan River"
+msgstr "Oxolotan daryosida yozgi ta'til"
+
+#: templates/index.html:277
+msgid ""
+"Experience adventure and natural beauty with river activities, lush "
+"landscapes, and relaxing riverside retreats."
+msgstr ""
+"Daryo faoliyatlari, yam-yashil manzaralar va dam olish joylarida sarguzasht "
+"va tabiiy go'zallikni his eting."
+
+#: templates/index.html:342 templates/index.html:347
+msgid "Santorini Island Weekend Vacation"
+msgstr "Santorini orolida dam olish kunlari"
+
+#: templates/index.html:350
+msgid ""
+"Discover stunning sunsets, white-washed buildings, and the romantic "
+"atmosphere of Greece's most beautiful island."
+msgstr ""
+"Ajoyib quyosh botishlari, oq binolar va Gretsiyaning eng go'zal orolining "
+"romantik muhitini kashf eting."
+
+#: templates/index.html:413
 msgid "View All Packages"
 msgstr "Barcha paketlar"
 
-#: templates/index.html:425 templates/tour/destination_detail.html:127
+#: templates/index.html:422 templates/tour/destination_detail.html:127
 #: templates/tour/gallery.html:22
 msgid "Photo Gallery"
 msgstr "Foto galereya"
 
-#: templates/index.html:427
+#: templates/index.html:424
 msgid "Photos From Travellers"
 msgstr "Sayohatchilardan fotolar"
 
-#: templates/index.html:430
+#: templates/index.html:427
 msgid ""
 "Check out beautiful moments captured by our travelers from around the world."
 " Share your travel memories with us and inspire others to explore."
@@ -727,29 +806,29 @@ msgstr ""
 "lahzalarni ko'ring. Bizning sayohatga kiriting va boshqalarni "
 "ilhomlantiring."
 
-#: templates/index.html:474
+#: templates/index.html:471
 msgid "Our Partners"
 msgstr "Hamkorlarimiz"
 
-#: templates/index.html:475
+#: templates/index.html:472
 msgid "Trusted by Leading Companies"
 msgstr "Yetakchi kompaniyalar ishonadi"
 
-#: templates/index.html:512
+#: templates/index.html:509
 msgid "Call To Action"
 msgstr "Harakatga chaqiruv"
 
-#: templates/index.html:514
+#: templates/index.html:511
 msgid "Ready For Unforgettable Travel. Remember Us!"
 msgstr "Unutilmas sayohat uchun tayyormisiz? Bizni eslang!"
 
-#: templates/index.html:517
+#: templates/index.html:514
 msgid "Contact us today to start planning your dream vacation"
 msgstr ""
 "Orzuingizdagi ta'tilni rejalashtirishni bugun boshlash uchun biz bilan "
 "bog'laning"
 
-#: templates/index.html:521
+#: templates/index.html:518
 msgid "Contact Us!"
 msgstr "Bog'laning!"
 
@@ -819,7 +898,7 @@ msgid "Available Tour Packages"
 msgstr "Mavjud sayohat paketlari"
 
 #: templates/tour/destination_detail.html:196
-#: templates/tour/package_detail.html:212 templates/tour/package_list.html:101
+#: templates/tour/package_detail.html:216 templates/tour/package_list.html:103
 msgid "View Details"
 msgstr "Batafsil ko'rish"
 
@@ -882,22 +961,22 @@ msgid "No destinations available at the moment."
 msgstr "Hozircha joylar mavjud emas."
 
 #: templates/tour/destination_list.html:90
-#: templates/tour/package_list.html:120
+#: templates/tour/package_list.html:122
 msgid "First"
 msgstr "Birinchi"
 
 #: templates/tour/destination_list.html:93 templates/tour/gallery.html:45
-#: templates/tour/package_list.html:123
+#: templates/tour/package_list.html:125
 msgid "Previous"
 msgstr "Oldingi"
 
 #: templates/tour/destination_list.html:103 templates/tour/gallery.html:49
-#: templates/tour/package_list.html:133
+#: templates/tour/package_list.html:135
 msgid "Next"
 msgstr "Keyingi"
 
 #: templates/tour/destination_list.html:106
-#: templates/tour/package_list.html:136
+#: templates/tour/package_list.html:138
 msgid "Last"
 msgstr "Oxirgi"
 
@@ -911,60 +990,60 @@ msgstr "Go'zal joylar va unutilmas lahzalar to'plamimizni ko'rib chiqing"
 msgid "No images in gallery yet."
 msgstr "Galereyada hali rasmlar yo'q."
 
-#: templates/tour/package_detail.html:25
+#: templates/tour/package_detail.html:27
 msgid "Max"
 msgstr "Maks"
 
-#: templates/tour/package_detail.html:25 templates/tour/package_detail.html:83
+#: templates/tour/package_detail.html:27 templates/tour/package_detail.html:85
 msgid "people"
 msgstr "kishi"
 
-#: templates/tour/package_detail.html:37
+#: templates/tour/package_detail.html:39
 msgid "Package Price"
 msgstr "Paket narxi"
 
-#: templates/tour/package_detail.html:40
-#: templates/tour/package_detail.html:209 templates/tour/package_list.html:98
+#: templates/tour/package_detail.html:42
+#: templates/tour/package_detail.html:213 templates/tour/package_list.html:100
 msgid "per person"
 msgstr "kishi uchun"
 
-#: templates/tour/package_detail.html:58
+#: templates/tour/package_detail.html:60
 msgid "Package Description"
 msgstr "Paket tavsifi"
 
-#: templates/tour/package_detail.html:82
+#: templates/tour/package_detail.html:84
 msgid "Group Size"
 msgstr "Guruh hajmi"
 
-#: templates/tour/package_detail.html:83
+#: templates/tour/package_detail.html:85
 msgid "Maximum"
 msgstr "Maksimal"
 
-#: templates/tour/package_detail.html:93
+#: templates/tour/package_detail.html:96
 msgid "View Destination"
 msgstr "Joyni ko'rish"
 
-#: templates/tour/package_detail.html:123
+#: templates/tour/package_detail.html:127
 msgid "What's Included"
 msgstr "Nimalar kiradi"
 
-#: templates/tour/package_detail.html:138
+#: templates/tour/package_detail.html:142
 msgid "What's Not Included"
 msgstr "Nimalar kirmaydi"
 
-#: templates/tour/package_detail.html:156
+#: templates/tour/package_detail.html:160
 msgid "Explore More"
 msgstr "Ko'proq kashf qiling"
 
-#: templates/tour/package_detail.html:157
+#: templates/tour/package_detail.html:161
 msgid "Related Packages"
 msgstr "Tegishli paketlar"
 
-#: templates/tour/package_detail.html:224
+#: templates/tour/package_detail.html:228
 msgid "Ready to book this adventure?"
 msgstr "Ushbu sarguzashtni buyurtma qilishga tayyormisiz?"
 
-#: templates/tour/package_detail.html:226
+#: templates/tour/package_detail.html:230
 msgid ""
 "Don't miss out on this amazing experience. Book now and create unforgettable"
 " memories!"
@@ -972,7 +1051,7 @@ msgstr ""
 "Ushbu ajoyib tajribani o'tkazib yubormang. Hozir buyurtma qiling va "
 "unutilmas xotiralar yarating!"
 
-#: templates/tour/package_detail.html:231
+#: templates/tour/package_detail.html:235
 msgid "Book This Package"
 msgstr "Ushbu paketni buyurtma qiling"
 
@@ -1000,11 +1079,11 @@ msgstr ""
 msgid "max"
 msgstr "maksimal"
 
-#: templates/tour/package_list.html:84
+#: templates/tour/package_list.html:86
 msgid "people max"
 msgstr "kishi (maks)"
 
-#: templates/tour/package_list.html:109
+#: templates/tour/package_list.html:111
 msgid "No packages available at the moment."
 msgstr "Hozircha paketlar mavjud emas."
 

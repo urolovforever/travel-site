@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-08 08:21+0000\n"
+"POT-Creation-Date: 2025-12-08 16:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -249,7 +249,7 @@ msgid "Comma-separated keywords"
 msgstr ""
 
 #: destinations/models.py:46 destinations/models.py:75
-#: templates/tour/package_detail.html:91
+#: templates/tour/package_detail.html:94
 msgid "Destination"
 msgstr "Направление"
 
@@ -309,7 +309,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: packages/models.py:16 templates/tour/package_detail.html:105
+#: packages/models.py:16 templates/tour/package_detail.html:109
 msgid "Itinerary"
 msgstr "Маршрут"
 
@@ -325,7 +325,7 @@ msgstr ""
 msgid "Currency"
 msgstr ""
 
-#: packages/models.py:21 templates/tour/package_detail.html:73
+#: packages/models.py:21 templates/tour/package_detail.html:75
 #: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1793
 msgid "Duration"
 msgstr "Продолжительность"
@@ -482,13 +482,13 @@ msgstr "Галерея"
 #: templates/base.html:113 templates/base.html:152 templates/contact.html:5
 #: templates/contact.html:12 templates/contact.html:23
 #: templates/tour/destination_detail.html:214
-#: templates/tour/package_detail.html:235
+#: templates/tour/package_detail.html:239
 msgid "Contact Us"
 msgstr "Свяжитесь с нами"
 
-#: templates/base.html:118 templates/index.html:259 templates/index.html:333
-#: templates/index.html:407 templates/tour/destination_detail.html:189
-#: templates/tour/package_detail.html:44
+#: templates/base.html:118 templates/index.html:258 templates/index.html:331
+#: templates/index.html:404 templates/tour/destination_detail.html:189
+#: templates/tour/package_detail.html:46
 msgid "Book Now"
 msgstr "Забронировать"
 
@@ -672,6 +672,44 @@ msgstr ""
 "Найдите идеальное место для вашего следующего приключения и создайте "
 "незабываемые воспоминания."
 
+#: templates/index.html:87
+msgid "Italy"
+msgstr "Италия"
+
+#: templates/index.html:91
+msgid "San Miguel"
+msgstr "Сан-Мигель"
+
+#: templates/index.html:95
+msgid ""
+"Experience the beauty of historic architecture and stunning coastal views."
+msgstr ""
+"Ощутите красоту исторической архитектуры и потрясающих прибрежных видов."
+
+#: templates/index.html:121
+msgid "Dubai"
+msgstr "Дубай"
+
+#: templates/index.html:125
+msgid "Burj Khalifa"
+msgstr "Бурдж-Халифа"
+
+#: templates/index.html:129
+msgid "Discover luxury and modern marvels in the heart of the desert."
+msgstr "Откройте для себя роскошь и современные чудеса в сердце пустыни."
+
+#: templates/index.html:155
+msgid "Japan"
+msgstr "Япония"
+
+#: templates/index.html:159
+msgid "Kyoto Temple"
+msgstr "Храм Киото"
+
+#: templates/index.html:163
+msgid "Immerse yourself in ancient culture and serene temple gardens."
+msgstr "Погрузитесь в древнюю культуру и безмятежные храмовые сады."
+
 #: templates/index.html:173
 msgid "More destinations"
 msgstr "Все направления"
@@ -694,32 +732,72 @@ msgstr ""
 " для того, чтобы дать вам лучший опыт. Каждый пакет включает проживание, "
 "мероприятия и экскурсии."
 
-#: templates/index.html:222 templates/index.html:296 templates/index.html:370
+#: templates/index.html:196 templates/index.html:201
+msgid "Experience The Great Holiday On Beach"
+msgstr "Незабываемый отдых на пляже"
+
+#: templates/index.html:204
+msgid ""
+"Enjoy pristine beaches, crystal clear waters, and unforgettable moments "
+"under the sun with our exclusive beach holiday package."
+msgstr ""
+"Наслаждайтесь чистейшими пляжами, кристально чистой водой и незабываемыми "
+"моментами под солнцем с нашим эксклюзивным пляжным пакетом."
+
+#: templates/index.html:221 templates/index.html:294 templates/index.html:367
 msgid "pax:"
 msgstr "Человек:"
 
-#: templates/index.html:242 templates/index.html:316 templates/index.html:390
+#: templates/index.html:229 templates/index.html:302 templates/index.html:375
+msgid "Malaysia"
+msgstr "Малайзия"
+
+#: templates/index.html:241 templates/index.html:314 templates/index.html:387
 msgid "reviews"
 msgstr "отзывов"
 
-#: templates/index.html:256 templates/index.html:330 templates/index.html:404
+#: templates/index.html:255 templates/index.html:328 templates/index.html:401
 msgid "/ per person"
 msgstr "/ на человека"
 
-#: templates/index.html:416
+#: templates/index.html:269 templates/index.html:274
+msgid "Summer Holiday To The Oxolotan River"
+msgstr "Летний отдых на реке Охолотан"
+
+#: templates/index.html:277
+msgid ""
+"Experience adventure and natural beauty with river activities, lush "
+"landscapes, and relaxing riverside retreats."
+msgstr ""
+"Испытайте приключения и природную красоту с речными развлечениями, пышными "
+"пейзажами и расслабляющим отдыхом у реки."
+
+#: templates/index.html:342 templates/index.html:347
+msgid "Santorini Island Weekend Vacation"
+msgstr "Выходные на острове Санторини"
+
+#: templates/index.html:350
+msgid ""
+"Discover stunning sunsets, white-washed buildings, and the romantic "
+"atmosphere of Greece's most beautiful island."
+msgstr ""
+"Откройте для себя потрясающие закаты, белоснежные здания и романтическую "
+"атмосферу самого красивого острова Греции."
+
+#: templates/index.html:413
 msgid "View All Packages"
 msgstr "Все пакеты"
 
-#: templates/index.html:425 templates/tour/destination_detail.html:127
+#: templates/index.html:422 templates/tour/destination_detail.html:127
 #: templates/tour/gallery.html:22
 msgid "Photo Gallery"
 msgstr "Фотогалерея"
 
-#: templates/index.html:427
+#: templates/index.html:424
 msgid "Photos From Travellers"
 msgstr "Фото от путешественников"
 
-#: templates/index.html:430
+#: templates/index.html:427
 msgid ""
 "Check out beautiful moments captured by our travelers from around the world."
 " Share your travel memories with us and inspire others to explore."
@@ -728,27 +806,27 @@ msgstr ""
 " мира. Поделитесь своими воспоминаниями о путешествиях с нами и вдохновите "
 "других на исследования."
 
-#: templates/index.html:474
+#: templates/index.html:471
 msgid "Our Partners"
 msgstr "Наши партнеры"
 
-#: templates/index.html:475
+#: templates/index.html:472
 msgid "Trusted by Leading Companies"
 msgstr "Нам доверяют ведущие компании"
 
-#: templates/index.html:512
+#: templates/index.html:509
 msgid "Call To Action"
 msgstr "Призыв к действию"
 
-#: templates/index.html:514
+#: templates/index.html:511
 msgid "Ready For Unforgettable Travel. Remember Us!"
 msgstr "Готовы к незабываемому путешествию? Помните о нас!"
 
-#: templates/index.html:517
+#: templates/index.html:514
 msgid "Contact us today to start planning your dream vacation"
 msgstr "Свяжитесь с нами сегодня, чтобы начать планировать отпуск своей мечты"
 
-#: templates/index.html:521
+#: templates/index.html:518
 msgid "Contact Us!"
 msgstr "Свяжитесь с нами!"
 
@@ -818,7 +896,7 @@ msgid "Available Tour Packages"
 msgstr "Доступные туристические пакеты"
 
 #: templates/tour/destination_detail.html:196
-#: templates/tour/package_detail.html:212 templates/tour/package_list.html:101
+#: templates/tour/package_detail.html:216 templates/tour/package_list.html:103
 msgid "View Details"
 msgstr "Подробнее"
 
@@ -881,22 +959,22 @@ msgid "No destinations available at the moment."
 msgstr "На данный момент направления недоступны."
 
 #: templates/tour/destination_list.html:90
-#: templates/tour/package_list.html:120
+#: templates/tour/package_list.html:122
 msgid "First"
 msgstr "Первая"
 
 #: templates/tour/destination_list.html:93 templates/tour/gallery.html:45
-#: templates/tour/package_list.html:123
+#: templates/tour/package_list.html:125
 msgid "Previous"
 msgstr "Предыдущая"
 
 #: templates/tour/destination_list.html:103 templates/tour/gallery.html:49
-#: templates/tour/package_list.html:133
+#: templates/tour/package_list.html:135
 msgid "Next"
 msgstr "Следующая"
 
 #: templates/tour/destination_list.html:106
-#: templates/tour/package_list.html:136
+#: templates/tour/package_list.html:138
 msgid "Last"
 msgstr "Последняя"
 
@@ -911,60 +989,60 @@ msgstr ""
 msgid "No images in gallery yet."
 msgstr "В галерее пока нет изображений."
 
-#: templates/tour/package_detail.html:25
+#: templates/tour/package_detail.html:27
 msgid "Max"
 msgstr "Макс"
 
-#: templates/tour/package_detail.html:25 templates/tour/package_detail.html:83
+#: templates/tour/package_detail.html:27 templates/tour/package_detail.html:85
 msgid "people"
 msgstr "человек"
 
-#: templates/tour/package_detail.html:37
+#: templates/tour/package_detail.html:39
 msgid "Package Price"
 msgstr "Цена пакета"
 
-#: templates/tour/package_detail.html:40
-#: templates/tour/package_detail.html:209 templates/tour/package_list.html:98
+#: templates/tour/package_detail.html:42
+#: templates/tour/package_detail.html:213 templates/tour/package_list.html:100
 msgid "per person"
 msgstr "на человека"
 
-#: templates/tour/package_detail.html:58
+#: templates/tour/package_detail.html:60
 msgid "Package Description"
 msgstr "Описание пакета"
 
-#: templates/tour/package_detail.html:82
+#: templates/tour/package_detail.html:84
 msgid "Group Size"
 msgstr "Размер группы"
 
-#: templates/tour/package_detail.html:83
+#: templates/tour/package_detail.html:85
 msgid "Maximum"
 msgstr "Максимум"
 
-#: templates/tour/package_detail.html:93
+#: templates/tour/package_detail.html:96
 msgid "View Destination"
 msgstr "Посмотреть направление"
 
-#: templates/tour/package_detail.html:123
+#: templates/tour/package_detail.html:127
 msgid "What's Included"
 msgstr "Что включено"
 
-#: templates/tour/package_detail.html:138
+#: templates/tour/package_detail.html:142
 msgid "What's Not Included"
 msgstr "Что не включено"
 
-#: templates/tour/package_detail.html:156
+#: templates/tour/package_detail.html:160
 msgid "Explore More"
 msgstr "Узнать больше"
 
-#: templates/tour/package_detail.html:157
+#: templates/tour/package_detail.html:161
 msgid "Related Packages"
 msgstr "Связанные пакеты"
 
-#: templates/tour/package_detail.html:224
+#: templates/tour/package_detail.html:228
 msgid "Ready to book this adventure?"
 msgstr "Готовы забронировать это приключение?"
 
-#: templates/tour/package_detail.html:226
+#: templates/tour/package_detail.html:230
 msgid ""
 "Don't miss out on this amazing experience. Book now and create unforgettable"
 " memories!"
@@ -972,7 +1050,7 @@ msgstr ""
 "Не упустите этот удивительный опыт. Бронируйте сейчас и создавайте "
 "незабываемые воспоминания!"
 
-#: templates/tour/package_detail.html:231
+#: templates/tour/package_detail.html:235
 msgid "Book This Package"
 msgstr "Забронировать этот пакет"
 
@@ -1000,11 +1078,11 @@ msgstr ""
 msgid "max"
 msgstr "макс"
 
-#: templates/tour/package_list.html:84
+#: templates/tour/package_list.html:86
 msgid "people max"
 msgstr "человек (макс)"
 
-#: templates/tour/package_list.html:109
+#: templates/tour/package_list.html:111
 msgid "No packages available at the moment."
 msgstr "На данный момент пакеты недоступны."
 
