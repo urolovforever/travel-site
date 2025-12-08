@@ -2259,3 +2259,103 @@ msgstr ""
 #: venv/lib/python3.11/site-packages/modeltranslation/widgets.py:32
 msgid "None"
 msgstr ""
+
+#: templates/index.html:87
+msgid "Turkey"
+msgstr "Turkiya"
+
+#: templates/index.html:95
+msgid "Istanbul is a historic city where East meets West"
+msgstr "Istanbul sharq va g'arb uchrashgan tarixiy shahar"
+
+#: templates/index.html:121
+msgid "UAE"
+msgstr "BAA"
+
+#: templates/index.html:125
+msgid "Dubai"
+msgstr "Dubay"
+
+#: templates/index.html:129
+msgid "Dubai is a modern city known for its skyscrapers and luxury shopping."
+msgstr "Dubay o'zining baland binolari va hashamatli do'konlari bilan mashhur zamonaviy shahar."
+
+#: templates/index.html:154
+msgid "Malaysia"
+msgstr "Malayziya"
+
+#: templates/index.html:158
+msgid "Kuala-Lumpur"
+msgstr "Kuala-Lumpur"
+
+#: templates/index.html:162
+msgid "Kuala Lumpur is famous for the Petronas Towers and cultural diversity."
+msgstr "Kuala Lumpur Petronas minoralari va madaniy xilma-xilligi bilan mashhur."
+
+#: templates/index.html:217
+msgid "Tashkent"
+msgstr "Toshkent"
+
+#: templates/index.html:221
+msgid "Tashkent is Uzbekistan's capital, known for its modern architecture, bustling markets, and rich history."
+msgstr "Toshkent O'zbekistonning poytaxti, zamonaviy me'morchiligi, gavjum bozorlari va boy tarixi bilan mashhur."
+
+#: templates/index.html:251
+msgid "Urungach Lake"
+msgstr "Urungach ko'li"
+
+#: templates/index.html:255
+msgid "Urungach Lake is a scenic spot known for its calm waters and natural beauty."
+msgstr "Urungach ko'li tinch suvlari va tabiiy go'zalligi bilan mashhur manzara."
+
+#: templates/index.html:284
+msgid "Bukhara"
+msgstr "Buxoro"
+
+#: templates/index.html:288
+msgid "Bukhara is an ancient city known for its historic mosques and rich heritage."
+msgstr "Buxoro tarixiy masjidlari va boy merosi bilan mashhur qadimiy shahar."
+
+#: templates/index.html:329
+msgid "Experience the Wonders of Istanbul"
+msgstr "Istanbulning ajoyiblarini his eting"
+
+#: templates/index.html:332
+msgid "Explore the vibrant streets of Istanbul, from historic mosques to bustling bazaars. Enjoy rich culture, delicious cuisine, and unforgettable views of the Bosphorus."
+msgstr "Istanbulning jonli ko'chalarini, tarixiy masjidlardan gavjum bozorlargacha kashf eting. Boy madaniyat, mazali taomlar va Bosfor bo'g'ozining unutilmas manzaralaridan bahramand bo'ling."
+
+#: templates/index.html:402
+msgid "Bali: Your Island Escape"
+msgstr "Bali: Sizning orolingizga qochish"
+
+#: templates/index.html:405
+msgid "Unwind in Bali's lush landscapes and sparkling shores. Explore hidden waterfalls, vibrant culture, and unforgettable coastal views."
+msgstr "Bali ning yam-yashil landshaftlari va yorqin qirg'oqlarida dam oling. Yashirin sharsharalar, jonli madaniyat va unutilmas qirg'oq manzaralarini kashf eting."
+
+#: templates/index.html:430
+msgid "Indonesia"
+msgstr "Indoneziya"
+
+#: templates/index.html:475
+msgid "Tashkent – Samarkand – Bukhara Tour"
+msgstr "Toshkent – Samarqand – Buxoro sayohati"
+
+#: templates/index.html:478
+msgid "A 3-day journey through history, architecture, and culture. Explore Uzbekistan's three iconic cities in one tour."
+msgstr "Tarix, me'morchilik va madaniyat bo'ylab 3 kunlik sayohat. Bir sayohatda O'zbekistonning uchta mashhur shahrini kashf eting."
+
+#: templates/index.html:61
+msgid "Top destinations around the World"
+msgstr "Dunyoning eng yaxshi joylari"
+
+#: templates/index.html:184
+msgid "Explore Uzbekistan"
+msgstr "O'zbekistonni kashf eting"
+
+#: templates/index.html:186
+msgid "Top destinations in Uzbekistan"
+msgstr "O'zbekistondagi eng yaxshi joylar"
+
+#: templates/index.html:189
+msgid "Discover Uzbekistan's most remarkable travel spots. Plan your next journey and enjoy experiences you'll never forget."
+msgstr "O'zbekistonning eng ajoyib sayohat joylarini kashf eting. Keyingi sayohatingizni rejalashtiring va hech qachon unutmaydigan tajribalardan bahramand bo'ling."

@@ -2259,3 +2259,103 @@ msgstr ""
 #: venv/lib/python3.11/site-packages/modeltranslation/widgets.py:32
 msgid "None"
 msgstr ""
+
+#: templates/index.html:87
+msgid "Turkey"
+msgstr "Турция"
+
+#: templates/index.html:95
+msgid "Istanbul is a historic city where East meets West"
+msgstr "Стамбул - исторический город, где встречаются Восток и Запад"
+
+#: templates/index.html:121
+msgid "UAE"
+msgstr "ОАЭ"
+
+#: templates/index.html:125
+msgid "Dubai"
+msgstr "Дубай"
+
+#: templates/index.html:129
+msgid "Dubai is a modern city known for its skyscrapers and luxury shopping."
+msgstr "Дубай - современный город, известный своими небоскребами и роскошными магазинами."
+
+#: templates/index.html:154
+msgid "Malaysia"
+msgstr "Малайзия"
+
+#: templates/index.html:158
+msgid "Kuala-Lumpur"
+msgstr "Куала-Лумпур"
+
+#: templates/index.html:162
+msgid "Kuala Lumpur is famous for the Petronas Towers and cultural diversity."
+msgstr "Куала-Лумпур известен башнями Петронас и культурным разнообразием."
+
+#: templates/index.html:217
+msgid "Tashkent"
+msgstr "Ташкент"
+
+#: templates/index.html:221
+msgid "Tashkent is Uzbekistan's capital, known for its modern architecture, bustling markets, and rich history."
+msgstr "Ташкент - столица Узбекистана, известная своей современной архитектурой, шумными рынками и богатой историей."
+
+#: templates/index.html:251
+msgid "Urungach Lake"
+msgstr "Озеро Урунгач"
+
+#: templates/index.html:255
+msgid "Urungach Lake is a scenic spot known for its calm waters and natural beauty."
+msgstr "Озеро Урунгач - живописное место, известное своими спокойными водами и природной красотой."
+
+#: templates/index.html:284
+msgid "Bukhara"
+msgstr "Бухара"
+
+#: templates/index.html:288
+msgid "Bukhara is an ancient city known for its historic mosques and rich heritage."
+msgstr "Бухара - древний город, известный своими историческими мечетями и богатым наследием."
+
+#: templates/index.html:329
+msgid "Experience the Wonders of Istanbul"
+msgstr "Испытайте чудеса Стамбула"
+
+#: templates/index.html:332
+msgid "Explore the vibrant streets of Istanbul, from historic mosques to bustling bazaars. Enjoy rich culture, delicious cuisine, and unforgettable views of the Bosphorus."
+msgstr "Исследуйте оживленные улицы Стамбула, от исторических мечетей до шумных базаров. Наслаждайтесь богатой культурой, вкусной кухней и незабываемыми видами на Босфор."
+
+#: templates/index.html:402
+msgid "Bali: Your Island Escape"
+msgstr "Бали: Ваш островной отдых"
+
+#: templates/index.html:405
+msgid "Unwind in Bali's lush landscapes and sparkling shores. Explore hidden waterfalls, vibrant culture, and unforgettable coastal views."
+msgstr "Отдохните в пышных ландшафтах Бали и сверкающих берегах. Исследуйте скрытые водопады, яркую культуру и незабываемые прибрежные виды."
+
+#: templates/index.html:430
+msgid "Indonesia"
+msgstr "Индонезия"
+
+#: templates/index.html:475
+msgid "Tashkent – Samarkand – Bukhara Tour"
+msgstr "Тур Ташкент – Самарканд – Бухара"
+
+#: templates/index.html:478
+msgid "A 3-day journey through history, architecture, and culture. Explore Uzbekistan's three iconic cities in one tour."
+msgstr "3-дневное путешествие через историю, архитектуру и культуру. Исследуйте три знаковых города Узбекистана в одном туре."
+
+#: templates/index.html:61
+msgid "Top destinations around the World"
+msgstr "Лучшие направления по всему миру"
+
+#: templates/index.html:184
+msgid "Explore Uzbekistan"
+msgstr "Исследуйте Узбекистан"
+
+#: templates/index.html:186
+msgid "Top destinations in Uzbekistan"
+msgstr "Лучшие направления в Узбекистане"
+
+#: templates/index.html:189
+msgid "Discover Uzbekistan's most remarkable travel spots. Plan your next journey and enjoy experiences you'll never forget."
+msgstr "Откройте для себя самые замечательные места Узбекистана. Планируйте следующее путешествие и наслаждайтесь незабываемыми впечатлениями."
