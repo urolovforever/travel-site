@@ -1615,7 +1615,7 @@ address {
   padding: 12px 16px;
   border: none;
   background: white;
-  color: var(--eerie-black-1);
+  color: #333333;
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 14px;
@@ -1631,10 +1631,10 @@ address {
 }
 
 .lang-dropdown-item.active {
-  background: linear-gradient(135deg, var(--alice-blue) 0%, #e3f2fd 100%);
-  color: var(--bright-navy-blue);
+  background: linear-gradient(135deg, #e3f2fd 0%, #d4ebf7 100%);
+  color: #0088cc;
   font-weight: 600;
-  border-left: 3px solid var(--bright-navy-blue);
+  border-left: 3px solid #0088cc;
   padding-left: 13px;
 }
 
@@ -1651,10 +1651,12 @@ address {
 .lang-name {
   flex: 1;
   text-align: left;
+  color: inherit;
+  font-weight: inherit;
 }
 
 .lang-check {
-  color: var(--bright-navy-blue);
+  color: #0088cc;
   font-size: 18px;
 }
 
