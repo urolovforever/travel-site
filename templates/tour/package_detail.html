@@ -10,10 +10,12 @@
 <!-- Hero Section -->
 <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{% if package.main_image %}{{ package.main_image.url }}{% else %}{% static 'images/hero-banner.jpg' %}{% endif %}'); min-height: 500px;">
   <div class="container">
+    {% if package.destination %}
     <p class="hero-text" style="margin-bottom: 10px; font-size: 16px;">
       <ion-icon name="location" style="vertical-align: middle; font-size: 20px;"></ion-icon>
       {{ package.destination|get_translated:'name' }}
     </p>
+    {% endif %}
     <h1 class="h1 hero-title" style="margin-bottom: 15px;">{{ package|get_translated:'title' }}</h1>
     <div class="btn-group" style="margin-top: 30px;">
       <span class="btn btn-secondary" style="cursor: default;">
@@ -85,6 +87,7 @@
           </div>
 
           <!-- Destination Card -->
+          {% if package.destination and package.destination.slug %}
           <div class="package-card" style="display: block;">
             <div class="card-content" style="text-align: center;">
               <ion-icon name="location" style="font-size: 40px; color: var(--bright-navy-blue); margin-bottom: 15px;"></ion-icon>
@@ -93,6 +96,7 @@
               <a href="{% url 'destinations:destination_detail' package.destination.slug %}" class="btn btn-primary btn-sm" style="margin-top: 10px;">{% trans "View Destination" %}</a>
             </div>
           </div>
+          {% endif %}
 
         </div>
 
