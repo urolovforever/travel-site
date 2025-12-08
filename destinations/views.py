@@ -17,7 +17,7 @@ class DestinationListView(ListView):
     paginate_by = settings.ITEMS_PER_PAGE
 
     def get_queryset(self):
-        return Destination.objects.filter(published=True).order_by('-created_at')
+        return Destination.objects.filter(published=True).prefetch_related('gallery_images').order_by('-created_at')
 
 
 class DestinationDetailView(DetailView):
@@ -102,10 +102,6 @@ def destination_detail_json(request, slug):
         'city': destination.city,
         'region': destination.region,
         'short_description': destination.short_description,
-        'description': destination.description,
-        'things_to_do': destination.things_to_do,
-        'best_time_to_visit': destination.best_time_to_visit,
-        'average_cost': destination.average_cost,
         'main_image': destination.main_image.url if destination.main_image else None,
         'gallery_images': gallery_images,
         'published': destination.published,
