@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import Package
+from .models import Package, PackageGalleryImage
 
 
 @register(Package)
@@ -16,3 +16,12 @@ class PackageTranslationOptions(TranslationOptions):
         'meta_description'
     )
     required_languages = ('en',)  # English is required, others optional
+
+
+@register(PackageGalleryImage)
+class PackageGalleryImageTranslationOptions(TranslationOptions):
+    """
+    Configure which fields of PackageGalleryImage should be translatable.
+    """
+    fields = ('caption',)
+    required_languages = ('en',)

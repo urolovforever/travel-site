@@ -16,7 +16,7 @@ class PackageListView(ListView):
     paginate_by = settings.ITEMS_PER_PAGE
 
     def get_queryset(self):
-        queryset = Package.objects.filter(published=True, available=True)
+        queryset = Package.objects.filter(published=True, available=True).prefetch_related('gallery_images')
 
         # Filter by price range
         min_price = self.request.GET.get('min_price')
@@ -38,7 +38,12 @@ class PackageDetailView(DetailView):
     slug_url_kwarg = 'slug'
 
     def get_queryset(self):
-        return Package.objects.filter(published=True)
+        return Package.objects.filter(published=True).prefetch_related('gallery_images')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['gallery_images'] = self.object.gallery_images.all()
+        return context
 
 
 # CRUD Views (requires authentication)
@@ -85,6 +90,17 @@ def package_list_json(request):
 def package_detail_json(request, slug):
     """JSON endpoint for a single package"""
     package = get_object_or_404(Package, slug=slug, published=True)
+
+    # Get gallery images
+    gallery_images = [
+        {
+            'image': img.image.url if img.image else None,
+            'caption': img.caption,
+            'order': img.order
+        }
+        for img in package.gallery_images.all()
+    ]
+
     data = {
         'id': package.id,
         'title': package.title,
@@ -93,12 +109,9 @@ def package_detail_json(request, slug):
         'price': str(package.price),
         'currency': package.currency,
         'duration': package.duration,
-        'duration_days': package.duration_days,
         'max_people': package.max_people,
-        'inclusions': package.inclusions,
-        'exclusions': package.exclusions,
         'main_image': package.main_image.url if package.main_image else None,
+        'gallery_images': gallery_images,
         'available': package.available,
-        'featured': package.featured,
     }
     return JsonResponse(data)

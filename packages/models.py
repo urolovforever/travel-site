@@ -58,3 +58,28 @@ class Package(models.Model):
     def price_per_person(self):
         """Format price display"""
         return f"{self.currency} {self.price}"
+
+
+class PackageGalleryImage(models.Model):
+    """
+    Gallery images for packages.
+    Multiple images can be added to each package.
+    """
+    package = models.ForeignKey(
+        Package,
+        on_delete=models.CASCADE,
+        related_name='gallery_images',
+        verbose_name=_('Package')
+    )
+    image = models.ImageField(_('Image'), upload_to='packages/gallery/')
+    caption = models.CharField(_('Caption'), max_length=200, blank=True)
+    order = models.PositiveIntegerField(_('Order'), default=0, help_text=_('Display order'))
+    created_at = models.DateTimeField(_('Created At'), auto_now_add=True)
+
+    class Meta:
+        verbose_name = _('Gallery Image')
+        verbose_name_plural = _('Gallery Images')
+        ordering = ['order', '-created_at']
+
+    def __str__(self):
+        return f"{self.package.title} - Image {self.order}"
