@@ -509,7 +509,7 @@ body { background: var(--white); }
   bottom: 20px;
   left: 20px;
   right: 20px;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-25);
   padding: 20px;
 }
