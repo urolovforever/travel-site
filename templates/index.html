@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load i18n_tags %}
 
-{% block title %}{% trans "Home" %} - Tourly Travel Agency{% endblock %}
+{% block title %}{% trans "Home" %} - SIDQDLOBAL Travel Agency{% endblock %}
 
 {% block content %}
 
@@ -170,7 +170,10 @@
 
     </ul>
 
-    <a href="{% url 'destinations:destination_list' %}" class="btn btn-primary">{% trans "More destinations" %}</a>
+    <button class="btn btn-primary"
+          onclick="window.location.href='{% url 'destinations:destination_list' %}'">
+      {% trans "More destinations" %}
+    </button>
 
   </div>
 </section>
@@ -413,7 +416,12 @@
 
     </ul>
 
-    <a href="{% url 'packages:package_list' %}" class="btn btn-primary">{% trans "View All Packages" %}</a>
+    <button class="btn btn-primary"
+          onclick="window.location.href='{% url 'packages:package_list' %}'">
+      {% trans "View All Packages" %}
+    </button>
+
+
 
   </div>
 </section>
