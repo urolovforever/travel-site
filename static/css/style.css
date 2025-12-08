@@ -1582,14 +1582,15 @@ address {
   right: 0;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  min-width: 180px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  min-width: 200px;
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
+  border: 1px solid rgba(0, 136, 204, 0.1);
 }
 
 .lang-dropdown-menu.show {
@@ -1600,6 +1601,10 @@ address {
 
 .lang-form {
   margin: 0;
+}
+
+.lang-form:not(:last-child) .lang-dropdown-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .lang-dropdown-item {
@@ -1615,16 +1620,27 @@ address {
   transition: all 0.2s ease;
   font-size: 14px;
   font-weight: 500;
+  text-align: left;
+  font-family: inherit;
 }
 
 .lang-dropdown-item:hover {
   background: var(--alice-blue);
   padding-left: 20px;
+  transform: translateX(4px);
 }
 
 .lang-dropdown-item.active {
-  background: var(--alice-blue);
+  background: linear-gradient(135deg, var(--alice-blue) 0%, #e3f2fd 100%);
   color: var(--bright-navy-blue);
+  font-weight: 600;
+  border-left: 3px solid var(--bright-navy-blue);
+  padding-left: 13px;
+}
+
+.lang-dropdown-item.active:hover {
+  background: linear-gradient(135deg, #d4e9f7 0%, #cfe9fc 100%);
+  padding-left: 17px;
 }
 
 .lang-flag {
