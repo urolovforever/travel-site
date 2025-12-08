@@ -17,10 +17,6 @@ class Destination(models.Model):
     # Location Information (will be translated by modeltranslation)
     country = models.CharField(_('Country'), max_length=100, default='Unknown')
     city = models.CharField(_('City'), max_length=100, blank=True)
-    region = models.CharField(_('Region'), max_length=100, blank=True)
-
-    # Description fields (will be translated by modeltranslation)
-    short_description = models.CharField(_('Short Description'), max_length=500, blank=True)
 
     # Media
     main_image = models.ImageField(_('Cover Image'), upload_to='destinations/', blank=True, null=True)
@@ -30,11 +26,6 @@ class Destination(models.Model):
     published = models.BooleanField(_('Published'), default=True)
     created_at = models.DateTimeField(_('Created At'), auto_now_add=True)
     updated_at = models.DateTimeField(_('Updated At'), auto_now=True)
-
-    # SEO Fields
-    meta_title = models.CharField(_('Meta Title'), max_length=200, blank=True, help_text=_('SEO title for search engines'))
-    meta_description = models.CharField(_('Meta Description'), max_length=160, blank=True, help_text=_('SEO description for search engines'))
-    meta_keywords = models.CharField(_('Meta Keywords'), max_length=255, blank=True, help_text=_('Comma-separated keywords'))
 
     class Meta:
         verbose_name = _('Destination')

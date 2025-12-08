@@ -13,11 +13,6 @@ class DestinationTranslationOptions(TranslationOptions):
         'title',
         'country',
         'city',
-        'region',
-        'short_description',
-        'meta_title',
-        'meta_description',
-        'meta_keywords',
     )
     required_languages = ('en',)  # English is required, others optional
 
