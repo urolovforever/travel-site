@@ -64,12 +64,12 @@
             </p>
 
             <h3 class="h3 card-title">
-              <a href="#">{{ destination|get_translated:'name' }}</a>
-<!--              <a href="{% url 'destinations:destination_detail' destination.slug %}">{{ destination|get_translated:'name' }}</a>-->
+              <a href="#">{{ destination|get_translated:'title' }}</a>
+<!--              <a href="{% url 'destinations:destination_detail' destination.slug %}">{{ destination|get_translated:'title' }}</a>-->
             </h3>
 
             <p class="card-text">
-              {{ destination|get_translated:'short_description'|truncatewords:15 }}
+              {{ destination|get_translated:'name' }}
             </p>
 
           </div>

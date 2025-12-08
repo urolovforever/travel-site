@@ -12,16 +12,10 @@ class DestinationForm(forms.ModelForm):
         model = Destination
         fields = [
             'name', 'title', 'slug',
-            'country', 'city', 'region',
-            'short_description',
+            'country', 'city',
             'main_image',
             'published', 'featured',
-            'meta_title', 'meta_description', 'meta_keywords'
         ]
-        widgets = {
-            'short_description': forms.Textarea(attrs={'rows': 3}),
-            'meta_description': forms.Textarea(attrs={'rows': 2}),
-        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -35,30 +29,19 @@ class DestinationForm(forms.ModelForm):
                 ),
                 'slug',
                 Row(
-                    Column('country', css_class='form-group col-md-4 mb-3'),
-                    Column('city', css_class='form-group col-md-4 mb-3'),
-                    Column('region', css_class='form-group col-md-4 mb-3'),
+                    Column('country', css_class='form-group col-md-6 mb-3'),
+                    Column('city', css_class='form-group col-md-6 mb-3'),
                 ),
-            ),
-            Fieldset(
-                _('Description & Content'),
-                'short_description',
             ),
             Fieldset(
                 _('Media'),
                 'main_image',
             ),
             Fieldset(
-                _('SEO Settings'),
-                'meta_title',
-                'meta_description',
-                'meta_keywords',
-            ),
-            Fieldset(
                 _('Status'),
                 Row(
                     Column('published', css_class='form-group col-md-6 mb-3'),
-                    Column(css_class='form-group col-md-6 mb-3'),
+                    Column('featured', css_class='form-group col-md-6 mb-3'),
                 ),
             ),
             Submit('submit', _('Save Destination'), css_class='btn btn-success btn-lg')
