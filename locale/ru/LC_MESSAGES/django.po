@@ -494,7 +494,7 @@ msgstr "Забронировать"
 
 #: templates/base.html:145
 msgid ""
-"Discover amazing destinations around the world with Tourly. We provide the "
+"Discover amazing destinations around the world with SIDQGLOBAL. We provide the "
 "best travel packages and unforgettable experiences for every traveler."
 msgstr ""
 "Откройте для себя удивительные направления по всему миру с Tourly. Мы "

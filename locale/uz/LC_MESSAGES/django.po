@@ -494,7 +494,7 @@ msgstr "Buyurtma qiling"
 
 #: templates/base.html:145
 msgid ""
-"Discover amazing destinations around the world with Tourly. We provide the "
+"Discover amazing destinations around the world with SIDQGLOBAL. We provide the "
 "best travel packages and unforgettable experiences for every traveler."
 msgstr ""
 "Tourly bilan dunyoning ajoyib joylarini kashf eting. Biz har bir sayohatchi "
