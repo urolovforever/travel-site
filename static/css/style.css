@@ -954,12 +954,12 @@ address {
 }
 
 .gallery-masonry {
-  column-count: 1;
+  column-count: 2;
   column-gap: 20px;
   margin-top: 40px;
 }
 
-.gallery-item {
+.gallery-item1 {
   break-inside: avoid;
   margin-bottom: 20px;
   opacity: 0;
@@ -1376,7 +1376,7 @@ address {
     column-gap: 30px;
   }
 
-  .gallery-item {
+  .gallery-item1 {
     margin-bottom: 30px;
   }
 
