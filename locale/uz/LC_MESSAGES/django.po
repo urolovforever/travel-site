@@ -71,8 +71,9 @@ msgstr ""
 
 #: bookings/models.py:27 templates/contact.html:81
 msgid "Email"
-msgstr "Email"
-
+msgstr "Elektron pochta"
+msgid "7 days 6 nights"
+msgstr "7 kun, 6 tun"
 #: bookings/models.py:28 templates/contact.html:73
 msgid "Phone"
 msgstr "Telefon"
@@ -505,8 +506,8 @@ msgid "Feel free to contact and reach us !!"
 msgstr "Biz bilan bog'laning, biz doim tayyormiz !!"
 
 #: templates/base.html:172
-msgid "Tashkent, Uzbekistan"
-msgstr "Toshkent, O'zbekiston"
+msgid "A.Navoiy 69, Tashkent, Uzbekistan"
+msgstr "A.Navoiy 69, Toshkent, O‘zbekiston"
 
 #: templates/base.html:182
 msgid "Subscribe our newsletter for more update & news !!"
@@ -2302,11 +2303,11 @@ msgstr "Toshkent O'zbekistonning poytaxti, zamonaviy me'morchiligi, gavjum bozor
 
 #: templates/index.html:251
 msgid "Urungach Lake"
-msgstr "Urungach ko'li"
+msgstr "Nefrit ko'li"
 
 #: templates/index.html:255
 msgid "Urungach Lake is a scenic spot known for its calm waters and natural beauty."
-msgstr "Urungach ko'li tinch suvlari va tabiiy go'zalligi bilan mashhur manzara."
+msgstr "Nefrit ko'li tinch suvlari va tabiiy go'zalligi bilan mashhur manzara."
 
 #: templates/index.html:284
 msgid "Bukhara"
@@ -2357,5 +2358,8 @@ msgid "Top destinations in Uzbekistan"
 msgstr "O'zbekistondagi eng yaxshi joylar"
 
 #: templates/index.html:189
-msgid "Discover Uzbekistan's most remarkable travel spots. Plan your next journey and enjoy experiences you'll never forget."
+msgid "Discover Uzbekistan’s most remarkable travel spots. Plan your next journey and enjoy experiences you’ll never forget."
 msgstr "O'zbekistonning eng ajoyib sayohat joylarini kashf eting. Keyingi sayohatingizni rejalashtiring va hech qachon unutmaydigan tajribalardan bahramand bo'ling."
+
+msgid "Uzbekistan"
+msgstr "O'zbekiston"

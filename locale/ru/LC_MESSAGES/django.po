@@ -71,7 +71,10 @@ msgstr ""
 
 #: bookings/models.py:27 templates/contact.html:81
 msgid "Email"
-msgstr "Email"
+msgstr "Электронная почта"
+
+msgid "7 days 6 nights"
+msgstr "7 дня 6 ночи"
 
 #: bookings/models.py:28 templates/contact.html:73
 msgid "Phone"
@@ -506,8 +509,8 @@ msgid "Feel free to contact and reach us !!"
 msgstr "Не стесняйтесь обращаться к нам !!"
 
 #: templates/base.html:172
-msgid "Tashkent, Uzbekistan"
-msgstr "Ташкент, Узбекистан"
+msgid "A.Navoiy 69, Tashkent, Uzbekistan"
+msgstr "А.Навои 69, Ташкент, Узбекистан"
 
 #: templates/base.html:182
 msgid "Subscribe our newsletter for more update & news !!"
@@ -2268,6 +2271,9 @@ msgstr "Турция"
 msgid "Istanbul is a historic city where East meets West"
 msgstr "Стамбул - исторический город, где встречаются Восток и Запад"
 
+msgid "Istanbul"
+msgstr "Стамбул"
+
 #: templates/index.html:121
 msgid "UAE"
 msgstr "ОАЭ"
@@ -2300,13 +2306,16 @@ msgstr "Ташкент"
 msgid "Tashkent is Uzbekistan's capital, known for its modern architecture, bustling markets, and rich history."
 msgstr "Ташкент - столица Узбекистана, известная своей современной архитектурой, шумными рынками и богатой историей."
 
+msgid "Uzbekistan"
+msgstr "Узбекистан"
+
 #: templates/index.html:251
 msgid "Urungach Lake"
-msgstr "Озеро Урунгач"
+msgstr "Нефритовое Oзеро "
 
 #: templates/index.html:255
 msgid "Urungach Lake is a scenic spot known for its calm waters and natural beauty."
-msgstr "Озеро Урунгач - живописное место, известное своими спокойными водами и природной красотой."
+msgstr "Нефритовое Oзеро - живописное место, известное своими спокойными водами и природной красотой."
 
 #: templates/index.html:284
 msgid "Bukhara"
@@ -2319,7 +2328,8 @@ msgstr "Бухара - древний город, известный своим�
 #: templates/index.html:329
 msgid "Experience the Wonders of Istanbul"
 msgstr "Испытайте чудеса Стамбула"
-
+msgid "Istanb"
+msgstr "Стамбул"
 #: templates/index.html:332
 msgid "Explore the vibrant streets of Istanbul, from historic mosques to bustling bazaars. Enjoy rich culture, delicious cuisine, and unforgettable views of the Bosphorus."
 msgstr "Исследуйте оживленные улицы Стамбула, от исторических мечетей до шумных базаров. Наслаждайтесь богатой культурой, вкусной кухней и незабываемыми видами на Босфор."
@@ -2357,5 +2367,5 @@ msgid "Top destinations in Uzbekistan"
 msgstr "Лучшие направления в Узбекистане"
 
 #: templates/index.html:189
-msgid "Discover Uzbekistan's most remarkable travel spots. Plan your next journey and enjoy experiences you'll never forget."
+msgid "Discover Uzbekistan’s most remarkable travel spots. Plan your next journey and enjoy experiences you’ll never forget."
 msgstr "Откройте для себя самые замечательные места Узбекистана. Планируйте следующее путешествие и наслаждайтесь незабываемыми впечатлениями."
