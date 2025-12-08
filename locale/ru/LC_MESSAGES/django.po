@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-07 19:55+0000\n"
+"POT-Creation-Date: 2025-12-08 08:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: bookings/forms.py:48 templates/tour/booking_form.html:24
 msgid "Submit Booking Request"
-msgstr ""
+msgstr "Отправить запрос на бронирование"
 
 #: bookings/models.py:11
 msgid "Pending"
@@ -190,7 +190,7 @@ msgstr ""
 
 #: destinations/models.py:25 templates/tour/destination_detail.html:110
 msgid "Things to Do"
-msgstr ""
+msgstr "Чем заняться"
 
 #: destinations/models.py:25
 msgid "List activities and attractions"
@@ -198,11 +198,11 @@ msgstr ""
 
 #: destinations/models.py:28 templates/tour/destination_detail.html:85
 msgid "Best Time to Visit"
-msgstr ""
+msgstr "Лучшее время для посещения"
 
 #: destinations/models.py:29 templates/tour/destination_detail.html:96
 msgid "Average Cost"
-msgstr ""
+msgstr "Средняя стоимость"
 
 #: destinations/models.py:29
 msgid "e.g., \"$500-$1000 per person\""
@@ -251,7 +251,7 @@ msgstr ""
 #: destinations/models.py:46 destinations/models.py:75
 #: templates/tour/package_detail.html:91
 msgid "Destination"
-msgstr ""
+msgstr "Направление"
 
 #: destinations/models.py:47 templates/about.html:64 templates/base.html:110
 #: templates/tour/destination_list.html:6
@@ -311,7 +311,7 @@ msgstr ""
 
 #: packages/models.py:16 templates/tour/package_detail.html:105
 msgid "Itinerary"
-msgstr ""
+msgstr "Маршрут"
 
 #: packages/models.py:16
 msgid "Day-by-day itinerary"
@@ -328,7 +328,7 @@ msgstr ""
 #: packages/models.py:21 templates/tour/package_detail.html:73
 #: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1793
 msgid "Duration"
-msgstr ""
+msgstr "Продолжительность"
 
 #: packages/models.py:21
 msgid "e.g., \"5 days 4 nights\""
@@ -754,110 +754,110 @@ msgstr "Свяжитесь с нами!"
 
 #: templates/tour/booking_form.html:6
 msgid "Book Package"
-msgstr ""
+msgstr "Забронировать пакет"
 
 #: templates/tour/booking_form.html:13
 msgid "Book Your Tour Package"
-msgstr ""
+msgstr "Забронируйте свой туристический пакет"
 
 #: templates/tour/destination_confirm_delete.html:6
 #: templates/tour/destination_confirm_delete.html:13
 msgid "Delete Destination"
-msgstr ""
+msgstr "Удалить направление"
 
 #: templates/tour/destination_confirm_delete.html:15
 msgid "Are you sure you want to delete this destination?"
-msgstr ""
+msgstr "Вы уверены, что хотите удалить это направление?"
 
 #: templates/tour/destination_confirm_delete.html:29
 msgid "Warning!"
-msgstr ""
+msgstr "Внимание!"
 
 #: templates/tour/destination_confirm_delete.html:29
 msgid "This action cannot be undone."
-msgstr ""
+msgstr "Это действие не может быть отменено."
 
 #: templates/tour/destination_confirm_delete.html:42
 msgid "Location:"
-msgstr ""
+msgstr "Местоположение:"
 
 #: templates/tour/destination_confirm_delete.html:51
 msgid "Name:"
-msgstr ""
+msgstr "Название:"
 
 #: templates/tour/destination_confirm_delete.html:66
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: templates/tour/destination_confirm_delete.html:71
 msgid "Yes, Delete"
-msgstr ""
+msgstr "Да, удалить"
 
 #: templates/tour/destination_detail.html:35
 msgid "Overview"
-msgstr ""
+msgstr "Обзор"
 
 #: templates/tour/destination_detail.html:52
 msgid "About"
-msgstr ""
+msgstr "О месте"
 
 #: templates/tour/destination_detail.html:67
 msgid "Location"
-msgstr ""
+msgstr "Местоположение"
 
 #: templates/tour/destination_detail.html:126
 msgid "Explore"
-msgstr ""
+msgstr "Исследовать"
 
 #: templates/tour/destination_detail.html:147
 msgid "Ready to explore?"
-msgstr ""
+msgstr "Готовы исследовать?"
 
 #: templates/tour/destination_detail.html:148
 msgid "Available Tour Packages"
-msgstr ""
+msgstr "Доступные туристические пакеты"
 
 #: templates/tour/destination_detail.html:196
 #: templates/tour/package_detail.html:212 templates/tour/package_list.html:101
 msgid "View Details"
-msgstr ""
+msgstr "Подробнее"
 
 #: templates/tour/destination_detail.html:208
 msgid "Ready for an unforgettable journey?"
-msgstr ""
+msgstr "Готовы к незабываемому путешествию?"
 
 #: templates/tour/destination_detail.html:210
 msgid "Contact us today to plan your perfect trip to"
-msgstr ""
+msgstr "Свяжитесь с нами сегодня, чтобы спланировать идеальную поездку в"
 
 #: templates/tour/destination_form.html:8
 #: templates/tour/destination_form.html:21
 msgid "Edit Destination"
-msgstr ""
+msgstr "Редактировать направление"
 
 #: templates/tour/destination_form.html:10
 msgid "Create Destination"
-msgstr ""
+msgstr "Создать направление"
 
 #: templates/tour/destination_form.html:23
 msgid "Create New Destination"
-msgstr ""
+msgstr "Создать новое направление"
 
 #: templates/tour/destination_form.html:27
 msgid "Fill in the details to create or update a destination"
-msgstr ""
+msgstr "Заполните данные для создания или обновления направления"
 
 #: templates/tour/destination_form.html:41
 msgid "Please correct the errors below:"
-msgstr ""
+msgstr "Пожалуйста, исправьте ошибки ниже:"
 
 #: templates/tour/destination_form.html:54
 msgid "Back to Destinations"
-msgstr ""
+msgstr "Вернуться к направлениям"
 
 #: templates/tour/destination_list.html:13
 msgid "Our Destinations"
-msgstr ""
+msgstr "Наши направления"
 
 #: templates/tour/destination_list.html:15
 #: templates/tour/destination_list.html:29
@@ -865,139 +865,148 @@ msgid ""
 "Discover amazing places around the world with our carefully curated "
 "destinations"
 msgstr ""
+"Откройте для себя удивительные места по всему миру с нашими тщательно "
+"отобранными направлениями"
 
 #: templates/tour/destination_list.html:24
 msgid "Uncover places"
-msgstr ""
+msgstr "Откройте места"
 
 #: templates/tour/destination_list.html:26
 msgid "Popular destinations"
-msgstr ""
+msgstr "Популярные направления"
 
 #: templates/tour/destination_list.html:79
 msgid "No destinations available at the moment."
-msgstr ""
+msgstr "На данный момент направления недоступны."
 
 #: templates/tour/destination_list.html:90
 #: templates/tour/package_list.html:120
 msgid "First"
-msgstr ""
+msgstr "Первая"
 
 #: templates/tour/destination_list.html:93 templates/tour/gallery.html:45
 #: templates/tour/package_list.html:123
 msgid "Previous"
-msgstr ""
+msgstr "Предыдущая"
 
 #: templates/tour/destination_list.html:103 templates/tour/gallery.html:49
 #: templates/tour/package_list.html:133
 msgid "Next"
-msgstr ""
+msgstr "Следующая"
 
 #: templates/tour/destination_list.html:106
 #: templates/tour/package_list.html:136
 msgid "Last"
-msgstr ""
+msgstr "Последняя"
 
 #: templates/tour/gallery.html:15
 msgid ""
 "Browse through our collection of beautiful destinations and memorable "
 "moments"
 msgstr ""
+"Просмотрите нашу коллекцию красивых направлений и незабываемых моментов"
 
 #: templates/tour/gallery.html:36
 msgid "No images in gallery yet."
-msgstr ""
+msgstr "В галерее пока нет изображений."
 
 #: templates/tour/package_detail.html:25
 msgid "Max"
-msgstr ""
+msgstr "Макс"
 
 #: templates/tour/package_detail.html:25 templates/tour/package_detail.html:83
 msgid "people"
-msgstr ""
+msgstr "человек"
 
 #: templates/tour/package_detail.html:37
 msgid "Package Price"
-msgstr ""
+msgstr "Цена пакета"
 
 #: templates/tour/package_detail.html:40
 #: templates/tour/package_detail.html:209 templates/tour/package_list.html:98
 msgid "per person"
-msgstr ""
+msgstr "на человека"
 
 #: templates/tour/package_detail.html:58
 msgid "Package Description"
-msgstr ""
+msgstr "Описание пакета"
 
 #: templates/tour/package_detail.html:82
 msgid "Group Size"
-msgstr ""
+msgstr "Размер группы"
 
 #: templates/tour/package_detail.html:83
 msgid "Maximum"
-msgstr ""
+msgstr "Максимум"
 
 #: templates/tour/package_detail.html:93
 msgid "View Destination"
-msgstr ""
+msgstr "Посмотреть направление"
 
 #: templates/tour/package_detail.html:123
 msgid "What's Included"
-msgstr ""
+msgstr "Что включено"
 
 #: templates/tour/package_detail.html:138
 msgid "What's Not Included"
-msgstr ""
+msgstr "Что не включено"
 
 #: templates/tour/package_detail.html:156
 msgid "Explore More"
-msgstr ""
+msgstr "Узнать больше"
 
 #: templates/tour/package_detail.html:157
 msgid "Related Packages"
-msgstr ""
+msgstr "Связанные пакеты"
 
 #: templates/tour/package_detail.html:224
 msgid "Ready to book this adventure?"
-msgstr ""
+msgstr "Готовы забронировать это приключение?"
 
 #: templates/tour/package_detail.html:226
 msgid ""
 "Don't miss out on this amazing experience. Book now and create unforgettable"
 " memories!"
 msgstr ""
+"Не упустите этот удивительный опыт. Бронируйте сейчас и создавайте "
+"незабываемые воспоминания!"
 
 #: templates/tour/package_detail.html:231
 msgid "Book This Package"
-msgstr ""
+msgstr "Забронировать этот пакет"
 
 #: templates/tour/package_list.html:6 templates/tour/package_list.html:13
 msgid "Tour Packages"
-msgstr ""
+msgstr "Туристические пакеты"
 
 #: templates/tour/package_list.html:15
 msgid ""
 "Choose from our exclusive tour packages designed to give you the best travel"
 " experience"
 msgstr ""
+"Выберите из наших эксклюзивных туристических пакетов, разработанных, чтобы "
+"дать вам лучший опыт путешествий"
 
 #: templates/tour/package_list.html:29
 msgid ""
 "Explore our carefully curated tour packages that offer unforgettable "
 "experiences and exceptional value"
 msgstr ""
+"Исследуйте наши тщательно подобранные туристические пакеты, которые "
+"предлагают незабываемые впечатления и исключительную ценность"
 
 #: templates/tour/package_list.html:65
 msgid "max"
-msgstr ""
+msgstr "макс"
 
 #: templates/tour/package_list.html:84
 msgid "people max"
-msgstr ""
+msgstr "человек (макс)"
 
 #: templates/tour/package_list.html:109
 msgid "No packages available at the moment."
-msgstr ""
+msgstr "На данный момент пакеты недоступны."
 
 #: venv/lib/python3.11/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
