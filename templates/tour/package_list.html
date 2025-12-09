@@ -115,33 +115,7 @@
     </ul>
 
     <!-- Pagination -->
-    {% if is_paginated %}
-      <nav aria-label="Page navigation" style="margin-top: 50px;">
-        <ul class="pagination justify-content-center" style="display: flex; gap: 10px; flex-wrap: wrap;">
-          {% if page_obj.has_previous %}
-            <li class="page-item">
-              <a class="btn btn-secondary" href="?page=1" style="--padding: 10px 20px;">{% trans "First" %}</a>
-            </li>
-            <li class="page-item">
-              <a class="btn btn-secondary" href="?page={{ page_obj.previous_page_number }}" style="--padding: 10px 20px;">{% trans "Previous" %}</a>
-            </li>
-          {% endif %}
-
-          <li class="page-item active">
-            <span class="btn btn-primary" style="--padding: 10px 20px;">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
-          </li>
-
-          {% if page_obj.has_next %}
-            <li class="page-item">
-              <a class="btn btn-secondary" href="?page={{ page_obj.next_page_number }}" style="--padding: 10px 20px;">{% trans "Next" %}</a>
-            </li>
-            <li class="page-item">
-              <a class="btn btn-secondary" href="?page={{ page_obj.paginator.num_pages }}" style="--padding: 10px 20px;">{% trans "Last" %}</a>
-            </li>
-          {% endif %}
-        </ul>
-      </nav>
-    {% endif %}
+    {% include 'includes/pagination.html' %}
 
   </div>
 </section>
