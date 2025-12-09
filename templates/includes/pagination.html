@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load pagination_tags %}
 
 {% if is_paginated %}
 <nav class="pagination-wrapper" aria-label="{% trans 'Page navigation' %}">
@@ -7,7 +8,7 @@
     {% if page_obj.has_previous %}
     <!-- First Page Button -->
     <li class="pagination-item">
-      <a href="?page=1{% if request.GET.urlencode %}&{{ request.GET.urlencode }}{% endif %}"
+      <a href="{% url_replace page=1 %}"
          class="pagination-link pagination-link-arrow"
          aria-label="{% trans 'First page' %}">
         <ion-icon name="chevron-back-outline"></ion-icon>
@@ -17,7 +18,7 @@
 
     <!-- Previous Page Button -->
     <li class="pagination-item">
-      <a href="?page={{ page_obj.previous_page_number }}{% if request.GET.urlencode %}&{{ request.GET.urlencode }}{% endif %}"
+      <a href="{% url_replace page=page_obj.previous_page_number %}"
          class="pagination-link pagination-link-arrow"
          aria-label="{% trans 'Previous page' %}">
         <ion-icon name="chevron-back-outline"></ion-icon>
@@ -50,13 +51,13 @@
       {% elif page_num == 1 or page_num == page_obj.paginator.num_pages %}
         <!-- Always show first and last page -->
         <li class="pagination-item">
-          <a href="?page={{ page_num }}{% if request.GET.urlencode %}&{{ request.GET.urlencode }}{% endif %}"
+          <a href="{% url_replace page=page_num %}"
              class="pagination-link">{{ page_num }}</a>
         </li>
       {% elif page_num >= page_obj.number|add:'-2' and page_num <= page_obj.number|add:'2' %}
         <!-- Show 2 pages before and after current page -->
         <li class="pagination-item">
-          <a href="?page={{ page_num }}{% if request.GET.urlencode %}&{{ request.GET.urlencode }}{% endif %}"
+          <a href="{% url_replace page=page_num %}"
              class="pagination-link">{{ page_num }}</a>
         </li>
       {% elif page_num == page_obj.number|add:'-3' or page_num == page_obj.number|add:'3' %}
@@ -70,7 +71,7 @@
     {% if page_obj.has_next %}
     <!-- Next Page Button -->
     <li class="pagination-item">
-      <a href="?page={{ page_obj.next_page_number }}{% if request.GET.urlencode %}&{{ request.GET.urlencode }}{% endif %}"
+      <a href="{% url_replace page=page_obj.next_page_number %}"
          class="pagination-link pagination-link-arrow"
          aria-label="{% trans 'Next page' %}">
         <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -79,7 +80,7 @@
 
     <!-- Last Page Button -->
     <li class="pagination-item">
-      <a href="?page={{ page_obj.paginator.num_pages }}{% if request.GET.urlencode %}&{{ request.GET.urlencode }}{% endif %}"
+      <a href="{% url_replace page=page_obj.paginator.num_pages %}"
          class="pagination-link pagination-link-arrow"
          aria-label="{% trans 'Last page' %}">
         <ion-icon name="chevron-forward-outline"></ion-icon>
