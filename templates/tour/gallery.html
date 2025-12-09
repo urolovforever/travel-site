@@ -21,9 +21,9 @@
   <div class="container">
     <h2 class="h2 section-title">{% trans "Photo Gallery" %}</h2>
 
-    <div class="gallery-masonry">
+    <div class="gallery-grid">
       {% for image in images %}
-        <div class="gallery-item1">
+        <div class="gallery-item">
           <div class="gallery-card">
             <img
               src="{{ image.image.url }}"
