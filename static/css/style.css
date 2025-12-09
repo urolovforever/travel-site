@@ -1531,7 +1531,7 @@ address {
    */
 
   .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }
 
@@ -1731,8 +1731,8 @@ address {
    */
 
   .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
   }
 
 }
