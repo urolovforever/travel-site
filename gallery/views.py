@@ -9,7 +9,7 @@ class GalleryView(ListView):
     model = GalleryImage
     template_name = 'tour/gallery.html'
     context_object_name = 'images'
-    paginate_by = 12  # 12 images per page
+    paginate_by = 9  # 9 images per page (3x3 grid on desktop)
 
     def get_queryset(self):
         queryset = GalleryImage.objects.all()
