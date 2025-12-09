@@ -2,6 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% load i18n_tags %}
+{% load pagination_tags %}
 
 {% block title %}{% trans "Destinations" %} | {{ block.super }}{% endblock %}
 
@@ -64,12 +65,12 @@
             </p>
 
             <h3 class="h3 card-title">
-              <a href="#">{{ destination|get_translated:'title' }}</a>
+              <a href="#">{{ destination|get_translated:'name' }}</a>
 <!--              <a href="{% url 'destinations:destination_detail' destination.slug %}">{{ destination|get_translated:'title' }}</a>-->
             </h3>
 
             <p class="card-text">
-              {{ destination|get_translated:'name' }}
+              {{ destination|get_translated:'title' }}
             </p>
 
           </div>
