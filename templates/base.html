@@ -217,16 +217,37 @@
 
         </div>
 
-        <div class="footer-form">
+        <div class="footer-links">
 
-          <p class="form-text">
-            {% trans "Subscribe our newsletter for more update & news !!" %}
-          </p>
+          <h4 class="contact-title">{% trans "Quick Links" %}</h4>
 
-          <form action="" class="form-wrapper">
-            <input type="email" name="email" class="input-field" placeholder="{% trans 'Enter Your Email' %}" required>
-            <button type="submit" class="btn btn-secondary">{% trans "Subscribe" %}</button>
-          </form>
+          <ul class="footer-links-list">
+
+            <li>
+              <a href="{% url 'index' %}" class="footer-link">{% trans "Home" %}</a>
+            </li>
+
+            <li>
+              <a href="{% url 'about' %}" class="footer-link">{% trans "About Us" %}</a>
+            </li>
+
+            <li>
+              <a href="{% url 'destinations:destination_list' %}" class="footer-link">{% trans "Destinations" %}</a>
+            </li>
+
+            <li>
+              <a href="{% url 'packages:package_list' %}" class="footer-link">{% trans "Packages" %}</a>
+            </li>
+
+            <li>
+              <a href="{% url 'gallery:gallery' %}" class="footer-link">{% trans "Gallery" %}</a>
+            </li>
+
+            <li>
+              <a href="{% url 'contact' %}" class="footer-link">{% trans "Contact" %}</a>
+            </li>
+
+          </ul>
 
         </div>
 
