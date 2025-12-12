@@ -253,7 +253,9 @@ body { background: var(--white); }
 
 .header-top .logo { margin-inline: auto; }
 
-.header-top .logo img { max-width: 100px; }
+.header-top .logo img {
+     object-fit: contain;
+     max-height: 80px;}
 
 .header-btn-group {
   justify-self: flex-end;
@@ -278,6 +280,8 @@ body { background: var(--white); }
   justify-content: space-between;
   align-items: center;
   padding-block: 25px 15px;
+  padding-block: 15px;
+  margin-top: 20px;
 }
 
 .social-list {
