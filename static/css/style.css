@@ -279,8 +279,7 @@ body { background: var(--white); }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 25px 15px;
-  padding-block: 15px;
+  padding-block: 40px 15px;
   margin-top: 20px;
 }
 
@@ -795,7 +794,7 @@ body { background: var(--white); }
 
 .footer-brand { margin-bottom: 30px; }
 
-.footer-brand img { width: 180px; }
+.footer-brand img { width: 140px; }
 
 .footer-brand .logo { margin-bottom: 20px; }
 

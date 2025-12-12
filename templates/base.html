@@ -168,7 +168,7 @@
       <div class="container">
 
         <div class="footer-brand">
-          <a href="#" class="logo">
+          <a href="{% url 'core:home' %}" class="logo">
             <img src="{% static 'images/LOGO.png' %}" alt="Tourly logo">
           </a>
 
@@ -224,11 +224,11 @@
           <ul class="footer-links-list">
 
             <li>
-              <a href="{% url 'index' %}" class="footer-link">{% trans "Home" %}</a>
+              <a href="{% url 'core:home' %}" class="footer-link">{% trans "Home" %}</a>
             </li>
 
             <li>
-              <a href="{% url 'about' %}" class="footer-link">{% trans "About Us" %}</a>
+              <a href="{% url 'core:about' %}" class="footer-link">{% trans "About Us" %}</a>
             </li>
 
             <li>
@@ -244,7 +244,7 @@
             </li>
 
             <li>
-              <a href="{% url 'contact' %}" class="footer-link">{% trans "Contact" %}</a>
+              <a href="{% url 'core:contact' %}" class="footer-link">{% trans "Contact" %}</a>
             </li>
 
           </ul>
