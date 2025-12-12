@@ -277,7 +277,7 @@ body { background: var(--white); }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 15px;
+  padding-block: 25px 15px;
 }
 
 .social-list {
@@ -1139,6 +1139,10 @@ address {
   .helpline-box .icon-box { padding: 14px; }
 
   .header-top .logo img { max-width: unset; }
+
+  .header-bottom .container {
+    padding-block: 15px;
+  }
 
   .search-btn { font-size: 30px; }
 
