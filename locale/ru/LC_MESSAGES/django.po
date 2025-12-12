@@ -611,8 +611,8 @@ msgid "Follow Us"
 msgstr "Следите за нами"
 
 #: templates/index.html:13
-msgid "Journey to explore world"
-msgstr "Путешествие по миру"
+msgid "Explore the world with us"
+msgstr "Исследуй мир с нами"
 
 #: templates/index.html:16
 msgid ""
@@ -659,8 +659,8 @@ msgid "Inquire now"
 msgstr "Отправить запрос"
 
 #: templates/index.html:59
-msgid "Uncover place"
-msgstr "Откройте места"
+msgid "Uncover the World"
+msgstr "Откройте мир"
 
 #: templates/index.html:61
 msgid "Popular destination"

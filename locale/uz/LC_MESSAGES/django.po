@@ -252,12 +252,12 @@ msgstr ""
 #: destinations/models.py:46 destinations/models.py:75
 #: templates/tour/package_detail.html:91
 msgid "Destination"
-msgstr "Joy"
+msgstr "Manzil"
 
 #: destinations/models.py:47 templates/about.html:64 templates/base.html:110
 #: templates/tour/destination_list.html:6
 msgid "Destinations"
-msgstr "Sayohat joylari"
+msgstr "Sayohat Manzillari"
 
 #: destinations/models.py:77 gallery/models.py:9
 #: venv/lib/python3.11/site-packages/django/db/models/fields/files.py:393
@@ -440,7 +440,7 @@ msgid ""
 msgstr ""
 "Bizning sayohat mutaxassislari jamoasi har bir tur paketini ehtiyotkorlik "
 "bilan tanlaydi, shunda siz unutilmas tajribaga ega bo'lasiz. Ekzotik plyaj "
-"joylaridan madaniy meros joylarigacha, biz har bir sayohatchi uchun biror "
+"manzillaridan madaniy meros manzillarigacha, biz har bir sayohatchi uchun biror "
 "narsa taqdim etamiz."
 
 #: templates/about.html:35
@@ -449,7 +449,7 @@ msgstr "Professional va tajribali gidlar"
 
 #: templates/about.html:39
 msgid "Carefully selected destinations"
-msgstr "Ehtiyotkorlik bilan tanlangan joylar"
+msgstr "Ehtiyotkorlik bilan tanlangan manzillar"
 
 #: templates/about.html:43
 msgid "Competitive prices and great value"
@@ -478,7 +478,7 @@ msgstr "Bosh sahifa"
 #: templates/base.html:112 templates/tour/gallery.html:6
 #: templates/tour/gallery.html:13
 msgid "Gallery"
-msgstr "Galereya"
+msgstr "Taassurotlar"
 
 #: templates/base.html:113 templates/base.html:152 templates/contact.html:5
 #: templates/contact.html:12 templates/contact.html:23
@@ -609,15 +609,15 @@ msgid "Follow Us"
 msgstr "Bizni kuzating"
 
 #: templates/index.html:13
-msgid "Journey to explore world"
-msgstr "Dunyoni kashf qilish sayohati"
+msgid "Explore the world with us"
+msgstr "Dunyoni biz bilan kashf qiling"
 
 #: templates/index.html:16
 msgid ""
 "Discover amazing destinations and create unforgettable memories with our "
-"carefully curated travel packages."
+"travel packages."
 msgstr ""
-"Ajoyib joylarni kashf eting va bizning ehtiyotkorlik bilan tanlangan sayohat"
+"Ajoyib manzillarni kashf eting va bizning sayohat"
 " paketlarimiz bilan unutilmas xotiralar yarating."
 
 #: templates/index.html:20
@@ -630,11 +630,11 @@ msgstr "Buyurtma berish"
 
 #: templates/index.html:31
 msgid "Search Destination"
-msgstr "Joyni qidirish"
+msgstr "Manzilni qidirish"
 
 #: templates/index.html:32
 msgid "Enter Destination"
-msgstr "Joyni kiriting"
+msgstr "Manzilni kiriting"
 
 #: templates/index.html:36
 msgid "Pax Number"
@@ -654,27 +654,27 @@ msgstr "Ketish sanasi"
 
 #: templates/index.html:50
 msgid "Inquire now"
-msgstr "Hozir so'rov yuborish"
+msgstr "Hoziroq so'rov yuborish"
 
 #: templates/index.html:59
-msgid "Uncover place"
-msgstr "Joylarni kashf eting"
+msgid "Uncover the World"
+msgstr "Dunyoni kashf eting"
 
 #: templates/index.html:61
 msgid "Popular destination"
-msgstr "Mashhur joylar"
+msgstr "Mashhur Manzillar"
 
 #: templates/index.html:64
 msgid ""
 "Explore our most popular travel destinations around the world. Find the "
 "perfect place for your next adventure and create unforgettable memories."
 msgstr ""
-"Dunyoning eng mashhur sayohat joylarini kashf eting. Keyingi sayohatingiz "
-"uchun ideal joyni toping va unutilmas xotiralar yarating."
+"Dunyoning eng mashhur sayohat manzillarini kashf eting. Keyingi sayohatingiz "
+"uchun ideal manzilni toping va unutilmas xotiralar yarating."
 
 #: templates/index.html:173
 msgid "More destinations"
-msgstr "Barcha joylar"
+msgstr "Barcha manzillar"
 
 #: templates/index.html:182 templates/tour/package_list.html:24
 msgid "Popular Packages"
@@ -713,11 +713,11 @@ msgstr "Barcha paketlar"
 #: templates/index.html:425 templates/tour/destination_detail.html:127
 #: templates/tour/gallery.html:22
 msgid "Photo Gallery"
-msgstr "Foto galereya"
+msgstr "Foto taassurotlar"
 
 #: templates/index.html:427
 msgid "Photos From Travellers"
-msgstr "Sayohatchilardan fotolar"
+msgstr "Sayohatchilardan taassurotlar"
 
 #: templates/index.html:430
 msgid ""
@@ -725,7 +725,7 @@ msgid ""
 " Share your travel memories with us and inspire others to explore."
 msgstr ""
 "Sayohatchilarimiz tomonidan dunyoning turli burchaklaridan olingan go'zal "
-"lahzalarni ko'ring. Bizning sayohatga kiriting va boshqalarni "
+"lahzalarni ko'ring. Taassurotlaringizni biz bilan ulashing va boshqalarni "
 "ilhomlantiring."
 
 #: templates/index.html:474
@@ -734,7 +734,7 @@ msgstr "Hamkorlarimiz"
 
 #: templates/index.html:475
 msgid "Trusted by Leading Companies"
-msgstr "Yetakchi kompaniyalar ishonadi"
+msgstr "Yetakchi kompaniyalar bizga ishonadi"
 
 #: templates/index.html:512
 msgid "Call To Action"
@@ -765,11 +765,11 @@ msgstr "Sayohat paketingizni buyurtma qiling"
 #: templates/tour/destination_confirm_delete.html:6
 #: templates/tour/destination_confirm_delete.html:13
 msgid "Delete Destination"
-msgstr "Joyni o'chirish"
+msgstr "Manzilni o'chirish"
 
 #: templates/tour/destination_confirm_delete.html:15
 msgid "Are you sure you want to delete this destination?"
-msgstr "Ushbu joyni o'chirishni xohlaysizmi?"
+msgstr "Ushbu manzilni o'chirishni xohlaysizmi?"
 
 #: templates/tour/destination_confirm_delete.html:29
 msgid "Warning!"
@@ -835,19 +835,19 @@ msgstr "Bugun biz bilan bog'laning va"
 #: templates/tour/destination_form.html:8
 #: templates/tour/destination_form.html:21
 msgid "Edit Destination"
-msgstr "Joyni tahrirlash"
+msgstr "Manzilni tahrirlash"
 
 #: templates/tour/destination_form.html:10
 msgid "Create Destination"
-msgstr "Joy yaratish"
+msgstr "Manzil yaratish"
 
 #: templates/tour/destination_form.html:23
 msgid "Create New Destination"
-msgstr "Yangi joy yaratish"
+msgstr "Yangi Manzil yaratish"
 
 #: templates/tour/destination_form.html:27
 msgid "Fill in the details to create or update a destination"
-msgstr "Joyni yaratish yoki yangilash uchun ma'lumotlarni to'ldiring"
+msgstr "Manzilni yaratish yoki yangilash uchun ma'lumotlarni to'ldiring"
 
 #: templates/tour/destination_form.html:41
 msgid "Please correct the errors below:"
@@ -855,11 +855,11 @@ msgstr "Iltimos, quyidagi xatolarni tuzating:"
 
 #: templates/tour/destination_form.html:54
 msgid "Back to Destinations"
-msgstr "Joylarga qaytish"
+msgstr "Manzillarga qaytish"
 
 #: templates/tour/destination_list.html:13
 msgid "Our Destinations"
-msgstr "Bizning joylarimiz"
+msgstr "Bizning manzillarimiz"
 
 #: templates/tour/destination_list.html:15
 #: templates/tour/destination_list.html:29
@@ -867,7 +867,7 @@ msgid ""
 "Discover amazing places around the world with our carefully curated "
 "destinations"
 msgstr ""
-"Ehtiyotkorlik bilan tanlangan joylarimiz bilan dunyoning ajoyib joylarini "
+"Ehtiyotkorlik bilan tanlangan joylarimiz bilan dunyoning ajoyib manzillarni "
 "kashf eting"
 
 #: templates/tour/destination_list.html:24
@@ -876,11 +876,11 @@ msgstr "Joylarni kashf eting"
 
 #: templates/tour/destination_list.html:26
 msgid "Popular destinations"
-msgstr "Mashhur joylar"
+msgstr "Mashhur manzillar"
 
 #: templates/tour/destination_list.html:79
 msgid "No destinations available at the moment."
-msgstr "Hozircha joylar mavjud emas."
+msgstr "Hozircha manizllar mavjud emas."
 
 #: templates/tour/destination_list.html:90
 #: templates/tour/package_list.html:120
@@ -906,7 +906,7 @@ msgstr "Oxirgi"
 msgid ""
 "Browse through our collection of beautiful destinations and memorable "
 "moments"
-msgstr "Go'zal joylar va unutilmas lahzalar to'plamimizni ko'rib chiqing"
+msgstr "Go'zal manzillar va unutilmas lahzalar to'plamimizni ko'rib chiqing"
 
 #: templates/tour/gallery.html:36
 msgid "No images in gallery yet."
@@ -943,7 +943,7 @@ msgstr "Maksimal"
 
 #: templates/tour/package_detail.html:93
 msgid "View Destination"
-msgstr "Joyni ko'rish"
+msgstr "Manzilni ko'rish"
 
 #: templates/tour/package_detail.html:123
 msgid "What's Included"
@@ -2347,7 +2347,7 @@ msgstr "Tarix, me'morchilik va madaniyat bo'ylab 3 kunlik sayohat. Bir sayohatda
 
 #: templates/index.html:61
 msgid "Top destinations around the World"
-msgstr "Dunyoning eng yaxshi joylari"
+msgstr "Dunyoning eng yaxshi manzillari"
 
 #: templates/index.html:184
 msgid "Explore Uzbekistan"
@@ -2355,11 +2355,11 @@ msgstr "O'zbekistonni kashf eting"
 
 #: templates/index.html:186
 msgid "Top destinations in Uzbekistan"
-msgstr "O'zbekistondagi eng yaxshi joylar"
+msgstr "O'zbekistondagi eng yaxshi manzillari"
 
 #: templates/index.html:189
 msgid "Discover Uzbekistan’s most remarkable travel spots. Plan your next journey and enjoy experiences you’ll never forget."
-msgstr "O'zbekistonning eng ajoyib sayohat joylarini kashf eting. Keyingi sayohatingizni rejalashtiring va hech qachon unutmaydigan tajribalardan bahramand bo'ling."
+msgstr "O'zbekistonning eng ajoyib sayohat manzillarrini kashf eting. Keyingi sayohatingizni rejalashtiring va hech qachon unutmaydigan tajribalardan bahramand bo'ling."
 
 msgid "Uzbekistan"
 msgstr "O'zbekiston"
